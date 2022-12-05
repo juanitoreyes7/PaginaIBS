@@ -1,0 +1,281 @@
+{
+  "AboutCompany": {
+    "description": "Auto imported from components/AboutCompany.vue"
+  },
+  "AboutCompanyTwo": {
+    "description": "Auto imported from components/AboutCompanyTwo.vue"
+  },
+  "AboutDelivery": {
+    "description": "Auto imported from components/AboutDelivery.vue"
+  },
+  "AccordionOne": {
+    "description": "Auto imported from components/AccordionOne.vue"
+  },
+  "AccordionTwo": {
+    "description": "Auto imported from components/AccordionTwo.vue"
+  },
+  "AppointmentForm": {
+    "description": "Auto imported from components/AppointmentForm.vue"
+  },
+  "BlogSidebar": {
+    "description": "Auto imported from components/BlogSidebar.vue"
+  },
+  "BrandLogoCarousel": {
+    "description": "Auto imported from components/BrandLogoCarousel.vue"
+  },
+  "Breadcrumbs": {
+    "description": "Auto imported from components/Breadcrumbs.vue"
+  },
+  "Breadcrumbs2": {
+    "description": "Auto imported from components/Breadcrumbs2.vue"
+  },
+  "CaseStudiesItem": {
+    "description": "Auto imported from components/CaseStudiesItem.vue"
+  },
+  "ContactUsInfo": {
+    "description": "Auto imported from components/ContactUsInfo.vue"
+  },
+  "CtaContact": {
+    "description": "Auto imported from components/CtaContact.vue"
+  },
+  "CtaContactTwo": {
+    "description": "Auto imported from components/CtaContactTwo.vue"
+  },
+  "CtaFour": {
+    "description": "Auto imported from components/CtaFour.vue"
+  },
+  "CtaOne": {
+    "description": "Auto imported from components/CtaOne.vue"
+  },
+  "CtaThree": {
+    "description": "Auto imported from components/CtaThree.vue"
+  },
+  "CtaTwo": {
+    "description": "Auto imported from components/CtaTwo.vue"
+  },
+  "CtaVideo": {
+    "description": "Auto imported from components/CtaVideo.vue"
+  },
+  "FeatureItem": {
+    "description": "Auto imported from components/FeatureItem.vue"
+  },
+  "FeatureItemStyleThree": {
+    "description": "Auto imported from components/FeatureItemStyleThree.vue"
+  },
+  "FeatureItemTwo": {
+    "description": "Auto imported from components/FeatureItemTwo.vue"
+  },
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
+  },
+  "FooterAbout": {
+    "description": "Auto imported from components/FooterAbout.vue"
+  },
+  "FooterWidgetApps": {
+    "description": "Auto imported from components/FooterWidgetApps.vue"
+  },
+  "FooterWidgetLink": {
+    "description": "Auto imported from components/FooterWidgetLink.vue"
+  },
+  "FunFact": {
+    "description": "Auto imported from components/FunFact.vue"
+  },
+  "FunFactThree": {
+    "description": "Auto imported from components/FunFactThree.vue"
+  },
+  "FunFactTwo": {
+    "description": "Auto imported from components/FunFactTwo.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/Header.vue"
+  },
+  "HeaderAppointment": {
+    "description": "Auto imported from components/HeaderAppointment.vue"
+  },
+  "HeaderCybersecurity": {
+    "description": "Auto imported from components/HeaderCybersecurity.vue"
+  },
+  "HeaderProcessing": {
+    "description": "Auto imported from components/HeaderProcessing.vue"
+  },
+  "HeaderResolution": {
+    "description": "Auto imported from components/HeaderResolution.vue"
+  },
+  "HeaderTop": {
+    "description": "Auto imported from components/HeaderTop.vue"
+  },
+  "HeroAppointment": {
+    "description": "Auto imported from components/HeroAppointment.vue"
+  },
+  "HeroCybersecurity": {
+    "description": "Auto imported from components/HeroCybersecurity.vue"
+  },
+  "HeroInfotechNo": {
+    "description": "Auto imported from components/HeroInfotechNo.vue"
+  },
+  "HeroProcessing": {
+    "description": "Auto imported from components/HeroProcessing.vue"
+  },
+  "HeroResolution": {
+    "description": "Auto imported from components/HeroResolution.vue"
+  },
+  "HeroService": {
+    "description": "Auto imported from components/HeroService.vue"
+  },
+  "MobileNavMenu": {
+    "description": "Auto imported from components/MobileNavMenu.vue"
+  },
+  "Navigation": {
+    "description": "Auto imported from components/Navigation.vue"
+  },
+  "OffCanvasMobileMenu": {
+    "description": "Auto imported from components/OffCanvasMobileMenu.vue"
+  },
+  "PageHeader": {
+    "description": "Auto imported from components/PageHeader.vue"
+  },
+  "PreviewMobileNavMenu": {
+    "description": "Auto imported from components/PreviewMobileNavMenu.vue"
+  },
+  "PreviewOffcanvasMobileMenu": {
+    "description": "Auto imported from components/PreviewOffcanvasMobileMenu.vue"
+  },
+  "QualifiedMethod": {
+    "description": "Auto imported from components/QualifiedMethod.vue"
+  },
+  "SearchOverlay": {
+    "description": "Auto imported from components/SearchOverlay.vue"
+  },
+  "SectionTitle": {
+    "description": "Auto imported from components/SectionTitle.vue"
+  },
+  "ServiceIT": {
+    "description": "Auto imported from components/ServiceIT.vue"
+  },
+  "ServiceItem": {
+    "description": "Auto imported from components/ServiceItem.vue"
+  },
+  "ServiceItemStyleFive": {
+    "description": "Auto imported from components/ServiceItemStyleFive.vue"
+  },
+  "ServiceItemStyleFour": {
+    "description": "Auto imported from components/ServiceItemStyleFour.vue"
+  },
+  "ServiceItemStyleThree": {
+    "description": "Auto imported from components/ServiceItemStyleThree.vue"
+  },
+  "ServiceItemStyleTwo": {
+    "description": "Auto imported from components/ServiceItemStyleTwo.vue"
+  },
+  "ServiceOne": {
+    "description": "Auto imported from components/ServiceOne.vue"
+  },
+  "TeamMember": {
+    "description": "Auto imported from components/TeamMember.vue"
+  },
+  "VideoPupupOne": {
+    "description": "Auto imported from components/VideoPupupOne.vue"
+  },
+  "VideoWithImages": {
+    "description": "Auto imported from components/VideoWithImages.vue"
+  },
+  "SectionsAccordionWrapper": {
+    "description": "Auto imported from components/sections/AccordionWrapper.vue"
+  },
+  "SectionsBlogPageWrapper": {
+    "description": "Auto imported from components/sections/BlogPageWrapper.vue"
+  },
+  "SectionsBlogStyleOne": {
+    "description": "Auto imported from components/sections/BlogStyleOne.vue"
+  },
+  "SectionsBlogStyleTwo": {
+    "description": "Auto imported from components/sections/BlogStyleTwo.vue"
+  },
+  "SectionsCaseStudiesItemWrapper": {
+    "description": "Auto imported from components/sections/CaseStudiesItemWrapper.vue"
+  },
+  "SectionsCaseStudiesSection": {
+    "description": "Auto imported from components/sections/CaseStudiesSection.vue"
+  },
+  "SectionsCaseStudiesSectionTwo": {
+    "description": "Auto imported from components/sections/CaseStudiesSectionTwo.vue"
+  },
+  "SectionsCompanyHistory": {
+    "description": "Auto imported from components/sections/CompanyHistory.vue"
+  },
+  "SectionsContactUs": {
+    "description": "Auto imported from components/sections/ContactUs.vue"
+  },
+  "SectionsContactUsFour": {
+    "description": "Auto imported from components/sections/ContactUsFour.vue"
+  },
+  "SectionsContactUsThree": {
+    "description": "Auto imported from components/sections/ContactUsThree.vue"
+  },
+  "SectionsContactUsTwo": {
+    "description": "Auto imported from components/sections/ContactUsTwo.vue"
+  },
+  "SectionsCotizaGmm": {
+    "description": "Auto imported from components/sections/CotizaGmm.vue"
+  },
+  "SectionsFeatureGallery": {
+    "description": "Auto imported from components/sections/FeatureGallery.vue"
+  },
+  "SectionsFeatureGalleryFour": {
+    "description": "Auto imported from components/sections/FeatureGalleryFour.vue"
+  },
+  "SectionsFeatureGalleryTwo": {
+    "description": "Auto imported from components/sections/FeatureGalleryTwo.vue"
+  },
+  "SectionsFourSteps": {
+    "description": "Auto imported from components/sections/FourSteps.vue"
+  },
+  "SectionsGalleryOne": {
+    "description": "Auto imported from components/sections/GalleryOne.vue"
+  },
+  "SectionsInfoTechExperience": {
+    "description": "Auto imported from components/sections/InfoTechExperience.vue"
+  },
+  "SectionsPricingOne": {
+    "description": "Auto imported from components/sections/PricingOne.vue"
+  },
+  "SectionsServiceITSolution": {
+    "description": "Auto imported from components/sections/ServiceITSolution.vue"
+  },
+  "SectionsServiceStyleEight": {
+    "description": "Auto imported from components/sections/ServiceStyleEight.vue"
+  },
+  "SectionsServiceStyleFive": {
+    "description": "Auto imported from components/sections/ServiceStyleFive.vue"
+  },
+  "SectionsServiceStyleSeven": {
+    "description": "Auto imported from components/sections/ServiceStyleSeven.vue"
+  },
+  "SectionsServiceStyleSix": {
+    "description": "Auto imported from components/sections/ServiceStyleSix.vue"
+  },
+  "SectionsServiceStyleThree": {
+    "description": "Auto imported from components/sections/ServiceStyleThree.vue"
+  },
+  "SectionsServiceStyleTwo": {
+    "description": "Auto imported from components/sections/ServiceStyleTwo.vue"
+  },
+  "SectionsTabSection": {
+    "description": "Auto imported from components/sections/TabSection.vue"
+  },
+  "SectionsTeamMemberList": {
+    "description": "Auto imported from components/sections/TeamMemberList.vue"
+  },
+  "SectionsTeamOne": {
+    "description": "Auto imported from components/sections/TeamOne.vue"
+  },
+  "SectionsTeamTwo": {
+    "description": "Auto imported from components/sections/TeamTwo.vue"
+  },
+  "SectionsTestimonialOne": {
+    "description": "Auto imported from components/sections/TestimonialOne.vue"
+  },
+  "SectionsTestimonialTwo": {
+    "description": "Auto imported from components/sections/TestimonialTwo.vue"
+  }
+}

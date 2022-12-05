@@ -1,0 +1,68 @@
+{
+    "logoList": [
+        {
+            "image": "/images/brand/axa.png",
+            "hoverImage": "/images/brand/axa.png"
+        },
+        {
+            "image": "/images/brand/afirme.png",
+            "hoverImage": "/images/brand/afirme.png"
+        },
+        {
+            "image": "/images/brand/atlas.png",
+            "hoverImage": "/images/brand/atlas.png"
+        },
+        {
+            "image": "/images/brand/metlife.png",
+            "hoverImage": "/images/brand/metlife.png"
+        },
+        {
+            "image": "/images/brand/sura.png",
+            "hoverImage": "/images/brand/sura.png"
+        },
+        {
+            "image": "/images/brand/banorte.png",
+            "hoverImage": "/images/brand/banorte.png"
+        },
+        {
+            "image": "/images/brand/aserta.png",
+            "hoverImage": "/images/brand/aserta.png"
+        },
+        {
+            "image": "/images/brand/zurich.png",
+            "hoverImage": "/images/brand/zurich.png"
+        },
+        {
+            "image": "/images/brand/bupa.png",
+            "hoverImage": "/images/brand/bupa.png"
+        },
+        {
+            "image": "/images/brand/chubb.png",
+            "hoverImage": "/images/brand/chubb.png"
+        },
+        {
+            "image": "/images/brand/commercial.png",
+            "hoverImage": "/images/brand/commercial.png"
+        },
+        {
+            "image": "/images/brand/hdi.png",
+            "hoverImage": "/images/brand/hdi.png"
+        },
+        {
+            "image": "/images/brand/nhseguros.png",
+            "hoverImage": "/images/brand/nhseguros.png"
+        },
+        {
+            "image": "/images/brand/plan.png",
+            "hoverImage": "/images/brand/plan.png"
+        },
+        {
+            "image": "/images/brand/qualitas.png",
+            "hoverImage": "/images/brand/qualitas.png"
+        },
+        {
+            "image": "/images/brand/sofimex.png",
+            "hoverImage": "/images/brand/sofimex.png"
+        }
+    ]
+}

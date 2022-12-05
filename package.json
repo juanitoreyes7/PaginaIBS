@@ -1,0 +1,37 @@
+{
+    "name": "mitech",
+    "version": "1.0.0",
+    "description": "VueJS Technology & Blog Template",
+    "author": "uzzal",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate"
+    },
+    "dependencies": {
+        "@emailjs/browser": "^3.7.0",
+        "@nuxtjs/style-resources": "^1.2.1",
+        "@vuepic/vue-datepicker": "^3.5.0",
+        "bootstrap": "^4.6.1",
+        "bootstrap-vue": "^2.21.2",
+        "nuxt": "^2.15.8",
+        "swiper": "^5.3.7",
+        "vue-awesome-swiper": "^4.1.0",
+        "vue-cool-lightbox": "^2.7.4",
+        "vue-count-to": "^1.0.13",
+        "vue-fixed-header": "^3.2.15",
+        "vue-multiselect": "^2.1.6",
+        "vue-observe-visibility": "^1.0.0",
+        "vue-sweetalert2": "^5.0.5",
+        "vue2-datepicker": "^3.11.0",
+        "vuejs-paginate": "^2.1.0"
+    },
+    "devDependencies": {
+        "sass": "^1.49.8",
+        "sass-loader": "^10.2.1",
+        "vue-template-compiler": "^2.7.10",
+        "webpack": "^4.46.0"
+    }
+}

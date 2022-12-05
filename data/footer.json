@@ -1,0 +1,42 @@
+{
+    "footerAboutData": {
+        "logo": "/images/logo/logoIBS.png",
+        "address": "González Cossio 3705 Col. Las Granjas Chihuahua, Chih, MX",
+        "telephone": "+52 614 414 8936",
+        "email": "contacto@ibsconsultores.com"
+    },
+   
+    "footerWidgetTitleThree": "Soporte",
+    "navListThree": [
+        {
+            "navTitle": "Contacto",
+            "navUrl": "/contact" 
+        },
+        {
+            "navTitle": "Preguntas",
+            "navUrl": "/Faq" 
+        },
+        {
+            "navTitle": "Nosotros",
+            "navUrl": "/about" 
+        },
+        {
+            "navTitle": "Seguros",
+            "navUrl": "/case-studies" 
+        }
+    ],
+    "footerAppData": {
+        "footerWidgetTitleFour": "Apps Store",
+        "android": "/images/icons/google-play.jpg",
+        "androidUrl": "https://play.google.com/store/apps/details?id=com.juanreyes.cincotenedores&hl=es_MX",
+        "apple": "/images/icons/apple-store.jpg",
+        "appleUrl": "https://apps.apple.com/mx/app/ibs-consultores/id1582085062"
+    },
+    "footerBottom": {
+        "copyright": "© 2022 IBS Consultores. All Rights Reserved. ",
+        "fbUrl": "https://www.facebook.com/ibsconsultores/",
+        "twitterUrl": "https://twitter.com/IBSCONSULTORES",
+        "instagramUrl": "https://www.instagram.com/ibsconsultores/",
+        "linkedinUrl": "https://www.linkedin.com/company/ibsconsultores/mycompany/"
+    }
+}

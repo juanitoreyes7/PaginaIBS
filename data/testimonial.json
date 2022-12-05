@@ -1,0 +1,34 @@
+{
+    "sectionTitle": "Esto es lo que piensan de nosotros.",
+    "sectionSubTitle": "Nuestos Clientes",
+    "testimonials": [
+        {
+            "subject": "Gastos Medicos",
+            "desc": "Excelente atención por parte de todo el equipo de IBS Consultores muy agradecido de tenerlos conmigo.",
+            "thumb": "/images/testimonial/testimonial1.jpg",
+            "name": "Talia Hernández",
+            "designation": "Cliente de Gastos Medicos"
+        },
+        {
+            "subject": "Autos",
+            "desc": "Muy amables todo el personal de IBS Cosnultores excelente servicio.",
+            "thumb": "/images/testimonial/testimonial2.jpg",
+            "name": "Carlos Gardea",
+            "designation": "Cliente de Autos"
+        },
+        {
+            "subject": "Gastos Medicos",
+            "desc": "Execlente servicio en el momento que tuve un siniestro ellos me ayudaron mucho con mis reembolsos.",
+            "thumb": "/images/testimonial/testimonial3.jpg",
+            "name": "Lupe Enríquez",
+            "designation": "Cliente de Gastos Medicos"
+        },
+        {
+            "subject": "Autos",
+            "desc": "Cuando tuve un siniestro ellos estuvieron desde el primer día hasta que pude resolverlo.",
+            "thumb": "/images/testimonial/testimonial4.jpg",
+            "name": "Adrián Hinojos",
+            "designation": "Cliente de Autos"
+        }
+    ]
+}

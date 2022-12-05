@@ -1,0 +1,205 @@
+[
+  {
+    "name": "About",
+    "path": "/About",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/About.vue",
+    "chunkName": "pages/About",
+    "_name": "_7b004f60"
+  },
+  {
+    "name": "Appointment",
+    "path": "/Appointment",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/Appointment.vue",
+    "chunkName": "pages/Appointment",
+    "_name": "_da6169bc"
+  },
+  {
+    "name": "blog",
+    "path": "/blog",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/blog/index.vue",
+    "chunkName": "pages/blog/index",
+    "_name": "_12926b5c"
+  },
+  {
+    "name": "case-studies",
+    "path": "/case-studies",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/case-studies/index.vue",
+    "chunkName": "pages/case-studies/index",
+    "_name": "_64f81b8c"
+  },
+  {
+    "name": "Contact",
+    "path": "/Contact",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/Contact.vue",
+    "chunkName": "pages/Contact",
+    "_name": "_2467d8a3"
+  },
+  {
+    "name": "Cotgmm",
+    "path": "/Cotgmm",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/Cotgmm.vue",
+    "chunkName": "pages/Cotgmm",
+    "_name": "_17bb818c"
+  },
+  {
+    "name": "Cybersecurity",
+    "path": "/Cybersecurity",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/Cybersecurity.vue",
+    "chunkName": "pages/Cybersecurity",
+    "_name": "_4927165c"
+  },
+  {
+    "name": "Faq",
+    "path": "/Faq",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/Faq/index.vue",
+    "chunkName": "pages/Faq/index",
+    "_name": "_18cc51dc"
+  },
+  {
+    "name": "descargables",
+    "path": "/descargables",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/descargables.vue",
+    "chunkName": "pages/descargables",
+    "_name": "_11de83fa"
+  },
+  {
+    "name": "IT-Solutions",
+    "path": "/IT-Solutions",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/IT-Solutions.vue",
+    "chunkName": "pages/IT-Solutions",
+    "_name": "_bea94176"
+  },
+  {
+    "name": "Leadership",
+    "path": "/Leadership",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/Leadership.vue",
+    "chunkName": "pages/Leadership",
+    "_name": "_7cf45d12"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/login.vue",
+    "chunkName": "pages/login",
+    "_name": "_346d364c"
+  },
+  {
+    "name": "Processing",
+    "path": "/Processing",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/Processing.vue",
+    "chunkName": "pages/Processing",
+    "_name": "_6dcd7b40"
+  },
+  {
+    "name": "Resolutions",
+    "path": "/Resolutions",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/Resolutions.vue",
+    "chunkName": "pages/Resolutions",
+    "_name": "_7f7e78ca"
+  },
+  {
+    "name": "Service",
+    "path": "/Service",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/Service.vue",
+    "chunkName": "pages/Service",
+    "_name": "_a1f1ae90"
+  },
+  {
+    "name": "blog-blog-details",
+    "path": "/blog/blog-details",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/blog/blog-details.vue",
+    "chunkName": "pages/blog/blog-details",
+    "_name": "_0299b547"
+  },
+  {
+    "name": "element-accordion",
+    "path": "/element/accordion",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/element/accordion.vue",
+    "chunkName": "pages/element/accordion",
+    "_name": "_88e13350"
+  },
+  {
+    "name": "element-box-icon",
+    "path": "/element/box-icon",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/element/box-icon.vue",
+    "chunkName": "pages/element/box-icon",
+    "_name": "_445f3a4a"
+  },
+  {
+    "name": "element-box-image",
+    "path": "/element/box-image",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/element/box-image.vue",
+    "chunkName": "pages/element/box-image",
+    "_name": "_0536312e"
+  },
+  {
+    "name": "element-box-large-image",
+    "path": "/element/box-large-image",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/element/box-large-image.vue",
+    "chunkName": "pages/element/box-large-image",
+    "_name": "_492de6d7"
+  },
+  {
+    "name": "element-call-to-action",
+    "path": "/element/call-to-action",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/element/call-to-action.vue",
+    "chunkName": "pages/element/call-to-action",
+    "_name": "_7c5e9fb9"
+  },
+  {
+    "name": "element-counters",
+    "path": "/element/counters",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/element/counters.vue",
+    "chunkName": "pages/element/counters",
+    "_name": "_d83770d2"
+  },
+  {
+    "name": "element-gradation",
+    "path": "/element/gradation",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/element/gradation.vue",
+    "chunkName": "pages/element/gradation",
+    "_name": "_7abf2a12"
+  },
+  {
+    "name": "element-teams",
+    "path": "/element/teams",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/element/teams.vue",
+    "chunkName": "pages/element/teams",
+    "_name": "_1e028074"
+  },
+  {
+    "name": "blog-slug",
+    "path": "/blog/:slug",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/blog/_slug.vue",
+    "chunkName": "pages/blog/_slug",
+    "_name": "_15ffadec"
+  },
+  {
+    "name": "case-studies-id",
+    "path": "/case-studies/:id?",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/case-studies/_id.vue",
+    "chunkName": "pages/case-studies/_id",
+    "_name": "_b00589bc"
+  },
+  {
+    "name": "Faq-id",
+    "path": "/Faq/:id",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/Faq/_id.vue",
+    "chunkName": "pages/Faq/_id",
+    "_name": "_3885c978"
+  },
+  {
+    "name": "service-slug",
+    "path": "/service/:slug?",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/service/_slug.vue",
+    "chunkName": "pages/service/_slug",
+    "_name": "_33d56413"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_6ac59335"
+  }
+]

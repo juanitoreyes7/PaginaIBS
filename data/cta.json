@@ -1,0 +1,16 @@
+{
+    "ctaOne": {
+        "title": "Compra y/o cotiza tu seguro aquí mismo <br><span> ¡ES MUY FÁCIL!</span>",
+        "buttonTalk": "/",
+        "buttonInfo": "/"
+    },
+    "ctaTwo": {
+        "title": "IT Security & Computing",
+        "subTitle": "Challenges are just opportunities in disguise."
+    },
+    "ctaFour": {
+        "title": "Get a copy of brochure on <span> Brand New IT Tech.</span>",
+        "subTitle": "Resources",
+        "image": "/images/banners/managed-it-services-book-cover.png"
+    }
+}
