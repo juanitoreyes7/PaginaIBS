@@ -34,7 +34,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="mailto:emision@ibsconsultores.com" class="single-contact-list">
+                            <a href="mailto:contacto@ibsconsultores.com" class="single-contact-list">
                                 <div class="content-wrap">
                                     <div class="content">
                                         <div class="icon">

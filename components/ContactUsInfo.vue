@@ -8,10 +8,10 @@
                         <ul class="conact-info__list">
                             <li>Agente de seguros</li>
                             <li>
-                                <a href="mailto:contact.sanfrancisco@mitech.com" class="hover-style-link text-color-primary">deyarey@ibsconsultores.com</a>
+                                <a href="mailto:deyarey@ibsconsultores.com" class="hover-style-link text-color-primary">deyarey@ibsconsultores.com</a>
                             </li>
                             <li>
-                                <a href="tel:(+68)122 09876" class="hover-style-link text-black font-weight--bold">(+52) 614 3459772</a>
+                                <a href="tel:(+52)6143459772" class="hover-style-link text-black font-weight--bold">(+52) 614 3459772</a>
                             </li>
                         </ul>
                     </div>
@@ -22,10 +22,10 @@
                         <ul class="conact-info__list">
                             <li>Asesora en seguros y fianzas</li>
                             <li>
-                                <a href="mailto:contact.newyork@mitech.com" class="hover-style-link text-color-primary">karina@ibsconsultores.com</a>
+                                <a href="mailto:karina@ibsconsultores.com" class="hover-style-link text-color-primary">karina@ibsconsultores.com</a>
                             </li>
                             <li>
-                                <a href="tel:(+47)122109878" class="hover-style-link text-black font-weight--bold">(+52) 614 2396300</a>
+                                <a href="tel:(+52)6142396300" class="hover-style-link text-black font-weight--bold">(+52) 614 2396300</a>
                             </li>
                         </ul>
                     </div>
@@ -36,10 +36,10 @@
                         <ul class="conact-info__list">
                             <li>Agente de seguros</li>
                             <li>
-                                <a href="mailto:contact.russia@mitech.com" class="hover-style-link text-color-primary">sandra.arzaga@ibsconsultores.com</a>
+                                <a href="mailto:sandra.arzaga@ibsconsultores.com" class="hover-style-link text-color-primary">sandra.arzaga@ibsconsultores.com</a>
                             </li>
                             <li>
-                                <a href="tel:(+53)122109877" class="hover-style-link text-black font-weight--bold">(+52) 614 1788760</a>
+                                <a href="tel:(+52)6141788760" class="hover-style-link text-black font-weight--bold">(+52) 614 1788760</a>
                             </li>
                         </ul>
                     </div>

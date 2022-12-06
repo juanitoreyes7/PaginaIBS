@@ -34,7 +34,7 @@
                                                     </div>
                                                     <div class="info-content">
                                                         <h6 class="info-title">(+52)6142408116</h6>
-                                                        <div class="info-sub-title">emision@ibsconsultores.com</div>
+                                                        <div class="info-sub-title">contacto@ibsconsultores.com</div>
                                                     </div>
                                                 </div>
                                             </div>
