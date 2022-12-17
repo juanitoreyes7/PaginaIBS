@@ -15,7 +15,6 @@
                     <div class="cybersecurity-hero-images-wrap wow move-up">
                         <div class="cybersecurity-hero-images section-space--mt_80">
                             <div class="inner-img-one">
-                                <img class="img-fluid worldRotate" src="/images/hero/mitech-slider-cybersecurity-global-image.png" alt="image">
                             </div>
                             <div class="inner-img-two">
                                 <img class="img-fluid ml-xl-5" src="/images/hero/persona1.png" alt="image">
