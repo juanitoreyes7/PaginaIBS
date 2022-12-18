@@ -49,18 +49,18 @@
     "_name": "_4927165c"
   },
   {
+    "name": "descargables",
+    "path": "/descargables",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/descargables.vue",
+    "chunkName": "pages/descargables",
+    "_name": "_3ccb8cc1"
+  },
+  {
     "name": "Faq",
     "path": "/Faq",
     "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/Faq/index.vue",
     "chunkName": "pages/Faq/index",
     "_name": "_18cc51dc"
-  },
-  {
-    "name": "descargables",
-    "path": "/descargables",
-    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/descargables.vue",
-    "chunkName": "pages/descargables",
-    "_name": "_11de83fa"
   },
   {
     "name": "IT-Solutions",

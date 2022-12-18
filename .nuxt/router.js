@@ -11,8 +11,8 @@ const _64f81b8c = () => interopDefault(import('../pages/case-studies/index.vue' 
 const _2467d8a3 = () => interopDefault(import('../pages/Contact.vue' /* webpackChunkName: "pages/Contact" */))
 const _17bb818c = () => interopDefault(import('../pages/Cotgmm.vue' /* webpackChunkName: "pages/Cotgmm" */))
 const _4927165c = () => interopDefault(import('../pages/Cybersecurity.vue' /* webpackChunkName: "pages/Cybersecurity" */))
+const _3ccb8cc1 = () => interopDefault(import('../pages/descargables.vue' /* webpackChunkName: "pages/descargables" */))
 const _18cc51dc = () => interopDefault(import('../pages/Faq/index.vue' /* webpackChunkName: "pages/Faq/index" */))
-const _11de83fa = () => interopDefault(import('../pages/descargables.vue' /* webpackChunkName: "pages/descargables" */))
 const _bea94176 = () => interopDefault(import('../pages/IT-Solutions.vue' /* webpackChunkName: "pages/IT-Solutions" */))
 const _7cf45d12 = () => interopDefault(import('../pages/Leadership.vue' /* webpackChunkName: "pages/Leadership" */))
 const _346d364c = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
@@ -74,13 +74,13 @@ export const routerOptions = {
     component: _4927165c,
     name: "Cybersecurity"
   }, {
+    path: "/descargables",
+    component: _3ccb8cc1,
+    name: "descargables"
+  }, {
     path: "/Faq",
     component: _18cc51dc,
     name: "Faq"
-  }, {
-    path: "/descargables",
-    component: _11de83fa,
-    name: "descargables"
   }, {
     path: "/IT-Solutions",
     component: _bea94176,
