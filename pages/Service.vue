@@ -72,7 +72,7 @@
         },
         head() {
             return {
-                title: 'Mitech || Service'
+                title: ''
             }
         },
     };

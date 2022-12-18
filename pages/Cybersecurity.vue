@@ -171,7 +171,7 @@
         },
         head() {
             return {
-                title: 'Mitech || Appointment'
+                title: ''
             }
         }
     };

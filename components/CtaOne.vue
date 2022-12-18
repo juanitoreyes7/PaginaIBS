@@ -21,12 +21,12 @@
                             </span> 
                             GMM
                         </a>
-                        <a href="https://ibsvida.segupoliza.com/#!/inicio" target="_blank" class="btn btn--white btn-one">
+                      <!--  <a href="https://ibsvida.segupoliza.com/#!/inicio" target="_blank" class="btn btn--white btn-one">
                             <span class="btn-icon mr-2">
                                 <i class="far fa-heart"></i>
                             </span> 
                             Vida
-                        </a>
+                        </a>-->
                     </div>
                 </div>
             </div>
