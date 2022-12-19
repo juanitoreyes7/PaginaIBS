@@ -1,35 +1,5 @@
 <template>
     <div class="header-area header-sticky">
-       <!-- <div class="header-top-bar-info bg-gray d-none d-lg-block">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="top-bar-wrap">
-                            <div class="top-bar-left">
-                                <div class="top-bar-text"></div>
-                            </div>
-                            <div class="top-bar-right">
-                                <ul class="top-bar-info">
-                                    <li class="info-item">
-                                        <a href="" class="info-link">
-                                            <i class="info-icon fa fa-user"></i>
-                                            <span class="info-text"><strong>Iniciar Sesión</strong></span>
-                                        </a>
-                                    </li>
-                                    <li class="info-item">
-                                        <a href="" class="info-link">
-                                            <i class="info-icon fa fa-user-plus"></i>
-                                            <span class="info-text"><strong>Registrate</strong></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->  
-        
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

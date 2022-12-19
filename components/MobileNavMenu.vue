@@ -2,143 +2,25 @@
     <div class="mobile-navigation">
         <nav class="offcanvas-navigation" id="offcanvas-navigation">
             <ul>
-                <li class="menu-item-has-children">
-                    <n-link to="/">Home</n-link>
-                    <ul class="sub-menu">
-                        <li>
-                            <n-link to="/">
-                                <span>Info Technology</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/processing">
-                                <span>Processing</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/appointment">
-                                <span>Appointment</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/service">
-                                <span>Services</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/resolutions">
-                                <span>Resolutions</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/cybersecurity">
-                                <span>Cybersecurity</span>
-                            </n-link>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
+                <li>
                     <n-link to="/about">
-                        <span>Company</span>
+                        <span>Nosotros</span>
                     </n-link>
-                    <ul class="sub-menu">
-                        <li>
-                            <n-link to="/about">
-                                <span>About Us</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/contact">
-                                <span>Contact Us</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/leadership">
-                                <span>Leadership</span>
-                            </n-link>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <n-link to="/descargables">
-                        <span>Services</span>
-                    </n-link>
-                    <ul class="sub-menu">
-                        <li>
-                            <n-link to="/descargables">
-                                <span>IT Services</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/it-solutions">
-                                <span>IT Solutions</span>
-                            </n-link>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children">
-                    <n-link to="/">
-                        <span>Elements</span>
-                    </n-link>
-                    <ul class="sub-menu">
-                        <li>
-                            <n-link to="/element/accordion">
-                                <span>Accordion</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/element/box-icon">
-                                <span>Box Icon</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/element/box-image">
-                                <span>Box Image</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/element/box-large-image">
-                                <span>Box Large Image</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/element/call-to-action">
-                                <span>Call To Action</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/element/counters">
-                                <span>Counters</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/element/gradation">
-                                <span>Gradation</span>
-                            </n-link>
-                        </li>
-                        <li>
-                            <n-link to="/element/teams">
-                                <span>Teams</span>
-                            </n-link>
-                        </li>
-                    </ul>
                 </li>
                 <li>
                     <n-link to="/case-studies">
-                        <span>Case Studies</span>
+                        <span>Seguros</span>
                     </n-link>
                 </li>
-                <li class="menu-item-has-children">
-                    <n-link to="/blog">
-                        <span>Blog</span>
+                <li>
+                    <n-link to="/contact">
+                        <span>Contacto</span>
                     </n-link>
-                    <ul class="sub-menu">
-                        <li>
-                            <n-link to="/blog/blog-details">
-                                <span>Blog Details</span>
-                            </n-link>
-                        </li>
-                    </ul>
+                </li>
+                <li>
+                    <n-link to="/descargables">
+                        <span>Descargables</span>
+                    </n-link>
                 </li>
             </ul>
         </nav>
