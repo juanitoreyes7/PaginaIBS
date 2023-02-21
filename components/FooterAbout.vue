@@ -11,7 +11,7 @@
                 <a href="mailto:contacto@ibsconsultores.com" class="hover-style-link">{{ footerAbout.email }}</a>
             </li>
             <li>
-                <a href="tel:+52 614 414 8936" class="hover-style-link text-black font-weight--bold">{{ footerAbout.telephone }}</a>
+                <a href="tel:+52 800 777 0911" class="hover-style-link text-black font-weight--bold">{{ footerAbout.telephone }}</a>
             </li>
             <li>
                 <a href="https://hasthemes.com/" target="_blank" class="hover-style-link text-color-primary">{{ footerAbout.web }}</a>

@@ -12,7 +12,7 @@
                             </li>
                             <li>
                                 <a href="tel:(+52)6143459772" class="hover-style-link text-black font-weight--bold">(+52) 614 3459772</a>
-                            </li>
+                            </li> 
                         </ul>
                     </div>
                 </div>

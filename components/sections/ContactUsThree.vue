@@ -29,7 +29,7 @@
                                         </div>
                                         <div class="main-content">
                                             <h6 class="heading">¡Llama para recibir asesoramiento ahora!</h6>
-                                            <div class="text">(+52) 614 4148936</div>
+                                            <div class="text">(+52) 800 7770911</div>
                                         </div>
                                     </div>
                                 </div>

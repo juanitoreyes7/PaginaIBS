@@ -16,6 +16,7 @@ const _18cc51dc = () => interopDefault(import('../pages/Faq/index.vue' /* webpac
 const _bea94176 = () => interopDefault(import('../pages/IT-Solutions.vue' /* webpackChunkName: "pages/IT-Solutions" */))
 const _7cf45d12 = () => interopDefault(import('../pages/Leadership.vue' /* webpackChunkName: "pages/Leadership" */))
 const _346d364c = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
+const _615892c7 = () => interopDefault(import('../pages/Politicas.vue' /* webpackChunkName: "pages/Politicas" */))
 const _6dcd7b40 = () => interopDefault(import('../pages/Processing.vue' /* webpackChunkName: "pages/Processing" */))
 const _7f7e78ca = () => interopDefault(import('../pages/Resolutions.vue' /* webpackChunkName: "pages/Resolutions" */))
 const _a1f1ae90 = () => interopDefault(import('../pages/Service.vue' /* webpackChunkName: "pages/Service" */))
@@ -93,6 +94,10 @@ export const routerOptions = {
     path: "/login",
     component: _346d364c,
     name: "login"
+  }, {
+    path: "/Politicas",
+    component: _615892c7,
+    name: "Politicas"
   }, {
     path: "/Processing",
     component: _6dcd7b40,

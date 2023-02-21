@@ -34,7 +34,7 @@
                                                         <span class="fa fa-phone"></span>
                                                     </div>
                                                     <div class="info-content"><p></p>
-                                                        <h6 class="info-title"> +52 614 414 8936</h6>
+                                                        <h6 class="info-title"> +52 800 777 09 11</h6>
                                                         <div class="info-sub-title">contacto@ibsconsultores.com</div>
                                                     </div>
                                                 </div>

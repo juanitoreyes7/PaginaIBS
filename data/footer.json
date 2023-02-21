@@ -2,12 +2,16 @@
     "footerAboutData": {
         "logo": "/images/logo/logoIBS.png",
         "address": "González Cossio 3705 Col. Las Granjas Chihuahua, Chih, MX",
-        "telephone": "+52 614 414 8936",
+        "telephone": "+52 800 777 09 11",
         "email": "contacto@ibsconsultores.com"
     },
    
     "footerWidgetTitleThree": "Soporte",
     "navListThree": [
+        {
+            "navTitle": "Politica de privacidad ",
+            "navUrl": "/Politicas" 
+        },
         {
             "navTitle": "Contacto",
             "navUrl": "/contact" 
