@@ -4,6 +4,11 @@
         "buttonTalk": "/",
         "buttonInfo": "/"
     },
+    "ctaOne1": {
+        "title": "Llena aquí tu información para tu nueva poliza de autos.<br><span> ¡ES MUY FÁCIL INGRESA AQUÍ!</span>",
+        "buttonTalk": "/",
+        "buttonInfo": "/"
+    },
     "ctaTwo": {
         "title": "IT Security & Computing",
         "subTitle": "Challenges are just opportunities in disguise."

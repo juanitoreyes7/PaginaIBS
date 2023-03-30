@@ -35,6 +35,9 @@
   "ContactUsInfo": {
     "description": "Auto imported from components/ContactUsInfo.vue"
   },
+  "ContactUsInfo1": {
+    "description": "Auto imported from components/ContactUsInfo1.vue"
+  },
   "CtaContact": {
     "description": "Auto imported from components/CtaContact.vue"
   },
@@ -46,6 +49,9 @@
   },
   "CtaOne": {
     "description": "Auto imported from components/CtaOne.vue"
+  },
+  "CtaOne1": {
+    "description": "Auto imported from components/CtaOne1.vue"
   },
   "CtaThree": {
     "description": "Auto imported from components/CtaThree.vue"

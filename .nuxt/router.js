@@ -20,6 +20,7 @@ const _615892c7 = () => interopDefault(import('../pages/Politicas.vue' /* webpac
 const _6dcd7b40 = () => interopDefault(import('../pages/Processing.vue' /* webpackChunkName: "pages/Processing" */))
 const _7f7e78ca = () => interopDefault(import('../pages/Resolutions.vue' /* webpackChunkName: "pages/Resolutions" */))
 const _a1f1ae90 = () => interopDefault(import('../pages/Service.vue' /* webpackChunkName: "pages/Service" */))
+const _0e247b32 = () => interopDefault(import('../pages/Solicitud.vue' /* webpackChunkName: "pages/Solicitud" */))
 const _0299b547 = () => interopDefault(import('../pages/blog/blog-details.vue' /* webpackChunkName: "pages/blog/blog-details" */))
 const _88e13350 = () => interopDefault(import('../pages/element/accordion.vue' /* webpackChunkName: "pages/element/accordion" */))
 const _445f3a4a = () => interopDefault(import('../pages/element/box-icon.vue' /* webpackChunkName: "pages/element/box-icon" */))
@@ -110,6 +111,10 @@ export const routerOptions = {
     path: "/Service",
     component: _a1f1ae90,
     name: "Service"
+  }, {
+    path: "/Solicitud",
+    component: _0e247b32,
+    name: "Solicitud"
   }, {
     path: "/blog/blog-details",
     component: _0299b547,
