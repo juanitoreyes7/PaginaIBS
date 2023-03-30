@@ -1,5 +1,5 @@
 <template>
-    <div class="breadcrumb-area bg-cover" :style="{ backgroundImage: `url('/images/bg/gmm2.png')` }">
+    <div class="breadcrumb-area bg-cover" :style="{ backgroundImage: `url('/images/bg/vida.png')` }">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    export default {
-        props: ['items', 'breadcrumbTitle']
-    }
+export default {
+    props: ['items', 'breadcrumbTitle']
+}
 </script>

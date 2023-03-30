@@ -4,7 +4,7 @@
 
         <HeaderAppointment />
 
-        <Breadcrumbs :items="breadcrumbNavigation" breadcrumbTitle="Visteon" />
+        <Breadcrumbs2 :items="breadcrumbNavigation" breadcrumbTitle="Visteon" />
 
         <CtaOne1 />
 
@@ -19,7 +19,7 @@
 
 <script>
 import HeaderAppointment from '@/components/HeaderAppointment';
-import Breadcrumbs from '@/components/Breadcrumbs';
+import Breadcrumbs2 from '@/components/Breadcrumbs2';
 import ContactUsInfo1 from '@/components/ContactUsInfo1';
 import CtaOne1 from '@/components/CtaOne1';
 import Footer from '@/components/Footer';
@@ -29,7 +29,7 @@ export default {
     name: 'contact',
     components: {
         HeaderAppointment,
-        Breadcrumbs,
+        Breadcrumbs2,
         ContactUsInfo1,
         CtaOne1,
         Footer,
