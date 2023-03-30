@@ -6,7 +6,7 @@
                     <div class="conact-info-wrap mt-30">
                         <h5 class="heading mb-20">Michell Castillo</h5>
                         <ul class="conact-info__list">
-                            <li>Ejecutivo de descuento por nomina</li>
+                            <li>Ejecutivo descuento por nomina</li>
                             <li>
                                 <a href="mailto:deyarey@ibsconsultores.com"
                                     class="hover-style-link text-color-primary">seguros@ibsconsultores.com</a>
