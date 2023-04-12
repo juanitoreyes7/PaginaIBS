@@ -4,7 +4,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title-wrap text-center section-space--mb_20">
-                        <h3 class="heading" v-html="data.aboutDelivery.sectionTitle">{{ data.aboutDelivery.sectionTitle }}</h3>
+                        <h3 class="heading" v-html="data.aboutDelivery.sectionTitle">{{ data.aboutDelivery.sectionTitle }}
+                        </h3>
                     </div>
                 </div>
             </div>
@@ -15,7 +16,7 @@
                             <div class="marker"></div>
                             <div class="title-wrap">
                                 <h5 class="title">{{ delivery.title }}</h5>
-                                <div class="desc">{{ delivery.desc }}</div>
+                                <div class="desc" style="text-align: justify;">{{ delivery.desc }}</div>
                             </div>
                         </div>
                     </div>
@@ -26,12 +27,12 @@
 </template>
 
 <script>
-    import data from '../data/about.json';
-    export default {
-        data () {
-            return {
-                data
-            }
+import data from '../data/about.json';
+export default {
+    data() {
+        return {
+            data
         }
-    };
+    }
+};
 </script>

@@ -9,7 +9,7 @@
                 <div class="post-categories">
                     {{ project.category }}
                 </div>
-                <div class="text">
+                <div class="text" style="text-align: justify;">
                     {{ project.desc }}
                 </div>
                 <div class="box-projects-arrow">
