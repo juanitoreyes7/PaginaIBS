@@ -22,7 +22,7 @@
 </template>
 
 <script>
-    export default {
-        props: ['project']
-    };
+export default {
+    props: ['project']
+};
 </script>
