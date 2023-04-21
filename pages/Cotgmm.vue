@@ -6,7 +6,6 @@
 
         <CotizaGmm />
 
-        <ContactUsInfo />
 
         <OffCanvasMobileMenu />
 
@@ -14,40 +13,38 @@
 </template>
 
 <script>
-    import HeaderAppointment from '@/components/HeaderAppointment';
-    import Breadcrumbs2 from '@/components/Breadcrumbs2';
-    import CotizaGmm from '@/components/sections/CotizaGmm';
-    import ContactUsInfo from '@/components/ContactUsInfo';
-    import OffCanvasMobileMenu from '@/components/OffCanvasMobileMenu';
+import HeaderAppointment from '@/components/HeaderAppointment';
+import Breadcrumbs2 from '@/components/Breadcrumbs2';
+import CotizaGmm from '@/components/sections/CotizaGmm';
+import OffCanvasMobileMenu from '@/components/OffCanvasMobileMenu';
 
-    export default {
-        name: 'contact',
-        components: {
-    HeaderAppointment,
-    Breadcrumbs2,
-    CotizaGmm,
-    ContactUsInfo,
-    OffCanvasMobileMenu,
-    CotizaGmm
-},
-        head() {
-            return {
-                title: 'Contact Us'
-            }
-        },
-        data () {
-            return {
-                breadcrumbNavigation: [
-                    {
-                        text: 'Home',
-                        to: "/"
-                    },
-                    {
-                        text: 'Contact Us',
-                        active: true
-                    }
-                ]
-            }
+export default {
+    name: 'contact',
+    components: {
+        HeaderAppointment,
+        Breadcrumbs2,
+        CotizaGmm,
+        OffCanvasMobileMenu,
+        CotizaGmm
+    },
+    head() {
+        return {
+            title: 'Contact Us'
         }
-    };
+    },
+    data() {
+        return {
+            breadcrumbNavigation: [
+                {
+                    text: 'Home',
+                    to: "/"
+                },
+                {
+                    text: 'Contact Us',
+                    active: true
+                }
+            ]
+        }
+    }
+};
 </script>
