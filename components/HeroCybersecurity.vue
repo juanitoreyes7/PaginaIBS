@@ -5,7 +5,8 @@
                 <div class="col-lg-6 col-md-7">
                     <div class="cybersecurity-hero-text wow move-up">
                         <h6>IBS Consultores Tu Mejor Agente de Seguros y de Fianzas</h6>
-                        <h3 class="font-weight--reguler mb-30">Al mal tiempo <span class="text-color-primary">un buen seguro.<sup>®</sup></span></h3>
+                        <h3 class="font-weight--reguler mb-30">Al mal tiempo <span class="text-color-primary">un buen
+                                seguro.<sup>®</sup></span></h3>
                         <!--<div class="hero-button mt-30">
                             <n-link to="/about" class="ht-btn ht-btn-md">Dig deeper now</n-link>
                         </div>-->

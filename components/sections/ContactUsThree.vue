@@ -1,10 +1,11 @@
 <template>
-    <div class="contact-us-area infotechno-contact-us-bg section-space--pt_100 bg-cover" :style="{ backgroundImage: `url('/images/bg/home-infotechno-contact-bg.jpg')` }">
+    <div class="contact-us-area infotechno-contact-us-bg section-space--pt_100 bg-cover"
+        :style="{ backgroundImage: `url('/images/bg/home-infotechno-contact-bg.jpg')` }">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <div class="image">
-                        <img class="img-fluid" src="/images/banners/enfrenteIBS.png" alt="image">
+                        <img class="img-fluid" src="/images/banners/enfrenteIBS.jpg" alt="image">
                     </div>
                 </div>
 
@@ -47,7 +48,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="https://goo.gl/maps/nvn5wH29NVCjECZPA"  target="_blank"  class="single-contact-list">
+                            <a href="https://goo.gl/maps/nvn5wH29NVCjECZPA" target="_blank" class="single-contact-list">
                                 <div class="content-wrap">
                                     <div class="content">
                                         <div class="icon">
