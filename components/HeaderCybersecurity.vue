@@ -14,13 +14,13 @@
                         <div class="header-right flexible-image-slider-wrap">
                             <div class="header-right-inner" id="hidden-icon-wrapper">
                                 <!-- Header Search Form -->
-                               <div class="header-search-form d-md-none d-block">
+                                <div class="header-search-form d-md-none d-block">
                                     <form class="search-form-top">
                                         <input class="search-field" type="text" placeholder="Search…">
                                         <button class="search-submit">
                                             <i class="search-btn-icon fa fa-search"></i>
                                         </button>
-                                    </form> 
+                                    </form>
                                 </div>
 
                                 <!-- Header Top Info -->
@@ -44,7 +44,8 @@
                                                         <span class="fa fa-map-marker-alt"></span>
                                                     </div>
                                                     <div class="info-content">
-                                                        <h6 class="info-title">Gonzalez Cossio 3705 Col. Las Granjas</h6>
+                                                        <h6 class="info-title">Manuel González Cossio 3705 Col. Las Granjas
+                                                        </h6>
                                                         <div class="info-sub-title">Chihuahua, Chih, Mx</div>
                                                     </div>
                                                 </div>
@@ -67,16 +68,20 @@
                                 <!-- Header Social Networks -->
                                 <div class="header-social-networks style-icons">
                                     <div class="inner">
-                                        <a class="social-link hint--black hint--bottom-left" aria-label="Twitter" href="https://twitter.com" data-hover="Twitter" target="_blank">
+                                        <a class="social-link hint--black hint--bottom-left" aria-label="Twitter"
+                                            href="https://twitter.com" data-hover="Twitter" target="_blank">
                                             <i class="social-icon fab fa-twitter"></i>
                                         </a>
-                                        <a class="social-link hint--black hint--bottom-left" aria-label="Facebook" href="https://facebook.com" data-hover="Facebook" target="_blank">
+                                        <a class="social-link hint--black hint--bottom-left" aria-label="Facebook"
+                                            href="https://facebook.com" data-hover="Facebook" target="_blank">
                                             <i class="social-icon fab fa-facebook-f"></i>
                                         </a>
-                                        <a class="social-link hint--black hint--bottom-left" aria-label="Instagram" href="https://instagram.com" data-hover="Instagram" target="_blank">
+                                        <a class="social-link hint--black hint--bottom-left" aria-label="Instagram"
+                                            href="https://instagram.com" data-hover="Instagram" target="_blank">
                                             <i class="social-icon fab fa-instagram"></i>
                                         </a>
-                                        <a class="social-link hint--black hint--bottom-left" aria-label="Linkedin" href="https://linkedin.com" data-hover="Linkedin" target="_blank">
+                                        <a class="social-link hint--black hint--bottom-left" aria-label="Linkedin"
+                                            href="https://linkedin.com" data-hover="Linkedin" target="_blank">
                                             <i class="social-icon fab fa-linkedin"></i>
                                         </a>
                                     </div>
@@ -84,7 +89,8 @@
 
                             </div>
                             <!-- mobile menu -->
-                            <div class="mobile-navigation-icon d-block d-xl-none" id="mobile-menu-trigger" @click="mobiletoggleClass('addClass', 'active')">
+                            <div class="mobile-navigation-icon d-block d-xl-none" id="mobile-menu-trigger"
+                                @click="mobiletoggleClass('addClass', 'active')">
                                 <i></i>
                             </div>
                         </div>
@@ -118,49 +124,49 @@
 </template>
 
 <script>
-    import FixedHeader from 'vue-fixed-header';
-    import Navigation from '@/components/Navigation';
-    
-    export default {
-        components: {
-            FixedHeader,
-            Navigation
-        },
-        data () {
-            return {
-                swiperOption: {
-                    slidesPerView : 3,
-                    slidesPerGroup: 1,
-                    loop: true,
-                    speed: 1000,
-                    autoplay: true,
-                    spaceBetween : 30,
-                    breakpoints: {
-                        1200:{
-                            slidesPerView : 3
-                        },
+import FixedHeader from 'vue-fixed-header';
+import Navigation from '@/components/Navigation';
 
-                        992:{
-                            slidesPerView : 2
-                        },
+export default {
+    components: {
+        FixedHeader,
+        Navigation
+    },
+    data() {
+        return {
+            swiperOption: {
+                slidesPerView: 3,
+                slidesPerGroup: 1,
+                loop: true,
+                speed: 1000,
+                autoplay: true,
+                spaceBetween: 30,
+                breakpoints: {
+                    1200: {
+                        slidesPerView: 3
+                    },
 
-                        575:{
-                            slidesPerView : 1
-                        }
+                    992: {
+                        slidesPerView: 2
+                    },
+
+                    575: {
+                        slidesPerView: 1
                     }
                 }
             }
+        }
+    },
+    methods: {
+        // offcanvas mobilemenu open
+        mobiletoggleClass(addRemoveClass, className) {
+            const el = document.querySelector('#offcanvas-menu');
+            if (addRemoveClass === 'addClass') {
+                el.classList.add(className);
+            } else {
+                el.classList.remove(className);
+            }
         },
-        methods: {
-            // offcanvas mobilemenu open
-            mobiletoggleClass(addRemoveClass, className) {
-                const el = document.querySelector('#offcanvas-menu');
-                if (addRemoveClass === 'addClass') {
-                    el.classList.add(className);
-                } else {
-                    el.classList.remove(className);
-                }
-            },
-        },
-    };
+    },
+};
 </script>

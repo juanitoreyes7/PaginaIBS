@@ -1,32 +1,31 @@
 {
     "footerAboutData": {
         "logo": "/images/logo/logoIBS.png",
-        "address": "González Cossio 3705 Col. Las Granjas Chihuahua, Chih, MX",
+        "address": "Manuel González Cossio 3705 Col. Las Granjas Chihuahua, Chih, MX",
         "telephone": "+52 800 777 09 11",
         "email": "contacto@ibsconsultores.com"
     },
-   
     "footerWidgetTitleThree": "Soporte",
     "navListThree": [
         {
             "navTitle": "Politica de privacidad ",
-            "navUrl": "/Politicas" 
+            "navUrl": "/Politicas"
         },
         {
             "navTitle": "Contacto",
-            "navUrl": "/contact" 
+            "navUrl": "/contact"
         },
         {
             "navTitle": "Preguntas",
-            "navUrl": "/Faq" 
+            "navUrl": "/Faq"
         },
         {
             "navTitle": "Nosotros",
-            "navUrl": "/about" 
+            "navUrl": "/about"
         },
         {
             "navTitle": "Seguros",
-            "navUrl": "/case-studies" 
+            "navUrl": "/case-studies"
         }
     ],
     "footerAppData": {

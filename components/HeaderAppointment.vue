@@ -33,7 +33,8 @@
                                                     <div class="info-icon">
                                                         <span class="fa fa-phone"></span>
                                                     </div>
-                                                    <div class="info-content"><p></p>
+                                                    <div class="info-content">
+                                                        <p></p>
                                                         <h6 class="info-title"> +52 800 777 09 11</h6>
                                                         <div class="info-sub-title">contacto@ibsconsultores.com</div>
                                                     </div>
@@ -44,8 +45,10 @@
                                                     <div class="info-icon">
                                                         <span class="fa fa-map-marker-alt"></span>
                                                     </div>
-                                                    <div class="info-content"><p></p>
-                                                        <h6 class="info-title">González Cossio 3705 Col. Las granjas</h6>
+                                                    <div class="info-content">
+                                                        <p></p>
+                                                        <h6 class="info-title">Manuel González Cossio 3705 Col. Las granjas
+                                                        </h6>
                                                         <div class="info-sub-title">Chihuahua, Chih, Mx</div>
                                                     </div>
                                                 </div>
@@ -68,7 +71,8 @@
                                                     <div class="info-icon">
                                                         <span class="fab fa-whatsapp link-icon"></span>
                                                     </div>
-                                                    <div class="info-content"><p></p>
+                                                    <div class="info-content">
+                                                        <p></p>
                                                         <h6 class="info-title">Whatsapp 24/7</h6>
                                                         <div class="info-sub-title">+52 614 240 8116</div>
                                                     </div>
@@ -81,16 +85,23 @@
                                 <!-- Header Social Networks -->
                                 <div class="header-social-networks style-icons">
                                     <div class="inner">
-                                        <a class=" social-link hint--black hint--bottom-left" aria-label="Twitter" href="https://twitter.com/IBSCONSULTORES" data-hover="Twitter" target="_blank">
+                                        <a class=" social-link hint--black hint--bottom-left" aria-label="Twitter"
+                                            href="https://twitter.com/IBSCONSULTORES" data-hover="Twitter" target="_blank">
                                             <i class="social-icon fab fa-twitter"></i>
                                         </a>
-                                        <a class=" social-link hint--black hint--bottom-left" aria-label="Facebook" href="https://www.facebook.com/ibsconsultores/" data-hover="Facebook" target="_blank">
+                                        <a class=" social-link hint--black hint--bottom-left" aria-label="Facebook"
+                                            href="https://www.facebook.com/ibsconsultores/" data-hover="Facebook"
+                                            target="_blank">
                                             <i class="social-icon fab fa-facebook-f"></i>
                                         </a>
-                                        <a class=" social-link hint--black hint--bottom-left" aria-label="Instagram" href="https://www.instagram.com/ibsconsultores/" data-hover="Instagram" target="_blank">
+                                        <a class=" social-link hint--black hint--bottom-left" aria-label="Instagram"
+                                            href="https://www.instagram.com/ibsconsultores/" data-hover="Instagram"
+                                            target="_blank">
                                             <i class="social-icon fab fa-instagram"></i>
                                         </a>
-                                        <a class=" social-link hint--black hint--bottom-left" aria-label="Linkedin" href="https://www.linkedin.com/company/ibsconsultores/mycompany/" data-hover="Linkedin" target="_blank">
+                                        <a class=" social-link hint--black hint--bottom-left" aria-label="Linkedin"
+                                            href="https://www.linkedin.com/company/ibsconsultores/mycompany/"
+                                            data-hover="Linkedin" target="_blank">
                                             <i class="social-icon fab fa-linkedin"></i>
                                         </a>
                                     </div>
@@ -98,7 +109,8 @@
 
                             </div>
                             <!-- mobile menu -->
-                            <div class="mobile-navigation-icon d-block d-xl-none" id="mobile-menu-trigger" @click="mobiletoggleClass('addClass', 'active')">
+                            <div class="mobile-navigation-icon d-block d-xl-none" id="mobile-menu-trigger"
+                                @click="mobiletoggleClass('addClass', 'active')">
                                 <i></i>
                             </div>
                         </div>
@@ -132,49 +144,49 @@
 </template>
 
 <script>
-    import FixedHeader from 'vue-fixed-header';
-    import Navigation from '@/components/Navigation';
-    
-    export default {
-        components: {
-            FixedHeader,
-            Navigation
-        },
-        data () {
-            return {
-                swiperOption: {
-                    slidesPerView : 3,
-                    slidesPerGroup: 1,
-                    loop: true,
-                    speed: 1000,
-                    autoplay: true,
-                    spaceBetween : 30,
-                    breakpoints: {
-                        1200:{
-                            slidesPerView : 3
-                        },
+import FixedHeader from 'vue-fixed-header';
+import Navigation from '@/components/Navigation';
 
-                        992:{
-                            slidesPerView : 2
-                        },
+export default {
+    components: {
+        FixedHeader,
+        Navigation
+    },
+    data() {
+        return {
+            swiperOption: {
+                slidesPerView: 3,
+                slidesPerGroup: 1,
+                loop: true,
+                speed: 1000,
+                autoplay: true,
+                spaceBetween: 30,
+                breakpoints: {
+                    1200: {
+                        slidesPerView: 3
+                    },
 
-                        575:{
-                            slidesPerView : 1
-                        }
+                    992: {
+                        slidesPerView: 2
+                    },
+
+                    575: {
+                        slidesPerView: 1
                     }
                 }
             }
+        }
+    },
+    methods: {
+        // offcanvas mobilemenu open
+        mobiletoggleClass(addRemoveClass, className) {
+            const el = document.querySelector('#offcanvas-menu');
+            if (addRemoveClass === 'addClass') {
+                el.classList.add(className);
+            } else {
+                el.classList.remove(className);
+            }
         },
-        methods: {
-            // offcanvas mobilemenu open
-            mobiletoggleClass(addRemoveClass, className) {
-                const el = document.querySelector('#offcanvas-menu');
-                if (addRemoveClass === 'addClass') {
-                    el.classList.add(className);
-                } else {
-                    el.classList.remove(className);
-                }
-            },
-        },
-    };
+    },
+};
 </script>
