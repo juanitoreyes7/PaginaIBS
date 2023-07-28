@@ -47,7 +47,7 @@
                                                     </div>
                                                     <div class="info-content">
                                                         <p></p>
-                                                        <h6 class="info-title">Manuel González Cossio 3705 Col. Las granjas
+                                                        <h6 class="info-title">Manuel González Cossio 3703 Col. Las granjas
                                                         </h6>
                                                         <div class="info-sub-title">Chihuahua, Chih, Mx</div>
                                                     </div>
