@@ -18,7 +18,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <!-- <div class="col-lg-6 col-md-6">
                     <div class="conact-info-wrap mt-30">
                         <h5 class="heading mb-20">Dora Castillo</h5>
                         <ul class="conact-info__list">
@@ -33,7 +33,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

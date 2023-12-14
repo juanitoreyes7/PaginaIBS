@@ -28,6 +28,13 @@
             "navUrl": "/case-studies"
         }
     ],
+    "footerAppData1": {
+        "footerWidgetTitleFour": "Viaja Seguro",
+        "android": "/images/icons/mexico.png",
+        "androidUrl": "https://voyseguromexico.com",
+        "apple": "/images/icons/usa.png",
+        "appleUrl": "https://voysegurousa.com.mx"
+    },
     "footerAppData": {
         "footerWidgetTitleFour": "Apps Store",
         "android": "/images/icons/google-play.jpg",

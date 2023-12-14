@@ -4,12 +4,25 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-7">
                     <div class="cybersecurity-hero-text wow move-up">
-                        <h6>IBS Consultores Tu Mejor Agente de Seguros y de Fianzas</h6>
-                        <h3 class="font-weight--reguler mb-30">Al mal tiempo <span class="text-color-primary">un buen
-                                seguro.<sup>®</sup></span></h3>
-                        <!--<div class="hero-button mt-30">
-                            <n-link to="/about" class="ht-btn ht-btn-md">Dig deeper now</n-link>
-                        </div>-->
+                        <h6 class="font-weight--reguler mb-30">IBS CONSULTORES TU MEJOR AGENTE DE SEGUROS Y DE FIANZAS </h6>
+                        <h3 class="font-weight--reguler mb-30">Viaja seguro, regresa tranquilo.</h3>
+                        <div class="col-xl-12 col-lg-4">
+                            <div class="cta-button-group--two text-center">
+                                <a href="https://public.nhseguros.com/#!policyIndividual/index?code=MjI4MDc%3D"
+                                    target="_blank" class="btn btn--white btn-one">
+                                    <span class="btn-icon mr-2">
+                                        <i class="far fa-car"></i>
+                                    </span>
+                                    Comprar
+                                </a>
+                                <!--  <a href="https://ibsvida.segupoliza.com/#!/inicio" target="_blank" class="btn btn--white btn-one">
+                            <span class="btn-icon mr-2">
+                                <i class="far fa-heart"></i>
+                            </span> 
+                            Vida
+                        </a>-->
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-5">
@@ -18,7 +31,7 @@
                             <div class="inner-img-one">
                             </div>
                             <div class="inner-img-two">
-                                <img class="img-fluid ml-xl-5" src="/images/hero/persona1.png" alt="image">
+                                <img class="img-fluid ml-xl-3" src="/images/hero/persona1.png" alt="image">
                             </div>
                         </div>
                     </div>
