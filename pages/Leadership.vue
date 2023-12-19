@@ -1,15 +1,11 @@
 <template>
     <div class="main-container">
 
-        <Header />
-
-        <Breadcrumbs :items="breadcrumbNavigation" breadcrumbTitle="Leadership" />
-
-        <TeamTwo />
-
-        <TeamMemberList />
+        <TeamOne />
 
         <CtaContact />
+        <CtaVideo />
+        <ContactUsFour />
 
         <Footer />
 
@@ -19,42 +15,40 @@
 </template>
 
 <script>
-    import Header from '@/components/Header';
-    import Breadcrumbs from '@/components/Breadcrumbs';
-    import TeamTwo from '@/components/sections/TeamTwo';
-    import TeamMemberList from '@/components/sections/TeamMemberList';
-    import CtaContact from '@/components/CtaContact';
-    import Footer from '@/components/Footer';
-    import OffCanvasMobileMenu from '@/components/OffCanvasMobileMenu';
+import TeamOne from '@/components/sections/TeamOne';
+import CtaContact from '@/components/CtaContact';
+import CtaVideo from '@/components/CtaVideo';
+import ContactUsFour from '@/components/sections/ContactUsFour';
+import Footer from '@/components/Footer';
+import OffCanvasMobileMenu from '@/components/OffCanvasMobileMenu';
 
-    export default {
-        components: {
-            Header,
-            Breadcrumbs,
-            TeamTwo,
-            TeamMemberList,
-            CtaContact,
-            Footer,
-            OffCanvasMobileMenu
-        },
-        data () {
-            return {
-                breadcrumbNavigation: [
-                    {
-                        text: 'Home',
-                        to: "/"
-                    },
-                    {
-                        text: 'Leadership',
-                        active: true
-                    }
-                ]
-            }
-        },
-        head() {
-            return {
-                title: 'Leadership'
-            }
+export default {
+    components: {
+        TeamOne,
+        CtaContact,
+        CtaVideo,
+        ContactUsFour,
+        Footer,
+        OffCanvasMobileMenu
+    },
+    data() {
+        return {
+            breadcrumbNavigation: [
+                {
+                    text: 'Home',
+                    to: "/"
+                },
+                {
+                    text: 'Leadership',
+                    active: true
+                }
+            ]
         }
-    };
+    },
+    head() {
+        return {
+            title: 'Leadership'
+        }
+    }
+};
 </script>    
