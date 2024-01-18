@@ -72,6 +72,7 @@ export { default as SectionsContactUs } from '../../components/sections/ContactU
 export { default as SectionsContactUsFour } from '../../components/sections/ContactUsFour.vue'
 export { default as SectionsContactUsThree } from '../../components/sections/ContactUsThree.vue'
 export { default as SectionsContactUsTwo } from '../../components/sections/ContactUsTwo.vue'
+export { default as SectionsCotHogar } from '../../components/sections/CotHogar.vue'
 export { default as SectionsCotizaGmm } from '../../components/sections/CotizaGmm.vue'
 export { default as SectionsFeatureGallery } from '../../components/sections/FeatureGallery.vue'
 export { default as SectionsFeatureGalleryFour } from '../../components/sections/FeatureGalleryFour.vue'

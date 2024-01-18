@@ -9,7 +9,8 @@
                                 ¡Pide tu cotización <span class="text-color-primary"> ahora mismo! </span>
                             </h3>
                             <div class="sub-heading">
-                                 <br>Para darte una mejor asesoría de acuerdo a tus necesidades, favor de contestar las siguientes preguntas.
+                                <br>Para darte una mejor asesoría de acuerdo a tus necesidades, favor de contestar las
+                                siguientes preguntas.
                             </div>
                         </div>
                     </div>
@@ -19,17 +20,17 @@
                             <form id="contact-form" ref="form" @submit.prevent="sendEmail">
                                 <div class="contact-form">
                                     <div class="contact-inner">
-                                         ¿Cuál es tu nombre completo?
-                                        <input name="nombreCli" type="text" >
+                                        ¿Cuál es tu nombre completo?
+                                        <input name="nombreCli" type="text">
                                     </div>
                                     <br>
                                     <div class="contact-input">
                                         <div class="contact-inner">
-                                        ¿Cuál es tu correo electrónico?
-                                            <input name="email" type="email" >
+                                            ¿Cuál es tu correo electrónico?
+                                            <input name="email" type="email">
                                         </div>
                                         <div class="contact-inner contact-message">
-                                        Teléfono de contacto
+                                            Teléfono de contacto
                                             <input name="telefono">
                                         </div>
                                     </div>
@@ -38,20 +39,15 @@
                                         <div class="contact-inner ">
                                             ¿Cuál es tu género?
                                             <select class="form-select" name="genero" aria-label="Default select example">
-                                            <option selected>Selecciona una opción</option>
-                                            <option value="femenino">Femenino</option>
-                                            <option value="masculino">Masculino</option>
+                                                <option selected>Selecciona una opción</option>
+                                                <option value="femenino">Femenino</option>
+                                                <option value="masculino">Masculino</option>
                                             </select>
                                         </div>
                                         <div class="contact-inner">
-                                           ¿Cuál es tu fecha de nacimiento?<br>
-                                                <date-picker
-                                                    v-model="dataFecha.fechaN"
-                                                    format="YYYY-MM-DD"
-                                                    type="date"
-                                                    placeholder="Fecha de Nacimiento"
-                                                    
-                                                ></date-picker>
+                                            ¿Cuál es tu fecha de nacimiento?<br>
+                                            <date-picker v-model="dataFecha.fechaN" format="YYYY-MM-DD" type="date"
+                                                placeholder="Fecha de Nacimiento"></date-picker>
                                         </div>
                                     </div>
                                     <br>
@@ -62,22 +58,22 @@
                                             <option selected>Selecciona una opcion</option>
                                             <option value="si">Si</option>
                                             <option value="no">No</option>
-                                            </select>
+                                        </select>
                                     </div>
                                     <br>
-                                    
+
                                     <div class="contact-input">
                                         <div class="contact-inner contact-message">
                                             ¿Tú o algún dependiente tuyo tienen alguna enfermedad?
                                             <select class="form-select" name="tienenE" aria-label="Default select example">
-                                            <option selected>Selecciona una opcion</option>
-                                            <option value="si">Si</option>
-                                            <option value="no">No</option>
+                                                <option selected>Selecciona una opcion</option>
+                                                <option value="si">Si</option>
+                                                <option value="no">No</option>
                                             </select>
                                         </div>
                                         <div class="contact-inner contact-message">
                                             ¿Cual es tu Código Postal?
-                                            <input name="cp" >
+                                            <input name="cp">
                                         </div>
                                     </div>
                                     <div class="submit-btn mt-20">
@@ -94,49 +90,49 @@
 </template>
 
 <script>
-    import emailjs from '@emailjs/browser';
-    import Swal from "sweetalert2";
-    import Multiselect from "vue-multiselect";
-    import DatePicker from 'vue2-datepicker';
-    import 'vue2-datepicker/index.css';
-    
-    export default {
-        components: { DatePicker, Multiselect },
-        data() {
-      return {
-        dataFecha:{
-        fechaN: "",
+import emailjs from '@emailjs/browser';
+import Swal from "sweetalert2";
+import Multiselect from "vue-multiselect";
+import DatePicker from 'vue2-datepicker';
+import 'vue2-datepicker/index.css';
+
+export default {
+    components: { DatePicker, Multiselect },
+    data() {
+        return {
+            dataFecha: {
+                fechaN: "",
+            },
+            decision1: [
+                "Si",
+                "No"
+            ],
+            decision2: [
+                "Si",
+                "No"
+            ],
+            genero: [
+                "Femenino",
+                "Masculino"
+            ],
+        };
     },
-        decision1: [
-        "Si",
-        "No"
-      ],
-      decision2: [
-        "Si",
-        "No"
-      ],
-      genero: [
-        "Femenino",
-        "Masculino"
-      ],
-      };
-    },
-      methods: {
+    methods: {
         sendEmail() {
-          emailjs.sendForm('service_o10ni4h', 'template_lo78jmh', this.$refs.form, '9dXIW13fiQT0eCgk5')
-          .then(() => {
-                location.href = "/contact/";
-              })
-              .catch((error) => {
-                alert(error);
-              });
-          Swal.fire({
-            icon: "success",
-            title: "En un momento un asesor se comunicara contigo.",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+            emailjs.sendForm('service_o10ni4h', 'template_lo78jmh', this.$refs.form, '9dXIW13fiQT0eCgk5')
+                .then(() => {
+                    location.href = "/contact/";
+                })
+                .catch((error) => {
+                    alert(error);
+                });
+            Swal.fire({
+                icon: "success",
+                title: "En un momento un asesor se comunicara contigo.",
+                showConfirmButton: false,
+                timer: 1500,
+            });
         }
-      }
     }
-    </script>
+}
+</script>

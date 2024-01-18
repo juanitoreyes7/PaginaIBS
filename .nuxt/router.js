@@ -10,6 +10,7 @@ const _12926b5c = () => interopDefault(import('../pages/blog/index.vue' /* webpa
 const _64f81b8c = () => interopDefault(import('../pages/case-studies/index.vue' /* webpackChunkName: "pages/case-studies/index" */))
 const _2467d8a3 = () => interopDefault(import('../pages/Contact.vue' /* webpackChunkName: "pages/Contact" */))
 const _17bb818c = () => interopDefault(import('../pages/Cotgmm.vue' /* webpackChunkName: "pages/Cotgmm" */))
+const _0ba3a556 = () => interopDefault(import('../pages/CotHogar.vue' /* webpackChunkName: "pages/CotHogar" */))
 const _4927165c = () => interopDefault(import('../pages/Cybersecurity.vue' /* webpackChunkName: "pages/Cybersecurity" */))
 const _3ccb8cc1 = () => interopDefault(import('../pages/descargables.vue' /* webpackChunkName: "pages/descargables" */))
 const _18cc51dc = () => interopDefault(import('../pages/Faq/index.vue' /* webpackChunkName: "pages/Faq/index" */))
@@ -71,6 +72,10 @@ export const routerOptions = {
     path: "/Cotgmm",
     component: _17bb818c,
     name: "Cotgmm"
+  }, {
+    path: "/CotHogar",
+    component: _0ba3a556,
+    name: "CotHogar"
   }, {
     path: "/Cybersecurity",
     component: _4927165c,

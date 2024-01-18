@@ -221,6 +221,9 @@
   "SectionsContactUsTwo": {
     "description": "Auto imported from components/sections/ContactUsTwo.vue"
   },
+  "SectionsCotHogar": {
+    "description": "Auto imported from components/sections/CotHogar.vue"
+  },
   "SectionsCotizaGmm": {
     "description": "Auto imported from components/sections/CotizaGmm.vue"
   },
