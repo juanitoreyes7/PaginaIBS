@@ -25,7 +25,6 @@ export default {
         Breadcrumbs2,
         CotizaGmm,
         OffCanvasMobileMenu,
-        CotizaGmm
     },
     head() {
         return {
