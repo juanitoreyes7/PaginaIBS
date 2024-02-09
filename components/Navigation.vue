@@ -5,29 +5,35 @@
                 <span>Inicio</span>
             </n-link>
         </li>
-        <!--<li class="has-children has-children--multilevel-submenu">
-            <n-link to="/about">
-                <span>Company</span>
+        <li class="has-children has-children--multilevel-submenu">
+            <n-link to="/">
+                <span>Cotización</span>
             </n-link>
             <ul class="submenu">
                 <li>
-                    <n-link to="/about">
-                        <span>About Us</span>
+                    <a href="https://ibs_w.segupoliza.com/#/pages/blank" target="_blank">
+                        <span>Autos</span>
+                    </a>
+                </li>
+                <li>
+                    <n-link to="/cotgmm" target="_blank">
+                        <span>Gastos Médicos Mayores</span>
                     </n-link>
                 </li>
                 <li>
-                    <n-link to="/contact">
-                        <span>Contact Us</span>
+                    <n-link to="/leadership" target="_blank">
+                        <span>Vida</span>
                     </n-link>
                 </li>
                 <li>
-                    <n-link to="/leadership">
-                        <span>Leadership</span>
-                    </n-link>
+                    <a href="https://portalagentes.segurossura.com.mx/cotizador/redirect?usuario=MXGARZAGAL01&solucion=PlanVive&pto-venta=107686&subgrupo=0444600002&perfil-tarifa=9010000001&mail=KARINA@IBSCONSULTORES.COM"
+                        target="_blank">
+                        <span>Hogar</span>
+                    </a>
                 </li>
             </ul>
         </li>
-        <li class="has-children has-children--multilevel-submenu">
+        <!--<li class="has-children has-children--multilevel-submenu">
             <n-link to="/descargables">
                 <span>Services</span>
             </n-link>

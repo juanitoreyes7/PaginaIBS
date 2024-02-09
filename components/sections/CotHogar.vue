@@ -36,25 +36,25 @@
                                     </div>
                                     <div class="contact-inner">
                                         ¿Cuál es tu domicilio? (Calle, Colonia, CP, Ciudad)
-                                        <input name="nombreCli" type="text">
+                                        <input name="domicilio" type="text">
                                     </div>
                                     <br>
                                     <div class="contact-input">
                                         <div class="contact-inner">
                                             Niveles
-                                            <select class="form-select" name="genero" aria-label="Default select example">
+                                            <select class="form-select" name="niveles" aria-label="Default select example">
                                                 <option selected>Selecciona una opción</option>
-                                                <option value="femenino">Una Planta</option>
-                                                <option value="masculino">Tiene Planta alta</option>
+                                                <option value="1N">1 Nivel</option>
+                                                <option value="2N">2 Niveles</option>
                                             </select>
                                         </div>
                                         <div class="contact-inner contact-message">
                                             Tipo de Construcción de los Techos:
-                                            <select class="form-select" name="genero" aria-label="Default select example">
+                                            <select class="form-select" name="techos" aria-label="Default select example">
                                                 <option selected>Selecciona una opción</option>
-                                                <option value="femenino">Concreto armado</option>
-                                                <option value="masculino">Lamina</option>
-                                                <option value="femenino">Otro</option>
+                                                <option value="concreto">Concreto armado</option>
+                                                <option value="lamina">Lamina</option>
+                                                <option value="otroC">Otro</option>
                                             </select>
                                         </div>
                                     </div>
@@ -62,11 +62,12 @@
                                     <div class="contact-input">
                                         <div class="contact-inner">
                                             Tipo de Construcción de los Muros:
-                                            <select class="form-select" name="genero" aria-label="Default select example">
+                                            <select class="form-select" name="construccio"
+                                                aria-label="Default select example">
                                                 <option selected>Selecciona una opción</option>
-                                                <option value="femenino">Block</option>
-                                                <option value="masculino">Ladrillos</option>
-                                                <option value="femenino">Otro</option>
+                                                <option value="block">Block</option>
+                                                <option value="ladrillos">Ladrillos</option>
+                                                <option value="OtroM">Otro</option>
                                             </select>
                                         </div>
                                         <div class="contact-inner contact-message">
@@ -75,31 +76,34 @@
                                         </div>
                                     </div>
 
+
+
+
                                     <div class="sub-heading">
                                         <h6 class="heading">
-                                            A continuación elige tus sumas aseguradas para tu cotización
+                                            A continuación elige tus sumas aseguradas para tu cotización.
                                         </h6>
                                     </div>
                                     <div class="contact-input">
                                         <div class="contact-inner ">
                                             Incendio edificio (Todo riesgo de Incendio)
-                                            <select class="form-select" name="genero" aria-label="Default select example">
+                                            <select class="form-select" name="I" aria-label="Default select example">
                                                 <option selected>Selecciona una opción</option>
-                                                <option value="femenino">$ 1,000,000.00</option>
-                                                <option value="masculino">$ 1,500,000.00</option>
-                                                <option value="femenino">$ 2,000,000.00</option>
-                                                <option value="masculino">$ 2,500,000.00</option>
-                                                <option value="masculino">$ 3,000,000.00</option>
+                                                <option value="I1">$ 1,000,000.00</option>
+                                                <option value="I15">$ 1,500,000.00</option>
+                                                <option value="I2">$ 2,000,000.00</option>
+                                                <option value="I25">$ 2,500,000.00</option>
+                                                <option value="OtroI">Otra cantidad</option>
                                             </select>
                                         </div>
                                         <div class="contact-inner ">
                                             Incendio contenidos (Todo riesgo de Incendio)
-                                            <select class="form-select" name="genero" aria-label="Default select example">
+                                            <select class="form-select" name="IC" aria-label="Default select example">
                                                 <option selected>Selecciona una opción</option>
-                                                <option value="femenino">$ 500,000.00</option>
-                                                <option value="masculino">$ 1,000,000.00</option>
-                                                <option value="femenino">$ 1,500,000.00</option>
-                                                <option value="masculino">$ 2,000,000.00</option>
+                                                <option value="IC5">$ 500,000.00</option>
+                                                <option value="IC1">$ 1,000,000.00</option>
+                                                <option value="IC15">$ 1,500,000.00</option>
+                                                <option value="OtroIC">Otra cantidad</option>
                                             </select>
                                         </div>
                                     </div>
@@ -107,49 +111,49 @@
                                     <div class="contact-input">
                                         <div class="contact-inner ">
                                             Resposabilidad civil
-                                            <select class="form-select" name="genero" aria-label="Default select example">
+                                            <select class="form-select" name="RC" aria-label="Default select example">
                                                 <option selected>Selecciona una opción</option>
-                                                <option value="masculino">$ 1,500,000.00</option>
-                                                <option value="femenino">$ 2,000,000.00</option>
-                                                <option value="masculino">$ 2,500,000.00</option>
-                                                <option value="masculino">$ 3,000,000.00</option>
-                                                <option value="masculino">$ 3,500,000.00</option>
+                                                <option value="RC15">$ 1,500,000.00</option>
+                                                <option value="RC2">$ 2,000,000.00</option>
+                                                <option value="RC25">$ 2,500,000.00</option>
+                                                <option value="RC3">$ 3,000,000.00</option>
+                                                <option value="OtroRC">Otra cantidad</option>
 
                                             </select>
                                         </div>
                                         <div class="contact-inner ">
                                             Cristales
-                                            <select class="form-select" name="genero" aria-label="Default select example">
+                                            <select class="form-select" name="C" aria-label="Default select example">
                                                 <option selected>Selecciona una opción</option>
-                                                <option value="femenino">$ 20,000.00</option>
-                                                <option value="masculino">$ 50,000.00</option>
-                                                <option value="femenino">$ 100,000.00</option>
-                                                <option value="masculino">$ 150,000.00</option>
+                                                <option value="C2">$ 20,000.00</option>
+                                                <option value="C5">$ 50,000.00</option>
+                                                <option value="C1">$ 100,000.00</option>
+                                                <option value="OtroC">Otra cantidad</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="contact-input">
                                         <div class="contact-inner ">
-                                            Rebo de contenidos
-                                            <select class="form-select" name="genero" aria-label="Default select example">
+                                            Robo de contenidos
+                                            <select class="form-select" name="RO" aria-label="Default select example">
                                                 <option selected>Selecciona una opción</option>
-                                                <option value="masculino">$ 60,000.00</option>
-                                                <option value="femenino">$ 120,000.00</option>
-                                                <option value="masculino">$ 200,000.00</option>
-                                                <option value="masculino">$ 250,000.00</option>
-                                                <option value="masculino">$ 300,000.00</option>
+                                                <option value="RO6">$ 60,000.00</option>
+                                                <option value="RO120">$ 120,000.00</option>
+                                                <option value="RO200">$ 200,000.00</option>
+                                                <option value="RO250">$ 250,000.00</option>
+                                                <option value="OtroRO">Otra cantidad</option>
 
                                             </select>
                                         </div>
                                         <div class="contact-inner ">
                                             Equipo electrónico
-                                            <select class="form-select" name="genero" aria-label="Default select example">
+                                            <select class="form-select" name="EE" aria-label="Default select example">
                                                 <option selected>Selecciona una opción</option>
-                                                <option value="masculino">$ 60,000.00</option>
-                                                <option value="femenino">$ 120,000.00</option>
-                                                <option value="masculino">$ 200,000.00</option>
-                                                <option value="masculino">$ 250,000.00</option>
-                                                <option value="masculino">$ 300,000.00</option>
+                                                <option value="EE6">$ 60,000.00</option>
+                                                <option value="EE120">$ 120,000.00</option>
+                                                <option value="EE200">$ 200,000.00</option>
+                                                <option value="EE250">$ 250,000.00</option>
+                                                <option value="OtroEE">Otra cantidad</option>
                                             </select>
                                         </div>
                                     </div>
@@ -178,16 +182,52 @@ export default {
     components: { DatePicker, Multiselect },
     data() {
         return {
-            dataFecha: {
-                fechaN: "",
-            },
-            decision1: [
-                "Si",
-                "No"
+            EE: [
+                "EE6",
+                "EE120",
+                "EE200",
+                "EE250",
+                "OtroEE"
             ],
-            decision2: [
-                "Si",
-                "No"
+            RO: [
+                "RO6",
+                "RO120",
+                "RO200",
+                "RO250",
+                "OtroRO"
+            ],
+            C: [
+                "C2",
+                "C5",
+                "C1",
+                "Otroc"
+            ],
+            RC: [
+                "RC15",
+                "RC2",
+                "RC25",
+                "RC3",
+                "OtroRC"
+            ],
+            IC: [
+                "IC5",
+                "IC1",
+                "IC15",
+                "OtroIC"
+            ],
+            I: [
+                "I1",
+                "I15",
+                "I2",
+                "I25",
+                "OtroI"
+            ],
+            I: [
+                "I1",
+                "I15",
+                "I2",
+                "I25",
+                "OtroI"
             ],
             genero: [
                 "Femenino",

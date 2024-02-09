@@ -6,7 +6,7 @@
                     <div class="cybersecurity-hero-text wow move-up">
                         <h6 class="font-weight--reguler mb-30">IBS CONSULTORES TU MEJOR AGENTE DE SEGUROS Y DE FIANZAS </h6>
                         <h3 class="font-weight--reguler mb-30">Viaja seguro, regresa tranquilo.</h3>
-                        <div class="col-xl-12 col-lg-4">
+                        <div class="col-xl-12 col-lg-12">
                             <div class="cta-button-group--two text-center">
                                 <a href="https://public.nhseguros.com/#!policyIndividual/index?code=MjI4MDc%3D"
                                     target="_blank" class="btn btn--white btn-one">

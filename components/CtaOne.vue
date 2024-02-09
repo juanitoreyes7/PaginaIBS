@@ -9,9 +9,9 @@
                             }}</h3>
                     </div>
                 </div>
-                <div class="col-xl-12 col-lg-4">
+                <div class="col-xl-12 col-lg-12">
                     <div class="cta-button-group--two text-center">
-                        <a href="https://ibs_w.segupoliza.com/#/quotes/new" target="_blank" class="btn btn--white btn-one">
+                        <a href="https://cotizador.ibsconsultores.com/" target="_blank" class="btn btn--white btn-one">
                             <span class="btn-icon mr-2">
                                 <i class="far fa-car"></i>
                             </span>
@@ -23,6 +23,8 @@
                             </span>
                             GMM
                         </a>
+                    </div>
+                    <div class="cta-button-group--two text-center">
                         <a href="https://portalagentes.segurossura.com.mx/cotizador/redirect?usuario=MXGARZAGAL01&solucion=PlanVive&pto-venta=107686&subgrupo=0444600002&perfil-tarifa=9010000001&mail=KARINA@IBSCONSULTORES.COM"
                             target="_blank" class="btn btn--white btn-one">
                             <span class="btn-icon mr-2">
@@ -34,7 +36,7 @@
                             <span class="btn-icon mr-2">
                                 <i class="far fa-home"></i>
                             </span>
-                            Hogar
+                            Casa
                         </a>
                     </div>
                 </div>
