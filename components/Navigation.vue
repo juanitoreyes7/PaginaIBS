@@ -11,7 +11,7 @@
             </n-link>
             <ul class="submenu">
                 <li>
-                    <a href="https://ibs_w.segupoliza.com/#/pages/blank" target="_blank">
+                    <a href="https://cotizador.ibsconsultores.com/" target="_blank">
                         <span>Autos</span>
                     </a>
                 </li>
