@@ -21,15 +21,15 @@
                     </n-link>
                 </li>
                 <li>
-                    <n-link to="/leadership" target="_blank">
-                        <span>Vida</span>
-                    </n-link>
-                </li>
-                <li>
                     <a href="https://portalagentes.segurossura.com.mx/cotizador/redirect?usuario=MXGARZAGAL01&solucion=PlanVive&pto-venta=107686&subgrupo=0444600002&perfil-tarifa=9010000001&mail=KARINA@IBSCONSULTORES.COM"
                         target="_blank">
-                        <span>Hogar</span>
+                        <span>Vida</span>
                     </a>
+                </li>
+                <li>
+                    <n-link to="/cothogar" target="_blank">
+                        <span>Hogar</span>
+                    </n-link>
                 </li>
             </ul>
         </li>
