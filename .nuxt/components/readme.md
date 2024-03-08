@@ -81,6 +81,7 @@ You can directly use them in pages and other components without the need to impo
 - `<SectionsContactUsThree>` | `<sections-contact-us-three>` (components/sections/ContactUsThree.vue)
 - `<SectionsContactUsTwo>` | `<sections-contact-us-two>` (components/sections/ContactUsTwo.vue)
 - `<SectionsCotHogar>` | `<sections-cot-hogar>` (components/sections/CotHogar.vue)
+- `<SectionsCotizaGmExt>` | `<sections-cotiza-gm-ext>` (components/sections/CotizaGmExt.vue)
 - `<SectionsCotizaGmm>` | `<sections-cotiza-gmm>` (components/sections/CotizaGmm.vue)
 - `<SectionsFeatureGallery>` | `<sections-feature-gallery>` (components/sections/FeatureGallery.vue)
 - `<SectionsFeatureGalleryFour>` | `<sections-feature-gallery-four>` (components/sections/FeatureGalleryFour.vue)

@@ -14,6 +14,7 @@ const _0ba3a556 = () => interopDefault(import('../pages/CotHogar.vue' /* webpack
 const _4927165c = () => interopDefault(import('../pages/Cybersecurity.vue' /* webpackChunkName: "pages/Cybersecurity" */))
 const _3ccb8cc1 = () => interopDefault(import('../pages/descargables.vue' /* webpackChunkName: "pages/descargables" */))
 const _18cc51dc = () => interopDefault(import('../pages/Faq/index.vue' /* webpackChunkName: "pages/Faq/index" */))
+const _0a20311e = () => interopDefault(import('../pages/GmExt.vue' /* webpackChunkName: "pages/GmExt" */))
 const _bea94176 = () => interopDefault(import('../pages/IT-Solutions.vue' /* webpackChunkName: "pages/IT-Solutions" */))
 const _7cf45d12 = () => interopDefault(import('../pages/Leadership.vue' /* webpackChunkName: "pages/Leadership" */))
 const _346d364c = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
@@ -88,6 +89,10 @@ export const routerOptions = {
     path: "/Faq",
     component: _18cc51dc,
     name: "Faq"
+  }, {
+    path: "/GmExt",
+    component: _0a20311e,
+    name: "GmExt"
   }, {
     path: "/IT-Solutions",
     component: _bea94176,

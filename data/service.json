@@ -15,34 +15,28 @@
     },
     "fourSteps": {
         "sectionTitle": "How it helps <span>your <br> business succeed</span>",
-        "sectionSubTitle": "How we works",
-        "heading": "<mark>04</mark> Steps",
+        "sectionSubTitle": "IBS CONSULTORES ",
+        "heading": "<mark>IBS</mark> Consultores",
         "steps": [
             {
                 "count": 1,
-                "heading": "01. Discussion",
+                "heading": "01. Paso",
                 "text": "We meet customers in set place to discuss the details about needs and demands before proposing a plan."
             },
             {
                 "count": 2,
-                "heading": "02. Concepts & Initiatives",
+                "heading": "02. Paso",
                 "text": "Our experts come up with all kinds of ideas and initiatives for delivering the best solutions for IT services chosen."
             },
             {
                 "count": 3,
-                "heading": "03. Testing & Trying",
+                "heading": "03. Paso",
                 "text": "After agreeing on the ideas and plans, we will conduct as scheduled and give comments on the results & adaptations."
-            },
-            {
-                "count": 4,
-                "heading": "04. Execute & install",
-                "text": "Once the final plan is approved, everything will be conducted according to the agreed contract."
             }
         ]
     },
     "featureSectionTitle": "How we claim to <span> excel?</span>",
     "featureSectionSubTitle": "Hire us, why not?",
-    
     "itSolutionTitle": "Contrata hoy mismo</br><span> tu seguro.</span>",
     "itSolutionSubTitle": "our services",
     "services": [

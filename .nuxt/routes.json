@@ -70,6 +70,13 @@
     "_name": "_18cc51dc"
   },
   {
+    "name": "GmExt",
+    "path": "/GmExt",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/GmExt.vue",
+    "chunkName": "pages/GmExt",
+    "_name": "_0a20311e"
+  },
+  {
     "name": "IT-Solutions",
     "path": "/IT-Solutions",
     "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/IT-Solutions.vue",

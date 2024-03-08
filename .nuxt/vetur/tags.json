@@ -224,6 +224,9 @@
   "SectionsCotHogar": {
     "description": "Auto imported from components/sections/CotHogar.vue"
   },
+  "SectionsCotizaGmExt": {
+    "description": "Auto imported from components/sections/CotizaGmExt.vue"
+  },
   "SectionsCotizaGmm": {
     "description": "Auto imported from components/sections/CotizaGmm.vue"
   },

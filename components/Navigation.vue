@@ -21,7 +21,7 @@
                     </n-link>
                 </li>
                 <li>
-                    <a href="https://portalagentes.segurossura.com.mx/cotizador/redirect?usuario=MXGARZAGAL01&solucion=PlanVive&pto-venta=107686&subgrupo=0444600002&perfil-tarifa=9010000001&mail=KARINA@IBSCONSULTORES.COM"
+                    <a href="https://portalagentes.segurossura.com.mx/cotizador/redirect?usuario=MXGARZAGAL02&solucion=PlanVive&pto-venta=107686&subgrupo=0444600002&perfil-tarifa=9010000001&mail=KARINA@IBSCONSULTORES.COM.MX"
                         target="_blank">
                         <span>Vida</span>
                     </a>

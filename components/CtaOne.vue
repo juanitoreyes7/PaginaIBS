@@ -25,7 +25,7 @@
                         </a>
                     </div>
                     <div class="cta-button-group--two text-center">
-                        <a href="https://portalagentes.segurossura.com.mx/cotizador/redirect?usuario=MXGARZAGAL01&solucion=PlanVive&pto-venta=107686&subgrupo=0444600002&perfil-tarifa=9010000001&mail=KARINA@IBSCONSULTORES.COM"
+                        <a href="https://portalagentes.segurossura.com.mx/cotizador/redirect?usuario=MXGARZAGAL02&solucion=PlanVive&pto-venta=107686&subgrupo=0444600002&perfil-tarifa=9010000001&mail=KARINA@IBSCONSULTORES.COM.MX"
                             target="_blank" class="btn btn--white btn-one">
                             <span class="btn-icon mr-2">
                                 <i class="far fa-heart"></i>
