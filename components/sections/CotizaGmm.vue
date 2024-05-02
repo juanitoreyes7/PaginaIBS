@@ -44,10 +44,9 @@
                                                 <option value="masculino">Masculino</option>
                                             </select>
                                         </div>
-                                        <div class="contact-inner">
-                                            ¿Cuál es tu fecha de nacimiento?<br>
-                                            <date-picker v-model="dataFecha.fechaN" format="YYYY-MM-DD" type="date"
-                                                placeholder="Fecha de Nacimiento"></date-picker>
+                                        <div class="contact-inner contact-message">
+                                            ¿Cual es tu fecha de nacimiento DD/MM/AAAA?
+                                            <input name="fechaN">
                                         </div>
                                     </div>
                                     <br>

@@ -4,12 +4,14 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-7">
                     <div class="cybersecurity-hero-text wow move-up">
-                        <h6 class="font-weight--reguler mb-30">IBS CONSULTORES TU MEJOR AGENTE DE SEGUROS Y DE FIANZAS </h6>
-                        <h3 class="font-weight--reguler mb-30">Viaja seguro, regresa tranquilo.</h3>
+                        <h3 class="font-weight--reguler mb-30">¡Nuevo producto, Auto + Mascota!</h3>
+                        <h6 class="font-weight--reguler mb-30">Al contratar tu póliza de Auto por primera vez, pide a tu
+                            asesor tu seguro de Mascota. </h6>
+
                         <div class="col-xl-12 col-lg-12">
                             <div class="cta-button-group--two text-center">
-                                <a href="https://public.nhseguros.com/#!policyIndividual/index?code=MjI4MDc%3D"
-                                    target="_blank" class="btn btn--white btn-one">
+                                <a href="https://www.ibsconsultores.com/contact" target="_blank"
+                                    class="btn btn--white btn-one">
                                     <span class="btn-icon mr-2">
                                         <i class="far fa-car"></i>
                                     </span>

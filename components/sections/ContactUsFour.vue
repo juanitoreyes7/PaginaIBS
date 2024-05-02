@@ -9,7 +9,7 @@
                                 ¡Puedes pedir asesoría con <span class="text-color-primary"> nuestros expertos! </span>
                             </h3>
                             <div class="sub-heading">
-                                 <br> ¡En breve nos pondremos en contacto contigo!
+                                <br> ¡En breve nos pondremos en contacto contigo!
                             </div>
                         </div>
                     </div>
@@ -26,8 +26,20 @@
                                             <input name="con_email" type="email" placeholder="Email *">
                                         </div>
                                     </div>
-                                    <div class="contact-inner">
-                                        <input name="con_telefono" type="number" placeholder="Teléfono *">
+                                    <div class="contact-input">
+                                        <div class="contact-inner ">
+                                            <select class="form-select" name="con_seguro"
+                                                aria-label="Default select example">
+                                                <option selected>Tipo de seguro *</option>
+                                                <option value="AutosFlotilla">Seguro Autos de flotillas</option>
+                                                <option value="GastosMedicos">Seguro Gastos Médicos</option>
+                                                <option value="Vida">Seguro Vida</option>
+                                                <option value="Hogar">Seguro Hogar</option>
+                                            </select>
+                                        </div>
+                                        <div class="contact-inner">
+                                            <input name="con_telefono" type="number" placeholder="Teléfono *">
+                                        </div>
                                     </div>
                                     <div class="contact-inner contact-message">
                                         <textarea name="con_message" placeholder="Escribe tu mensaje o tu duda."></textarea>
@@ -46,26 +58,26 @@
 </template>
 
 <script>
-    import emailjs from '@emailjs/browser';
-    import Swal from "sweetalert2";
-    
-    export default {
-      methods: {
+import emailjs from '@emailjs/browser';
+import Swal from "sweetalert2";
+
+export default {
+    methods: {
         sendEmail() {
-          emailjs.sendForm('service_o10ni4h', 'template_g8ir5ck', this.$refs.form, '9dXIW13fiQT0eCgk5')
-          .then(() => {
-                location.href = "/contact/";
-              })
-              .catch((error) => {
-                alert(error);
-              });
-          Swal.fire({
-            icon: "success",
-            title: "En un momento un asesor se comunicara contigo.",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+            emailjs.sendForm('service_o10ni4h', 'template_yfycgff', this.$refs.form, '9dXIW13fiQT0eCgk5')
+                .then(() => {
+                    location.href = "/contact/";
+                })
+                .catch((error) => {
+                    alert(error);
+                });
+            Swal.fire({
+                icon: "success",
+                title: "En un momento un asesor se comunicara contigo.",
+                showConfirmButton: false,
+                timer: 1500,
+            });
         }
-      }
     }
-    </script>
+}
+</script>

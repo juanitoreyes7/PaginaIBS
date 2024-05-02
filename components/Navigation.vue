@@ -5,34 +5,6 @@
                 <span>Inicio</span>
             </n-link>
         </li>
-        <li class="has-children has-children--multilevel-submenu">
-            <n-link to="/">
-                <span>Cotización</span>
-            </n-link>
-            <ul class="submenu">
-                <li>
-                    <a href="https://cotizador.ibsconsultores.com/" target="_blank">
-                        <span>Autos</span>
-                    </a>
-                </li>
-                <li>
-                    <n-link to="/cotgmm" target="_blank">
-                        <span>Gastos Médicos Mayores</span>
-                    </n-link>
-                </li>
-                <li>
-                    <a href="https://portalagentes.segurossura.com.mx/cotizador/redirect?usuario=MXGARZAGAL02&solucion=PlanVive&pto-venta=107686&subgrupo=0444600002&perfil-tarifa=9010000001&mail=KARINA@IBSCONSULTORES.COM.MX"
-                        target="_blank">
-                        <span>Vida</span>
-                    </a>
-                </li>
-                <li>
-                    <n-link to="/cothogar" target="_blank">
-                        <span>Hogar</span>
-                    </n-link>
-                </li>
-            </ul>
-        </li>
         <!--<li class="has-children has-children--multilevel-submenu">
             <n-link to="/descargables">
                 <span>Services</span>
