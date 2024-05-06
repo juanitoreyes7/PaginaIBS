@@ -66,6 +66,12 @@
     "chunkName": "pages/GmExt"
   },
   {
+    "name": "hospitales",
+    "path": "/hospitales",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/hospitales.vue",
+    "chunkName": "pages/hospitales"
+  },
+  {
     "name": "IT-Solutions",
     "path": "/IT-Solutions",
     "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/IT-Solutions.vue",
