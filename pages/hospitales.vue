@@ -82,30 +82,19 @@
                                             <div class="icon-box-wrap">
                                                 <div class="content-header">
                                                     <h5 class="heading">
-                                                        GNP
+                                                        ZURICH
                                                     </h5>
                                                 </div>
                                                 <div class="content">
-                                                    <div class="text"><i class="fal fa-download"></i><a
-                                                            href="/doc/gnp/avisoaccidentes.pdf" target="_blank"> Aviso de
-                                                            accidentes o enfermedad.</a></div>
-                                                    <div class="text"><i class="fal fa-download"></i> <a
-                                                            href="/doc/gnp/informemedico.pdf" target="_blank">Informe
-                                                            médico.</a></div>
-                                                    <div class="text"><i class="fal fa-download"></i><a
-                                                            href="/doc/gnp/reembolso.pdf" target="_blank"> Solicitud de
-                                                            reembolso.</a></div>
-                                                    <div class="text"><i class="fal fa-download"></i><a
-                                                            href="/doc/gnp/informacionbancaria.pdf" target="_blank"> Formato
-                                                            unico de información bancaria.</a></div>
-                                                    <div class="text"><i class="fal fa-download"></i> <a
-                                                            href="/doc/gnp/parto.pdf" target="_blank">Notificacion de ayuda
-                                                            para parto o cesarea.</a></div>
-                                                    <div class="text"> </div>
+                                                    <a href="https://www.zurich.com.mx/HospitalNetworkWeb/views/supplier/supplierNetwork.xhtml"
+                                                        target="_blank" class="ht-btn ht-btn-md ht-btn--outline">
+                                                        Entrar
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="grid-item animate">
@@ -113,13 +102,13 @@
                                             <div class="icon-box-wrap">
                                                 <div class="content-header">
                                                     <h5 class="heading">
-                                                        ATLAS
+                                                        GNP
                                                     </h5>
                                                 </div>
                                                 <div class="content">
-                                                    <a href="https://www.segurosatlas.com.mx/OficinasAtencion.html"
+                                                    <a href="https://www.gnp.com.mx/directorio-proveedores-medicos"
                                                         target="_blank" class="ht-btn ht-btn-md">
-                                                        Talk to a consultant
+                                                        Entrar
                                                     </a>
                                                 </div>
                                             </div>
@@ -132,13 +121,14 @@
                                             <div class="icon-box-wrap">
                                                 <div class="content-header">
                                                     <h5 class="heading">
-                                                        ZURICH
+                                                        SURA
                                                     </h5>
                                                 </div>
                                                 <div class="content">
-                                                    <n-link to="/contact" class="ht-btn ht-btn-md ht-btn--outline">
-                                                        Contact us now
-                                                    </n-link>
+                                                    <a href="https://www.segurossura.com.mx/red-medica/" target="_blank"
+                                                        class="ht-btn ht-btn-md ht-btn--outline">
+                                                        Entrar
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -173,7 +163,7 @@ export default {
     },
     head() {
         return {
-            title: 'Descargables'
+            title: 'Hospitales y Médicos'
         }
     },
     data() {
