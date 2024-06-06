@@ -9,6 +9,10 @@
             "hoverImage": "/images/brand/afirme.png"
         },
         {
+            "image": "/images/brand/qualitas.png",
+            "hoverImage": "/images/brand/qualitas.png"
+        },
+        {
             "image": "/images/brand/atlas.png",
             "hoverImage": "/images/brand/atlas.png"
         },
@@ -21,16 +25,24 @@
             "hoverImage": "/images/brand/sura.png"
         },
         {
-            "image": "/images/brand/banorte.png",
-            "hoverImage": "/images/brand/banorte.png"
-        },
-        {
-            "image": "/images/brand/aserta.png",
-            "hoverImage": "/images/brand/aserta.png"
+            "image": "/images/brand/ana.png",
+            "hoverImage": "/images/brand/ana.png"
         },
         {
             "image": "/images/brand/zurich.png",
             "hoverImage": "/images/brand/zurich.png"
+        },
+        {
+            "image": "/images/brand/mafre.png",
+            "hoverImage": "/images/brand/mafre.png"
+        },
+        {
+            "image": "/images/brand/hir.png",
+            "hoverImage": "/images/brand/hir.png"
+        },
+        {
+            "image": "/images/brand/aserta.png",
+            "hoverImage": "/images/brand/aserta.png"
         },
         {
             "image": "/images/brand/bupa.png",
@@ -57,12 +69,12 @@
             "hoverImage": "/images/brand/plan.png"
         },
         {
-            "image": "/images/brand/qualitas.png",
-            "hoverImage": "/images/brand/qualitas.png"
-        },
-        {
             "image": "/images/brand/sofimex.png",
             "hoverImage": "/images/brand/sofimex.png"
+        },
+        {
+            "image": "/images/brand/banorte.png",
+            "hoverImage": "/images/brand/banorte.png"
         }
     ]
 }
