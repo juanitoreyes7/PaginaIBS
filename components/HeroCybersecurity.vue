@@ -4,16 +4,16 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-7">
                     <div class="cybersecurity-hero-text wow move-up">
-                        <h3 class="font-weight--reguler mb-30">¡Nuevo producto, Auto + Mascota!</h3>
-                        <h6 class="font-weight--reguler mb-30">Al contratar tu póliza de Auto por primera vez, pide a tu
-                            asesor tu seguro de Mascota. </h6>
+                        <h3 class="font-weight--reguler mb-30">¡Nuevo producto de vida!</h3>
+                        <h6 class="font-weight--reguler mb-30">Un Seguro de Vida Individual diseñado para proteger a tu
+                            familia. </h6>
 
                         <div class="col-xl-12 col-lg-12">
                             <div class="cta-button-group--two text-center">
-                                <a href="https://www.ibsconsultores.com/contact" target="_blank"
-                                    class="btn btn--white btn-one">
+                                <a href="https://www.segurosargos.com/seimovil/acceso/porToken/53CEE673317802A108A53428:4a789270eaeefc5bf36f5545daa7a375"
+                                    target="_blank" class="btn btn--white btn-one">
                                     <span class="btn-icon mr-2">
-                                        <i class="far fa-car"></i>
+                                        <i class="far fa-baby"></i>
                                     </span>
                                     Comprar
                                 </a>
