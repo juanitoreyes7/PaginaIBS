@@ -28,29 +28,55 @@
                                                     </h5>
                                                 </div>
                                                 <div class="content">
-                                                    <div class="text" style="text-align: justify;">La información contenida
-                                                        o adjunta en este correo electrónico es confidencial y privada,
-                                                        propiedad de IBS CONSULTORES, S.C. y el destinatario. Esta dirigida
-                                                        exclusivamente al destinatario.</div>
-                                                    <div class="text" style="text-align: justify;">La modificación,
-                                                        retransmisión, difusión, copia u otro
-                                                        uso de esta información por cualquier medio, por personas distintas
-                                                        al destinatario está estrictamente prohibido y puede ser ilegal. Si
-                                                        lo ha recibido por error,por favor notifique al emisor e
-                                                        inmediatamente bórrelo de forma permanente y destruya cualquier
-                                                        copia impresa.</div>
-                                                    <div class="text" style="text-align: justify;">This message and/or
-                                                        document enclosed is intended only
-                                                        for the use of the individual or entity to which it is addressed an
-                                                        may contain information that is privileged,confidential and exempt
-                                                        from disclosure under applicable law.</div>
-                                                    <div class="text" style="text-align: justify;">If the reader of this
-                                                        message is not the intended
-                                                        recipient, you are hereby notified that any dissemination,
-                                                        distribution, or copying of this message and/or document enclosed is
-                                                        strictly prohibited. If you received this communication in error,
-                                                        please notify the sender inmmediately, permanently delete it and
-                                                        destroy any copues of it that werep</div>
+                                                    <div class="text" style="text-align: justify;">
+                                                        La información contenida o adjunta en este correo electrónico es
+                                                        confidencial y privada, propiedad de IBS CONSULTORES, S.C. y del
+                                                        destinatario. Está dirigida exclusivamente a la persona a quien va
+                                                        destinada.
+                                                    </div>
+                                                    <p></p>
+                                                    <div class="text" style="text-align: justify;">
+                                                        La modificación, retransmisión, difusión, copia o cualquier otro uso
+                                                        de esta información por personas distintas al destinatario está
+                                                        estrictamente prohibido y puede ser ilegal. Si usted ha recibido
+                                                        este mensaje por error, por favor notifique inmediatamente al
+                                                        remitente, elimínelo de forma permanente y destruya cualquier copia
+                                                        impresa.
+                                                    </div>
+                                                    <p></p>
+                                                    <div class="text" style="text-align: justify;">
+                                                        Contamos con una aplicación móvil oficial de IBS Consultores, en la
+                                                        cual los usuarios pueden consultar información importante
+                                                        relacionada con sus pólizas. Al utilizar esta aplicación, se
+                                                        solicitará cierta información personal que será tratada conforme a
+                                                        nuestra política de privacidad. El usuario podrá eliminar su cuenta
+                                                        en cualquier momento accediendo a la sección Perfil > Eliminar
+                                                        cuenta, y sus datos serán eliminados de forma permanente.
+                                                    </div>
+                                                    <p></p>
+                                                    <div class="text" style="text-align: justify;">
+                                                        This email and/or any documents attached are intended solely for the
+                                                        use of the individual or entity to whom they are addressed and may
+                                                        contain confidential, privileged, or legally protected information.
+                                                    </div>
+                                                    <p></p>
+                                                    <div class="text" style="text-align: justify;">
+                                                        If you are not the intended recipient, you are hereby notified that
+                                                        any review, dissemination, distribution, or copying of this
+                                                        communication is strictly prohibited. If you have received this
+                                                        message in error, please notify the sender immediately, permanently
+                                                        delete it, and destroy any printed copies.
+                                                    </div>
+                                                    <p></p>
+                                                    <div class="text" style="text-align: justify;">
+                                                        We offer an official mobile application from IBS Consultores where
+                                                        users can access important information related to their insurance
+                                                        policies. By using the app, certain personal information will be
+                                                        requested and handled in accordance with our privacy policy. Users
+                                                        may delete their account at any time by navigating to Profile >
+                                                        Delete Account, and all personal data will be permanently removed.
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
