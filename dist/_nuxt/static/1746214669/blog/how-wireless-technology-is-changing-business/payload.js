@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/blog/how-wireless-technology-is-changing-business", {data:[{}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/blog/how-technology-made-businesses-more-efficient", {data:[{}],fetch:{},mutations:void 0});

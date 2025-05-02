@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/hospitales", {data:[{}],fetch:{},mutations:void 0});

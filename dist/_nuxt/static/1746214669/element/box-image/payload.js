@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/element/box-image", {data:[{}],fetch:{},mutations:void 0});

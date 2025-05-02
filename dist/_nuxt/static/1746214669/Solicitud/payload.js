@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/Solicitud", {data:[{}],fetch:{},mutations:void 0});

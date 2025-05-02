@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/blog/blockchain-technology-effects-on-logistics-sector", {data:[{}],fetch:{},mutations:void 0});
