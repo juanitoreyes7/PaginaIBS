@@ -5,7 +5,7 @@
     "author": "uzzal",
     "private": true,
     "scripts": {
-        "dev": "nuxt",
+        "dev": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
         "build": "NODE_OPTIONS=--openssl-legacy-provider nuxt build",
         "start": "nuxt start",
         "deploy": "NODE_OPTIONS=--openssl-legacy-provider npm run generate && aws s3 sync dist/ s3://TU_BUCKET_IBS --delete && aws cloudfront create-invalidation --distribution-id TU_DISTRIBUTION_ID --paths '/*'",

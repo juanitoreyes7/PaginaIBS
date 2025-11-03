@@ -73,6 +73,9 @@ export default {
         ** You can extend webpack config here
         */
         extend (config, ctx) {
+            // Fix for Node.js 17+ OpenSSL compatibility
+            config.output = config.output || {};
+            config.output.hashFunction = 'md4';
         }
     },
 }
