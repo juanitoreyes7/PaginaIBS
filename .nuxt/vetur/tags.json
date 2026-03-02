@@ -38,6 +38,9 @@
   "ContactUsInfo1": {
     "description": "Auto imported from components/ContactUsInfo1.vue"
   },
+  "CorporateVideo": {
+    "description": "Auto imported from components/CorporateVideo.vue"
+  },
   "CtaContact": {
     "description": "Auto imported from components/CtaContact.vue"
   },
@@ -76,6 +79,9 @@
   },
   "FooterAbout": {
     "description": "Auto imported from components/FooterAbout.vue"
+  },
+  "FooterVideo": {
+    "description": "Auto imported from components/FooterVideo.vue"
   },
   "FooterWidgetApps": {
     "description": "Auto imported from components/FooterWidgetApps.vue"
@@ -119,6 +125,9 @@
   "HeroInfotechNo": {
     "description": "Auto imported from components/HeroInfotechNo.vue"
   },
+  "HeroInsurance": {
+    "description": "Auto imported from components/HeroInsurance.vue"
+  },
   "HeroProcessing": {
     "description": "Auto imported from components/HeroProcessing.vue"
   },
@@ -127,6 +136,12 @@
   },
   "HeroService": {
     "description": "Auto imported from components/HeroService.vue"
+  },
+  "HomeCarousel": {
+    "description": "Auto imported from components/HomeCarousel.vue"
+  },
+  "InsuranceModal": {
+    "description": "Auto imported from components/InsuranceModal.vue"
   },
   "MobileNavMenu": {
     "description": "Auto imported from components/MobileNavMenu.vue"
@@ -185,8 +200,23 @@
   "VideoWithImages": {
     "description": "Auto imported from components/VideoWithImages.vue"
   },
+  "SectionsAboutBanner": {
+    "description": "Auto imported from components/sections/AboutBanner.vue"
+  },
+  "SectionsAboutUsDescription": {
+    "description": "Auto imported from components/sections/AboutUsDescription.vue"
+  },
+  "SectionsAboutUsHero": {
+    "description": "Auto imported from components/sections/AboutUsHero.vue"
+  },
   "SectionsAccordionWrapper": {
     "description": "Auto imported from components/sections/AccordionWrapper.vue"
+  },
+  "SectionsAdvisoryButtons": {
+    "description": "Auto imported from components/sections/AdvisoryButtons.vue"
+  },
+  "SectionsAdvisoryButtonsCobranza": {
+    "description": "Auto imported from components/sections/AdvisoryButtonsCobranza.vue"
   },
   "SectionsBlogPageWrapper": {
     "description": "Auto imported from components/sections/BlogPageWrapper.vue"
@@ -209,6 +239,9 @@
   "SectionsCompanyHistory": {
     "description": "Auto imported from components/sections/CompanyHistory.vue"
   },
+  "SectionsCompañiasSegurosSection": {
+    "description": "Auto imported from components/sections/CompañiasSegurosSection.vue"
+  },
   "SectionsContactUs": {
     "description": "Auto imported from components/sections/ContactUs.vue"
   },
@@ -230,6 +263,12 @@
   "SectionsCotizaGmm": {
     "description": "Auto imported from components/sections/CotizaGmm.vue"
   },
+  "SectionsDirectoresSection": {
+    "description": "Auto imported from components/sections/DirectoresSection.vue"
+  },
+  "SectionsExperienciaSection": {
+    "description": "Auto imported from components/sections/ExperienciaSection.vue"
+  },
   "SectionsFeatureGallery": {
     "description": "Auto imported from components/sections/FeatureGallery.vue"
   },
@@ -239,14 +278,32 @@
   "SectionsFeatureGalleryTwo": {
     "description": "Auto imported from components/sections/FeatureGalleryTwo.vue"
   },
+  "SectionsFormacionExperienciaSection": {
+    "description": "Auto imported from components/sections/FormacionExperienciaSection.vue"
+  },
+  "SectionsFormacionSection": {
+    "description": "Auto imported from components/sections/FormacionSection.vue"
+  },
   "SectionsFourSteps": {
     "description": "Auto imported from components/sections/FourSteps.vue"
   },
   "SectionsGalleryOne": {
     "description": "Auto imported from components/sections/GalleryOne.vue"
   },
+  "SectionsIBSAppSection": {
+    "description": "Auto imported from components/sections/IBSAppSection.vue"
+  },
   "SectionsInfoTechExperience": {
     "description": "Auto imported from components/sections/InfoTechExperience.vue"
+  },
+  "SectionsInsuranceDirectory": {
+    "description": "Auto imported from components/sections/InsuranceDirectory.vue"
+  },
+  "SectionsInsuranceDirectoryCobranza": {
+    "description": "Auto imported from components/sections/InsuranceDirectoryCobranza.vue"
+  },
+  "SectionsPremiosSection": {
+    "description": "Auto imported from components/sections/PremiosSection.vue"
   },
   "SectionsPricingOne": {
     "description": "Auto imported from components/sections/PricingOne.vue"
@@ -284,10 +341,16 @@
   "SectionsTeamTwo": {
     "description": "Auto imported from components/sections/TeamTwo.vue"
   },
+  "SectionsTerminosCondicionesButton": {
+    "description": "Auto imported from components/sections/TerminosCondicionesButton.vue"
+  },
   "SectionsTestimonialOne": {
     "description": "Auto imported from components/sections/TestimonialOne.vue"
   },
   "SectionsTestimonialTwo": {
     "description": "Auto imported from components/sections/TestimonialTwo.vue"
+  },
+  "SectionsTiposSegurosSection": {
+    "description": "Auto imported from components/sections/TiposSegurosSection.vue"
   }
 }

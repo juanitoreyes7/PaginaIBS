@@ -15,8 +15,6 @@
 
         <GalleryOne />
 
-        <TestimonialTwo />
-
         <BrandLogoCarousel />
 
         <CtaContactTwo />
@@ -38,7 +36,6 @@
     import FunFactThree from '@/components/FunFactThree';
     import CtaTwo from '@/components/CtaTwo';
     import GalleryOne from '@/components/sections/GalleryOne';
-    import TestimonialTwo from '@/components/sections/TestimonialTwo';
     import BrandLogoCarousel from '@/components/BrandLogoCarousel';
     import CtaContactTwo from '@/components/CtaContactTwo';
     import Footer from '@/components/Footer';
@@ -53,7 +50,6 @@
             FunFactThree,
             CtaTwo,
             GalleryOne,
-            TestimonialTwo,
             BrandLogoCarousel,
             CtaContactTwo,
             Footer,

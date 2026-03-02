@@ -1,5 +1,16 @@
 {
   "projects": {
-    "default": "paginasibsmx"
-  }
+    "default": "paginasibsmx",
+    "IBSweb": "paginasibsmx"
+  },
+  "targets": {
+    "paginasibsmx": {
+      "hosting": {
+        "web": [
+          "paginasibsmx"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

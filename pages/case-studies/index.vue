@@ -3,7 +3,13 @@
 
         <HeaderAppointment />
 
-        <Breadcrumbs :items="breadcrumbNavigation" breadcrumbTitle="Seguros" />
+        <Breadcrumbs2
+            :items="breadcrumbNavigation"
+            breadcrumbTitle="Seguros"
+            subtitle="IBS Consultores tu mejor Agente de Seguros y de Fianzas"
+            :hero-size="true"
+            bg-image="/images/bg/SEGUROS.png"
+        />
 
         <CaseStudiesItemWrapper />
 
@@ -18,7 +24,7 @@
 
 <script>
     import HeaderAppointment from '@/components/HeaderAppointment';
-    import Breadcrumbs from '@/components/Breadcrumbs';
+    import Breadcrumbs2 from '@/components/Breadcrumbs2';
     import CtaOne from '@/components/CtaOne';
     import CaseStudiesItemWrapper from '@/components/sections/CaseStudiesItemWrapper';
     import Footer from '@/components/Footer';
@@ -27,7 +33,7 @@
     export default {
         components: {
             HeaderAppointment,
-            Breadcrumbs,
+            Breadcrumbs2,
             CtaOne,
             CaseStudiesItemWrapper,
             Footer,

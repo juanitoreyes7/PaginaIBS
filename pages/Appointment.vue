@@ -15,8 +15,6 @@
 
         <CaseStudiesSection />
 
-        <TestimonialTwo />
-
         <FunFactTwo />
 
         <ContactUs />
@@ -36,7 +34,6 @@
     import TeamOne from '@/components/sections/TeamOne';
     import CtaOne from '@/components/CtaOne';
     import CaseStudiesSection from '@/components/sections/CaseStudiesSection';
-    import TestimonialTwo from '@/components/sections/TestimonialTwo';
     import FunFactTwo from '@/components/FunFactTwo';
     import ContactUs from '@/components/sections/ContactUs';
     import Footer from '@/components/Footer';
@@ -50,7 +47,6 @@
             TeamOne,
             CtaOne,
             CaseStudiesSection,
-            TestimonialTwo,
             FunFactTwo,
             ContactUs,
             Footer,

@@ -1,93 +1,83 @@
 <template>
     <ul>
-        <li>
-            <n-link to="/">
-                <span>Inicio</span>
-            </n-link>
-        </li>
-        <!--<li class="has-children has-children--multilevel-submenu">
-            <n-link to="/descargables">
-                <span>Services</span>
-            </n-link>
-            <ul class="submenu">
-                <li>
-                    <n-link to="/descargables">
-                        <span>IT Services</span>
-                    </n-link>
-                </li>
-                <li>
-                    <n-link to="/it-solutions">
-                        <span>IT Solutions</span>
-                    </n-link>
-                </li>
-            </ul>
-        </li>
-        <li class="has-children has-children--multilevel-submenu">
-            <n-link to="/">
-                <span>Elements</span>
-            </n-link>
-            <ul class="submenu">
-                <li>
-                    <n-link to="/element/accordion">
-                        <span>Accordion</span>
-                    </n-link>
-                </li>
-                <li>
-                    <n-link to="/element/box-icon">
-                        <span>Box Icon</span>
-                    </n-link>
-                </li>
-                <li>
-                    <n-link to="/element/box-image">
-                        <span>Box Image</span>
-                    </n-link>
-                </li>
-                <li>
-                    <n-link to="/element/box-large-image">
-                        <span>Box Large Image</span>
-                    </n-link>
-                </li>
-                <li>
-                    <n-link to="/element/call-to-action">
-                        <span>Call To Action</span>
-                    </n-link>
-                </li>
-                <li>
-                    <n-link to="/element/counters">
-                        <span>Counters</span>
-                    </n-link>
-                </li>
-                <li>
-                    <n-link to="/element/gradation">
-                        <span>Gradation</span>
-                    </n-link>
-                </li>
-                <li>
-                    <n-link to="/element/teams">
-                        <span>Teams</span>
-                    </n-link>
-                </li>
-            </ul>
-        </li>-->
-        <li>
-            <n-link to="/about">
-                <span>Nosotros</span>
-            </n-link>
-        </li>
-        <li>
-            <n-link to="/case-studies">
-                <span>Seguros</span>
-            </n-link>
-        </li>
-        <li>
-            <n-link to="/contact">
-                <span>Contacto</span>
-            </n-link>
-        </li>
-        <li>
-            <n-link to="/descargables">
-                <span>Descargables</span>
+        <li v-for="(item, index) in navItemsWithIcons" :key="index">
+            <n-link :to="item.to">
+                <img
+                    v-if="item.icon && item.icon.startsWith('/')"
+                    :src="item.icon"
+                    :alt="item.label"
+                    class="nav-item-icon"
+                >
+                <i v-else-if="item.icon" :class="item.icon" class="nav-item-icon nav-item-icon--fa"></i>
+                <span>{{ item.label }}</span>
             </n-link>
         </li>
     </ul>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            navItemsWithIcons: [
+                {
+                    to: '/portal',
+                    label: 'Inicio',
+                    icon: 'fas fa-home'
+                },
+                {
+                    to: '/about',
+                    label: 'Nosotros',
+                    icon: 'fas fa-users'
+                },
+                {
+                    to: '/case-studies',
+                    label: 'Seguros',
+                    icon: 'fas fa-shield-alt'
+                },
+                {
+                    to: '/ibsapp',
+                    label: 'IBSApp',
+                    icon: 'fas fa-mobile-alt'
+                },
+                {
+                    to: '/siniestros',
+                    label: 'Siniestros',
+                    icon: 'fas fa-exclamation-triangle'
+                },
+                {
+                    to: '/cobranza',
+                    label: 'Cobranza',
+                    icon: 'fas fa-file-invoice-dollar'
+                },
+                {
+                    to: '/contact',
+                    label: 'Contacto',
+                    icon: 'fas fa-envelope'
+                },
+                {
+                    to: '/descargables',
+                    label: 'Descargables',
+                    icon: 'fas fa-download'
+                }
+            ]
+        };
+    }
+};
+</script>
+
+<style scoped lang="scss">
+.nav-item-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+    object-fit: contain;
+
+    &--fa {
+        font-size: 16px;
+        width: auto;
+        height: auto;
+    }
+}
+</style>

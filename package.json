@@ -5,17 +5,18 @@
     "author": "uzzal",
     "private": true,
     "scripts": {
-        "dev": "NODE_OPTIONS=--openssl-legacy-provider nuxt",
-        "build": "NODE_OPTIONS=--openssl-legacy-provider nuxt build",
+        "dev": "nuxt",
+        "build": "nuxt build",
         "start": "nuxt start",
-        "deploy": "NODE_OPTIONS=--openssl-legacy-provider npm run generate && aws s3 sync dist/ s3://TU_BUCKET_IBS --delete && aws cloudfront create-invalidation --distribution-id TU_DISTRIBUTION_ID --paths '/*'",
-        "generate": "NODE_OPTIONS=--openssl-legacy-provider nuxt generate"
+        "generate": "nuxt generate",
+        "deploy": "npm run generate && aws s3 sync dist/ s3://TU_BUCKET_IBS --delete"
     },
     "dependencies": {
         "@emailjs/browser": "^3.7.0",
         "@nuxtjs/style-resources": "^1.2.1",
         "bootstrap": "^4.6.1",
         "bootstrap-vue": "^2.21.2",
+        "firebase": "^8.10.0",
         "nuxt": "^2.15.8",
         "swiper": "^5.3.7",
         "vue-awesome-swiper": "^4.1.0",

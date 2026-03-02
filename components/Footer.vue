@@ -1,5 +1,5 @@
 <template>
-    <div class="footer-area-wrapper bg-gray">
+    <div class="footer-area-wrapper footer-blue-bg">
         <div class="footer-area section-space--ptb_80">
             <div class="container">
                 <div class="row footer-widget-wrapper">
@@ -80,3 +80,71 @@ export default {
     }
 };
 </script>
+
+<style scoped lang="scss">
+.footer-blue-bg {
+    background: linear-gradient(180deg, #002FA6 0%, #086AD8 100%);
+    color: #ffffff;
+
+    .footer-area {
+        color: #ffffff;
+    }
+
+    :deep(.footer-widget__title) {
+        color: #ffffff !important;
+    }
+
+    :deep(.footer-widget__list) {
+        li {
+            color: rgba(255, 255, 255, 0.9);
+
+            a {
+                color: rgba(255, 255, 255, 0.9) !important;
+                transition: color 0.3s ease;
+
+                &.text-black,
+                &.font-weight--bold {
+                    color: rgba(255, 255, 255, 0.9) !important;
+                }
+
+                &.text-color-primary {
+                    color: rgba(255, 255, 255, 0.9) !important;
+                }
+
+                &:hover {
+                    color: #ffffff !important;
+                }
+            }
+        }
+    }
+
+    .copyright-text {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .footer-copyright-area {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: transparent;
+    }
+
+    :deep(.ht-social-networks .social-link) {
+        color: rgba(255, 255, 255, 0.9) !important;
+        border-color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(255, 255, 255, 0.1);
+
+        .link-icon {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        &:hover {
+            color: #ffffff !important;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+
+            .link-icon {
+                color: #ffffff !important;
+            }
+        }
+    }
+}
+</style>

@@ -13,6 +13,11 @@
                     </n-link>
                 </li>
                 <li>
+                    <n-link to="/ibsapp">
+                        <span>IBSApp</span>
+                    </n-link>
+                </li>
+                <li>
                     <n-link to="/contact">
                         <span>Contacto</span>
                     </n-link>
@@ -22,6 +27,22 @@
                         <span>Descargables</span>
                     </n-link>
                 </li>
+                <li class="mobile-nav-logout">
+                    <a
+                        v-if="!isLoggedIn"
+                        href="/login"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="mobile-logout-btn mobile-login-link"
+                    >
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Iniciar sesión</span>
+                    </a>
+                    <button v-else type="button" class="mobile-logout-btn" @click="cerrarSesion">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Cerrar sesión</span>
+                    </button>
+                </li>
             </ul>
         </nav>
     </div>
@@ -30,32 +51,46 @@
 <script>
     export default{
         name: 'MobileNavMenu',
+        data() {
+            return { isLoggedIn: false };
+        },
         mounted() {
+            if (process.client && this.$auth && this.$auth.onAuthStateChanged) {
+                this.$auth.onAuthStateChanged((user) => {
+                    this.isLoggedIn = !!user;
+                });
+            }
             const offCanvasNav = document.querySelector('#offcanvas-navigation');
+            if (!offCanvasNav) return;
             const offCanvasNavSubMenu = offCanvasNav.querySelectorAll('.sub-menu');
             const anchorLinks = offCanvasNav.querySelectorAll('a');
-        
-            for (let i = 0; i < offCanvasNavSubMenu.length; i++){
+            for (let i = 0; i < offCanvasNavSubMenu.length; i++) {
                 offCanvasNavSubMenu[i].insertAdjacentHTML("beforebegin", "<span class='menu-expand'><i></i></span>");
             }
-        
             const menuExpand = offCanvasNav.querySelectorAll('.menu-expand');
             const numMenuExpand = menuExpand.length;
-        
             for (let i = 0; i < numMenuExpand; i++) {
-                menuExpand[i].addEventListener("click", (e) => {sideMenuExpand(e)});
+                menuExpand[i].addEventListener("click", (e) => { sideMenuExpand(e); });
             }
-        
             for (let i = 0; i < anchorLinks.length; i++) {
-                anchorLinks[i].addEventListener("click", () => {closeMobileMenu()});
+                anchorLinks[i].addEventListener("click", () => { closeMobileMenu(); });
             }
-
-            const sideMenuExpand = (e) => {
+            function sideMenuExpand(e) {
                 e.currentTarget.parentElement.classList.toggle('active');
             }
-            const closeMobileMenu = () => {
+            function closeMobileMenu() {
                 const offcanvasMobileMenu = document.querySelector('#offcanvas-mobile-menu');
                 offcanvasMobileMenu?.classList.remove('active');
+            }
+        },
+        methods: {
+            async cerrarSesion() {
+                if (this.$auth) {
+                    await this.$auth.signOut();
+                    const offcanvas = document.querySelector('#offcanvas-mobile-menu');
+                    if (offcanvas) offcanvas.classList.remove('active');
+                    this.$router.push('/login');
+                }
             }
         }
     };
@@ -111,6 +146,28 @@
                             color: $theme-color--two;
                         }
                     }
+                }
+            }
+            .mobile-nav-logout {
+                margin-top: 16px;
+                padding-top: 16px;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            .mobile-logout-btn,
+            .mobile-login-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 0;
+                border: none;
+                background: none;
+                color: $white;
+                font-size: 14px;
+                text-transform: uppercase;
+                cursor: pointer;
+                text-decoration: none;
+                &:hover {
+                    color: $theme-color--two;
                 }
             }
             li {

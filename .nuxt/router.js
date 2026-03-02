@@ -8,6 +8,7 @@ const _7b004f60 = () => interopDefault(import('../pages/About.vue' /* webpackChu
 const _da6169bc = () => interopDefault(import('../pages/Appointment.vue' /* webpackChunkName: "pages/Appointment" */))
 const _12926b5c = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
 const _64f81b8c = () => interopDefault(import('../pages/case-studies/index.vue' /* webpackChunkName: "pages/case-studies/index" */))
+const _159d55bd = () => interopDefault(import('../pages/cobranza.vue' /* webpackChunkName: "pages/cobranza" */))
 const _2467d8a3 = () => interopDefault(import('../pages/Contact.vue' /* webpackChunkName: "pages/Contact" */))
 const _17bb818c = () => interopDefault(import('../pages/Cotgmm.vue' /* webpackChunkName: "pages/Cotgmm" */))
 const _0ba3a556 = () => interopDefault(import('../pages/CotHogar.vue' /* webpackChunkName: "pages/CotHogar" */))
@@ -16,13 +17,23 @@ const _3ccb8cc1 = () => interopDefault(import('../pages/descargables.vue' /* web
 const _18cc51dc = () => interopDefault(import('../pages/Faq/index.vue' /* webpackChunkName: "pages/Faq/index" */))
 const _0a20311e = () => interopDefault(import('../pages/GmExt.vue' /* webpackChunkName: "pages/GmExt" */))
 const _ff580dd6 = () => interopDefault(import('../pages/hospitales.vue' /* webpackChunkName: "pages/hospitales" */))
+const _332ae914 = () => interopDefault(import('../pages/ibsapp.vue' /* webpackChunkName: "pages/ibsapp" */))
 const _bea94176 = () => interopDefault(import('../pages/IT-Solutions.vue' /* webpackChunkName: "pages/IT-Solutions" */))
 const _7cf45d12 = () => interopDefault(import('../pages/Leadership.vue' /* webpackChunkName: "pages/Leadership" */))
 const _346d364c = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
 const _615892c7 = () => interopDefault(import('../pages/Politicas.vue' /* webpackChunkName: "pages/Politicas" */))
+const _7fc959b9 = () => interopDefault(import('../pages/poliza-accidente.vue' /* webpackChunkName: "pages/poliza-accidente" */))
+const _1e4a97fc = () => interopDefault(import('../pages/poliza-auto.vue' /* webpackChunkName: "pages/poliza-auto" */))
+const _f74eb910 = () => interopDefault(import('../pages/poliza-funeraria.vue' /* webpackChunkName: "pages/poliza-funeraria" */))
+const _6a08158a = () => interopDefault(import('../pages/poliza-gmm.vue' /* webpackChunkName: "pages/poliza-gmm" */))
+const _0ce5ac3d = () => interopDefault(import('../pages/poliza-vida.vue' /* webpackChunkName: "pages/poliza-vida" */))
+const _c871cc0e = () => interopDefault(import('../pages/portafolio-polizas.vue' /* webpackChunkName: "pages/portafolio-polizas" */))
+const _57ea64ce = () => interopDefault(import('../pages/portal.vue' /* webpackChunkName: "pages/portal" */))
 const _6dcd7b40 = () => interopDefault(import('../pages/Processing.vue' /* webpackChunkName: "pages/Processing" */))
+const _75112ec0 = () => interopDefault(import('../pages/registro.vue' /* webpackChunkName: "pages/registro" */))
 const _7f7e78ca = () => interopDefault(import('../pages/Resolutions.vue' /* webpackChunkName: "pages/Resolutions" */))
 const _a1f1ae90 = () => interopDefault(import('../pages/Service.vue' /* webpackChunkName: "pages/Service" */))
+const _03d2588e = () => interopDefault(import('../pages/siniestros.vue' /* webpackChunkName: "pages/siniestros" */))
 const _0e247b32 = () => interopDefault(import('../pages/Solicitud.vue' /* webpackChunkName: "pages/Solicitud" */))
 const _0299b547 = () => interopDefault(import('../pages/blog/blog-details.vue' /* webpackChunkName: "pages/blog/blog-details" */))
 const _88e13350 = () => interopDefault(import('../pages/element/accordion.vue' /* webpackChunkName: "pages/element/accordion" */))
@@ -33,6 +44,7 @@ const _7c5e9fb9 = () => interopDefault(import('../pages/element/call-to-action.v
 const _d83770d2 = () => interopDefault(import('../pages/element/counters.vue' /* webpackChunkName: "pages/element/counters" */))
 const _7abf2a12 = () => interopDefault(import('../pages/element/gradation.vue' /* webpackChunkName: "pages/element/gradation" */))
 const _1e028074 = () => interopDefault(import('../pages/element/teams.vue' /* webpackChunkName: "pages/element/teams" */))
+const _0e14f92f = () => interopDefault(import('../pages/beneficios/_slug.vue' /* webpackChunkName: "pages/beneficios/_slug" */))
 const _15ffadec = () => interopDefault(import('../pages/blog/_slug.vue' /* webpackChunkName: "pages/blog/_slug" */))
 const _b00589bc = () => interopDefault(import('../pages/case-studies/_id.vue' /* webpackChunkName: "pages/case-studies/_id" */))
 const _3885c978 = () => interopDefault(import('../pages/Faq/_id.vue' /* webpackChunkName: "pages/Faq/_id" */))
@@ -67,6 +79,10 @@ export const routerOptions = {
     component: _64f81b8c,
     name: "case-studies"
   }, {
+    path: "/cobranza",
+    component: _159d55bd,
+    name: "cobranza"
+  }, {
     path: "/Contact",
     component: _2467d8a3,
     name: "Contact"
@@ -99,6 +115,10 @@ export const routerOptions = {
     component: _ff580dd6,
     name: "hospitales"
   }, {
+    path: "/ibsapp",
+    component: _332ae914,
+    name: "ibsapp"
+  }, {
     path: "/IT-Solutions",
     component: _bea94176,
     name: "IT-Solutions"
@@ -115,9 +135,41 @@ export const routerOptions = {
     component: _615892c7,
     name: "Politicas"
   }, {
+    path: "/poliza-accidente",
+    component: _7fc959b9,
+    name: "poliza-accidente"
+  }, {
+    path: "/poliza-auto",
+    component: _1e4a97fc,
+    name: "poliza-auto"
+  }, {
+    path: "/poliza-funeraria",
+    component: _f74eb910,
+    name: "poliza-funeraria"
+  }, {
+    path: "/poliza-gmm",
+    component: _6a08158a,
+    name: "poliza-gmm"
+  }, {
+    path: "/poliza-vida",
+    component: _0ce5ac3d,
+    name: "poliza-vida"
+  }, {
+    path: "/portafolio-polizas",
+    component: _c871cc0e,
+    name: "portafolio-polizas"
+  }, {
+    path: "/portal",
+    component: _57ea64ce,
+    name: "portal"
+  }, {
     path: "/Processing",
     component: _6dcd7b40,
     name: "Processing"
+  }, {
+    path: "/registro",
+    component: _75112ec0,
+    name: "registro"
   }, {
     path: "/Resolutions",
     component: _7f7e78ca,
@@ -126,6 +178,10 @@ export const routerOptions = {
     path: "/Service",
     component: _a1f1ae90,
     name: "Service"
+  }, {
+    path: "/siniestros",
+    component: _03d2588e,
+    name: "siniestros"
   }, {
     path: "/Solicitud",
     component: _0e247b32,
@@ -166,6 +222,10 @@ export const routerOptions = {
     path: "/element/teams",
     component: _1e028074,
     name: "element-teams"
+  }, {
+    path: "/beneficios/:slug?",
+    component: _0e14f92f,
+    name: "beneficios-slug"
   }, {
     path: "/blog/:slug",
     component: _15ffadec,

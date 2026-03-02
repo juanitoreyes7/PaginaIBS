@@ -1,0 +1,91 @@
+{
+    "title": "Directorio de Aseguradoras",
+    "subtitle": "Contacta directamente con tu aseguradora para reportar un siniestro",
+    "companies": [
+
+        {
+            "id": 1,
+            "name": "Afirme",
+            "logo": "/images/brand/afirme.png",
+            "phone": "800 723 4763",
+            "phoneLink": "tel:8007234763"
+        },
+        {
+            "id": 2,
+            "name": "Qualitas",
+            "logo": "/images/brand/qualitas.png",
+            "phone": "800 288 6700 / 800 800 2880",
+            "phoneLink": "tel:8002886700"
+        },
+        {
+            "id": 3,
+            "name": "ANA",
+            "logo": "/images/brand/ana.png",
+            "phone": "800 911 2627",
+            "phoneLink": "tel:8009112627"
+        },
+        {
+            "id": 4,
+            "name": "AXA",
+            "logo": "/images/brand/axa.png",
+            "phone": "800 900 1292",
+            "phoneLink": "tel:8009001292"
+        },
+        {
+            "id": 5,
+            "name": "Atlas",
+            "logo": "/images/brand/atlas.png",
+            "phone": "800 849 3917",
+            "phoneLink": "tel:8008493917"
+        },
+        {
+            "id": 6,
+            "name": "Zurich",
+            "logo": "/images/brand/zurich.png",
+            "phone": "800 288 6911",
+            "phoneLink": "tel:8002886911"
+        },
+        {
+            "id": 7,
+            "name": "HDI",
+            "logo": "/images/brand/hdi.png",
+            "phone": "800 019 6000",
+            "phoneLink": "tel:8000196000"
+        },
+        {
+            "id": 8,
+            "name": "MetLife",
+            "logo": "/images/brand/metlife.png",
+            "phone": "55 5227 9000",
+            "phoneLink": "tel:5552279000"
+        },
+        {
+            "id": 9,
+            "name": "Primero Seguros",
+            "logo": "/images/brand/plan.png",
+            "phone": "800 017 6288",
+            "phoneLink": "tel:8000176288"
+        },
+        {
+            "id": 10,
+            "name": "CHUBB",
+            "logo": "/images/brand/chubb.png",
+            "phone": "811 253 3030",
+            "phoneLink": "tel:8112533030"
+        },
+        {
+            "id": 11,
+            "name": "AIG",
+            "logo": "/images/brand/aserta.png",
+            "phone": "800 001 1300",
+            "phoneLink": "tel:8000011300"
+        },
+        {
+            "id": 12,
+            "name": "New Horizon",
+            "logo": "/images/brand/nhseguros.png",
+            "phone": "1 713 4019563",
+            "phoneLink": "tel:17134019563"
+        }
+    ]
+}

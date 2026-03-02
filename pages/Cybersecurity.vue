@@ -135,8 +135,6 @@
             </div>
         </div>
 
-        <TestimonialTwo class="pb-0 bg-white" />
-
         <ContactUsFour />
 
         <ContactUsThree />
@@ -151,7 +149,6 @@
 <script>
     import HeaderCybersecurity from '@/components/HeaderCybersecurity';
     import HeroCybersecurity from '@/components/HeroCybersecurity';
-    import TestimonialTwo from '@/components/sections/TestimonialTwo';
     import BrandLogoCarousel from '@/components/BrandLogoCarousel';
     import ContactUsFour from '@/components/sections/ContactUsFour';
     import ContactUsThree from '@/components/sections/ContactUsThree';
@@ -165,7 +162,6 @@
             ContactUsFour,
             ContactUsThree,
             BrandLogoCarousel,
-            TestimonialTwo,
             Footer,
             OffCanvasMobileMenu
         },

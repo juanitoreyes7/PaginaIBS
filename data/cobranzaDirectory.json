@@ -1,0 +1,169 @@
+{
+    "title": "Directorio de Aseguradoras",
+    "subtitle": "Accede al portal de pago de tu aseguradora",
+    "companies": [
+        {
+            "id": 1,
+            "name": "Afirme",
+            "logo": "/images/brand/afirme.png",
+            "paymentUrl": "https://www.afirmeseguros.com/clientes/#/recibos",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 2,
+            "name": "Qualitas",
+            "logo": "/images/brand/qualitas.png",
+            "paymentUrl": "https://www.qualitas.com.mx/web/qmx/pago-de-poliza",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 3,
+            "name": "AXA",
+            "logo": "/images/brand/axa.png",
+            "paymentUrl": "https://cajaaxa.mitec.com.mx/cua/inicio.do?method=loginAgente&perfil=cliente",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 4,
+            "name": "Atlas",
+            "logo": "/images/brand/atlas.png",
+            "paymentUrl": "https://hyperion.segurosatlas.com.mx/Portales/Pages/General/PagoLinea2.aspx",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 5,
+            "name": "MetLife",
+            "logo": "/images/brand/metlife.png",
+            "paymentUrl": "https://www.metlife.com.mx/tramites-y-servicios/paga-tu-poliza/",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 6,
+            "name": "Zurich",
+            "logo": "/images/brand/zurich.png",
+            "paymentUrl": "https://miportal.zurich.com.mx/pagos/a ",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 7,
+            "name": "HDI",
+            "logo": "/images/brand/hdi.png",
+            "paymentUrl": " https://www.hdi.com.mx/atencion-a-clientes/pago-de-polizas/",
+            "paymentText": "Portal de Pago"
+        },
+        
+        {
+            "id": 8,
+            "name": "New Horizon",
+            "logo": "/images/brand/nhseguros.png",
+            "paymentUrl": "#",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 9,
+            "name": "ANA",
+            "logo": "/images/brand/ana.png",
+            "paymentUrl": "https://www.anaseguros.com.mx/",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 10,
+            "name": "General de Seguros",
+            "logo": "/images/brand/general.png",
+            "paymentUrl": "#",
+            "paymentText": "Portal de Pago"
+        },
+
+        {
+            "id": 11,
+            "name": "GNP",
+            "logo": "/images/brand/gnp.png",
+            "paymentUrl": "#",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 12,
+            "name": "AIG",
+            "logo": "/images/brand/aig.png",
+            "paymentUrl": "https://www.aig.com.mx",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 13,
+            "name": "Plan Seguro",
+            "logo": "/images/brand/plan.png",
+            "paymentUrl": "https://web.planseguro.com.mx:444/pagatupoliza/poliza",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 14,
+            "name": "CHUBB",
+            "logo": "/images/brand/chubb.png",
+            "paymentUrl": "https://aba.chubb.com/pago-poliza ",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 15,
+            "name": "Seguros Monterrey",
+            "logo": "/images/brand/mty.png",
+            "paymentUrl": " https://www.smnyl-clientes.com.mx/pago-en-linea/ ",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 16,
+            "name": "GMX",
+            "logo": "/images/brand/gmx.png",
+            "paymentUrl": "https://ews.gmx.com.mx/CO-DIG/pagoenlinea.aspx ",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 17,
+            "name": "SURA",
+            "logo": "/images/brand/sura.png",
+            "paymentUrl": "https://web.planseguro.com.mx:444/pagatupoliza/poliza",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 18,
+            "name": "INBURSA",
+            "logo": "/images/brand/inbursa.png",
+            "paymentUrl": " https://serviciosgfi.inbursa.com:4077/PagodePolizasGFI/BuscaPagoServicio.aspx    ",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 19,
+            "name": "Mapfre",
+            "logo": "/images/brand/mafre.png",
+            "paymentUrl": "https://zonaliados.mapfre.com.mx/cobranzaii/Gestion/Linea/LineaCBPublic.aspx?utm_source=homepage&utm_medium=banner ",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 20,
+            "name": "ARGOS",
+            "logo": "/images/brand/argos.png",
+            "paymentUrl": "https://www.segurosargos.com/sas2.0/cobros",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 21,
+            "name": "Allianz",
+            "logo": "/images/brand/allianz.png",
+            "paymentUrl": "https://www.allianz.com.mx/servicios/tramites/pago-en-linea.html",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 22,
+            "name": "Prevem",
+            "logo": "/images/brand/prevem.png",
+            "paymentUrl": "#",
+            "paymentText": "Portal de Pago"
+        },
+        {
+            "id": 22,
+            "name": "HIR",
+            "logo": "/images/brand/hir.png",
+            "paymentUrl": "#",
+            "paymentText": "Portal de Pago"
+        }
+    ]
+}

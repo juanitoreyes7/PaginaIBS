@@ -1,0 +1,19 @@
+# Ignora la carpeta de módulos de Node instalada localmente
+node_modules
+
+# Ignora logs de debug de npm
+npm-debug.log
+
+# No copies el propio Dockerfile ni el .dockerignore a la imagen
+Dockerfile
+.dockerignore
+
+# Ignora la carpeta de Git y el archivo gitignore
+.git
+.gitignore
+
+# Ignora archivos de variables de entorno locales
+*.env
+
+# Ignora el archivo README si no es necesario en la imagen
+README.md

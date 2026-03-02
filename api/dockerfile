@@ -1,0 +1,18 @@
+# Usa imagen oficial de Node.js
+FROM node:18-alpine
+
+# Directorio de trabajo
+WORKDIR /usr/src/app
+
+# Copia dependencias y código
+COPY package*.json ./
+RUN npm install --production
+
+COPY . .
+
+# Expón el puerto que usa tu servidor (Cloud Run usa $PORT)
+ENV PORT 8080
+EXPOSE 8080
+
+# Comando de inicio (ajusta según tu script)
+CMD ["node", "index.js"]

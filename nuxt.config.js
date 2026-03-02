@@ -37,6 +37,7 @@ export default {
     ** Plugins to load before mounting the App
     */
     plugins: [
+        '~/plugins/firebase.js',
         '~/plugins/vue-awesome-swiper.js',
         '~/plugins/vuejs-paginate.js',
         '~/plugins/observe-visibility.js',
@@ -74,8 +75,9 @@ export default {
         */
         extend (config, ctx) {
             // Fix for Node.js 17+ OpenSSL compatibility
-            config.output = config.output || {};
-            config.output.hashFunction = 'md4';
+            const crypto = require('crypto');
+            const crypto_orig_createHash = crypto.createHash;
+            crypto.createHash = algorithm => crypto_orig_createHash(algorithm === 'md4' ? 'sha256' : algorithm);
         }
     },
 }

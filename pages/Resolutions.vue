@@ -13,8 +13,6 @@
 
         <CtaContactTwo />
 
-        <TestimonialTwo />
-
         <FeatureGalleryFour />
 
         <CtaThree />
@@ -37,7 +35,6 @@
     import FunFactThree from '@/components/FunFactThree';
     import ServiceStyleFive from '@/components/sections/ServiceStyleFive';
     import CtaContactTwo from '@/components/CtaContactTwo';
-    import TestimonialTwo from '@/components/sections/TestimonialTwo';
     import FeatureGalleryFour from '@/components/sections/FeatureGalleryFour';
     import CtaThree from '@/components/CtaThree';
     import BrandLogoCarousel from '@/components/BrandLogoCarousel';
@@ -53,7 +50,6 @@
             FunFactThree,
             ServiceStyleFive,
             CtaContactTwo,
-            TestimonialTwo,
             FeatureGalleryFour,
             CtaThree,
             BrandLogoCarousel,

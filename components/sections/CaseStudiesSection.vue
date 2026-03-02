@@ -21,9 +21,15 @@
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                     </div>
-                    <div class="section-under-heading text-center section-space--mt_40">
-                        {{ data.underHeading }}
-                        <a href="http://eepurl.com/h9mhRj" Target="_blank">¡Aqui!</a>
+                    <div class="newsletter-modern section-space--mt_40">
+                        <div class="newsletter-modern-content">
+                            <span class="newsletter-icon"><i class="fas fa-envelope"></i></span>
+                            <span class="newsletter-title">Suscríbete a nuestro boletín</span>
+                            <a href="http://eepurl.com/h9mhRj" target="_blank" rel="noopener noreferrer" class="newsletter-btn-small">
+                                Suscribirse
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -81,3 +87,64 @@ export default {
     }
 };
 </script>
+
+<style scoped lang="scss">
+.newsletter-modern {
+    background: rgba(8, 106, 216, 0.08);
+    border: 1px solid rgba(8, 106, 216, 0.2);
+    border-radius: 12px;
+    padding: 16px 24px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-modern-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px 20px;
+}
+
+.newsletter-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(8, 106, 216, 0.15);
+    border-radius: 50%;
+    font-size: 14px;
+    color: #086AD8;
+}
+
+.newsletter-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+.newsletter-btn-small {
+    padding: 8px 18px;
+    background: #086AD8;
+    color: #fff !important;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+
+    &:hover {
+        background: #002FA6;
+        color: #fff !important;
+    }
+
+    i {
+        font-size: 11px;
+    }
+}
+</style>

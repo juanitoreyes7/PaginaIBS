@@ -4,6 +4,7 @@
         {
             "id": 1,
             "image": "/images/projects/sedan.png",
+            "imageBanner": "/images/bg/AUTOS.png",
             "heading": "Autos",
             "imageVideo": "/images/bg/auto.jpg",
             "desc": "Es un seguro que cubre el vehículo del propietario por los daños o hurto del automotor, así como por afectaciones aotras personas o a sus bienes, en casos de accidente de tránsito.",
@@ -20,7 +21,8 @@
             "id": 2,
             "image": "/images/projects/medicos.png",
             "heading": "Gastos Médicos",
-            "imageVideo": "/images/bg/gmm.png",
+            "imageBanner": "/images/bg/GMM.png",
+            "imageVideo": "/images/bg/GMMS.png",
             "desc": "Los seguros de gastos médicos que te ofrecemos están diseñados para enfrentar cualquier problema de salud, enfermedad o accidente, garantizando tu bienestar.",
             "youtube": "https://youtu.be/SyICKkdI9Fc",
             "acordDesc": "Este producto te da la protección financiera para hacer frente a los gastos generados por la atención médica originados de un accidente o enfermedad. ",
@@ -33,6 +35,7 @@
         {
             "id": 3,
             "image": "/images/projects/vida.png",
+            "imageBanner": "/images/bg/VIDAS.png",
             "heading": "Vida",
             "imageVideo": "/images/bg/vida.jpg",
             "acordDesc": "Este producto protege financieramente a tu familia y a otras personas que dependen de tus ingresos. Además, hay otros esquemas que te pueden ser de utilidad si lo que planeas es un ahorro para el retiro. ",
@@ -49,6 +52,8 @@
             "id": 4,
             "image": "/images/projects/viajes.png",
             "heading": "Viajes",
+            "imageBanner": "/images/bg/VIAJE.png",
+
             "imageVideo": "/images/bg/viaje.jpg",
             "desc": "Los seguros de viaje que te ofrecemos están diseñados para afrontar cualquier inconveniente en tu viaje durante las 24 horas del día y los 365 días del año.",
             "acordDesc": "Este producto está diseñado para cubrirte durante viajes de duración limitada. Está dirigido a turistas que hagan viajes cortos al extranjero o dentro de la república, ofrece protección como cancelaciones, pérdida de equipaje, atención médica de emergencia, responsabilidad civil, repatriación, entre otros.",
@@ -63,6 +68,8 @@
             "id": 5,
             "image": "/images/projects/hogar.png",
             "heading": "Hogar",
+            "imageBanner": "/images/bg/HOGAR.png",
+
             "imageVideo": "/images/bg/hogar.jpg",
             "acordDesc": "Los seguros de hogar que te ofrecemos están diseñados a tu estilo de vida, ya sea que vivas solo, en pareja o si tienes hijos.",
             "desc": "Es un producto para proteger financieramente tu patrimonio como lo es tu hogar, si resulta dañada o destruida.",
@@ -77,6 +84,7 @@
             "id": 6,
             "image": "/images/projects/empresarial.png",
             "heading": "Empresarial",
+            "imageBanner": "/images/bg/EMPRESARIAL.png",
             "imageVideo": "/images/bg/empresarial.jpg",
             "acordDesc": "Producto que protege a tu empresa ante cualquier riesgo de la actividad empresarial.",
             "desc": "Producto que protege a tu empresa ante cualquier riesgo de peligro en la actividad empresarial.",
@@ -91,6 +99,7 @@
             "id": 7,
             "image": "/images/projects/mascotas.png",
             "heading": "Mascotas",
+            "imageBanner": "/images/bg/MASCOTAS.png",
             "imageVideo": "/images/bg/mascotas.jpg",
             "acordDesc": "Es un tipo de seguro de salud, orientado a mascotas y otros animales domésticos",
             "desc": "Es un tipo de seguro de salud, orientado a mascotas y otros animales domésticos.",
@@ -105,6 +114,9 @@
             "id": 9,
             "image": "/images/projects/Flotillas.png",
             "heading": "Colectivos",
+
+            "imageBanner": "/images/bg/COLECTIVOS.png",
+
             "imageVideo": "/images/bg/colectivos.jpg",
             "acordDesc": "Estos seguros tienen como finalidad el proteger el activo más importante de las empresas que son sus colaboradores, asimismo parte de su patrimonio. Estos seguros se pueden brindar como prestación o como descuento por nómina dependiendo de el caso y necesidad de la empresa. Los productos que manejamos son: Vida, Gastos funerarios, Gastos médicos, Gastos médicos menores, Accidentes, flotillas de automóviles, pick-up y camiones.",
             "desc": "Estos seguros tienen como finalidad el proteger el activo más importante de las empresas que son sus colaboradores.",

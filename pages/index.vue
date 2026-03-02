@@ -3,15 +3,13 @@
 
         <HeaderAppointment />
 
-        <HeroCybersecurity />
+        <HeroInsurance />
 
         <BrandLogoCarousel />
 
         <CtaOne />
 
         <CaseStudiesSection />
-
-        <ContactUsFour />
 
         <CompanyHistory />
 
@@ -24,12 +22,11 @@
 
 <script>
 import HeaderAppointment from '@/components/HeaderAppointment';
-import HeroCybersecurity from '@/components/HeroCybersecurity';
+import HeroInsurance from '@/components/HeroInsurance';
 import BrandLogoCarousel from '@/components/BrandLogoCarousel';
 import CtaOne from '@/components/CtaOne';
 import CaseStudiesSection from '@/components/sections/CaseStudiesSection';
 import CompanyHistory from '@/components/sections/CompanyHistory';
-import ContactUsFour from '@/components/sections/ContactUsFour';
 import Footer from '@/components/Footer';
 import OffCanvasMobileMenu from '@/components/OffCanvasMobileMenu';
 
@@ -38,10 +35,9 @@ import OffCanvasMobileMenu from '@/components/OffCanvasMobileMenu';
 export default {
     components: {
         HeaderAppointment,
-        HeroCybersecurity,
+        HeroInsurance,
         CtaOne,
         BrandLogoCarousel,
-        ContactUsFour,
         CaseStudiesSection,
         CompanyHistory,
         Footer,

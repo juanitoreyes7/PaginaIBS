@@ -244,8 +244,6 @@
             </div>
         </div>
 
-        <TestimonialTwo />
-
         <CtaThree />
 
         <Footer />
@@ -259,7 +257,6 @@
     import data from '../../data/caseStidies.json';
 
     import HeaderAppointment from '@/components/HeaderAppointment';
-    import TestimonialTwo from '@/components/sections/TestimonialTwo';
     import AccordionTwo from '@/components/AccordionTwo';
     import CtaThree from '@/components/CtaThree';
     import Footer from '@/components/Footer';
@@ -268,7 +265,6 @@
     export default {
         components: {
             HeaderAppointment,
-            TestimonialTwo,
             AccordionTwo,
             CtaThree,
             Footer,
