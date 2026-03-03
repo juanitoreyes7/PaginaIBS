@@ -10,22 +10,72 @@ const { URL } = require('url'); // Asegúrate que esta línea exista
 
 router.get('/polizas', async (req, res) => {
   const { rfc } = req.query;
-  if (!rfc) return res.status(400).json({ error: 'RFC requerido' });
+
+  console.log('\n==============================');
+  console.log('[GET] /api/polizas');
+  console.log('query.rfc:', rfc);
+  console.log('==============================\n');
 
   try {
-    // Usar la nueva función optimizada que implementa la recomendación de SICAS
-    const polizasEncontradas = await consultarPolizasOptimizado(rfc);
+    if (!rfc) {
+      return res.status(400).json({ success: false, message: 'Falta rfc' });
+    }
 
-    // Filtrar por tipo de póliza según el IDSRamo
-    const autos = polizasEncontradas.filter(p => p.IDSRamo === '17' || p.IDSRamo === '19');
-    const gmm = polizasEncontradas.filter(p => p.IDSRamo === '10');
-    const vida = polizasEncontradas.filter(p => p.IDSRamo === '14');
-    const hogar = polizasEncontradas.filter(p => p.IDSRamo === '29');
+    console.log('[1] entrando al try');
+    console.log('[2] consultando SICAS...');
 
-    
-    res.json({ success: true, autos, gmm, vida, hogar });
-  } catch (error) {
-    res.status(500).json({ success: false, message: 'Error interno al consultar pólizas' });
+    // ✅ Aquí ya usamos tu service real
+    const polizas = await consultarPolizasOptimizado(rfc);
+
+    console.log('[3] SICAS OK. total:', polizas.length);
+
+    // ✅ Clasificación por IDSRamo (ajusta números si en tu SICAS son distintos)
+    const autos = [];
+    const gmm = [];
+    const vida = [];
+
+    for (const p of polizas) {
+      const id = String(p.IDSRamo || '').trim();
+
+      // ⚠️ AJUSTA ESTOS IDS A LOS TUYOS
+      // Normalmente SICAS usa IDs de ramo distintos por instalación.
+      // Deja logs para ver qué IDs te llegan.
+      if (id === '1' || /auto/i.test(p.ramo || '') || /auto/i.test(p.subRamo || '')) {
+        autos.push(p);
+      } else if (id === '2' || /gastos|m[eé]dicos/i.test(p.ramo || '') || /gmm/i.test(p.subRamo || '')) {
+        gmm.push(p);
+      } else if (id === '3' || /vida/i.test(p.ramo || '') || /vida/i.test(p.subRamo || '')) {
+        vida.push(p);
+      }
+    }
+
+    // ✅ si quieres ver qué IDS trae SICAS:
+    const idsEncontrados = [...new Set(polizas.map(x => String(x.IDSRamo || '').trim()))];
+    console.log('IDSRamo encontrados:', idsEncontrados);
+
+    return res.json({
+      success: true,
+      autos,
+      gmm,
+      vida
+    });
+
+  } catch (err) {
+    console.error('🔥 ERROR REAL en /api/polizas');
+    console.error('message:', err?.message);
+    console.error('stack:', err?.stack);
+    console.error('axios status:', err?.response?.status);
+    console.error('axios data:', err?.response?.data);
+
+    return res.status(500).json({
+      success: false,
+      message: 'Error interno al consultar pólizas',
+      debug: {
+        message: err?.message,
+        status: err?.response?.status,
+        data: err?.response?.data
+      }
+    });
   }
 });
 

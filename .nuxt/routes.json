@@ -154,6 +154,13 @@
     "_name": "_6a08158a"
   },
   {
+    "name": "poliza-hogar",
+    "path": "/poliza-hogar",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/poliza-hogar.vue",
+    "chunkName": "pages/poliza-hogar",
+    "_name": "_f4addc18"
+  },
+  {
     "name": "poliza-vida",
     "path": "/poliza-vida",
     "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/poliza-vida.vue",

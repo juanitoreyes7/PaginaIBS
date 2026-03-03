@@ -10,124 +10,144 @@
                 </nuxt-link>
 
                 <div v-if="!gm" class="poliza-gmm__empty">
-                    <p>No se encontró la póliza. <nuxt-link to="/portafolio-polizas">Ver portafolio</nuxt-link></p>
+                    <p>
+                        No se encontró la póliza.
+                        <nuxt-link to="/portafolio-polizas">Ver portafolio</nuxt-link>
+                    </p>
                 </div>
 
-                <template v-else>
-                    <!-- Banner -->
-                    <div class="poliza-gmm__banner">
-                        <p v-for="(item, idx) in asegurados" :key="idx" class="poliza-gmm__banner-title">
-                            {{ item.nombre }}
-                        </p>
-                    </div>
+                <div v-else class="poliza-gmm__content">
+                        <!-- Banner -->
+                        <div class="poliza-gmm__banner">
+                            <p v-for="(item, idx) in asegurados" :key="idx" class="poliza-gmm__banner-title">
+                                {{ item.nombre }}
+                            </p>
+                        </div>
 
-                    <!-- Asegurados -->
-                    <div v-if="asegurados.length" class="poliza-gmm__asegurados">
-                        <p v-for="(item, idx) in asegurados" :key="idx" class="poliza-gmm__asegurado-nombre">
-                            Detalle de póliza GMM
+                        <!-- Asegurados -->
+                        <div v-if="asegurados.length" class="poliza-gmm__asegurados">
+                            <p v-for="(item, idx) in asegurados" :key="idx" class="poliza-gmm__asegurado-nombre">
+                                {{ item.nombre }}
+                            </p>
+                        </div>
 
-                        </p>
-                    </div>
-
-                    <!-- Cards: Compañía/Estatus | Nº Póliza/Vigencia -->
-                    <div class="poliza-gmm__grid">
-                        <div class="poliza-gmm__card poliza-gmm__card--dark">
-                            <div class="poliza-gmm__field">
-                                <span class="poliza-gmm__label">Número de póliza</span>
-                                <span class="poliza-gmm__value poliza-gmm__value--dark">{{ gm.numPolizaGM || '—' }} </span>
+                        <!-- Cards: Compañía/Estatus | Nº Póliza/Vigencia -->
+                        <div class="poliza-gmm__grid">
+                            <div class="poliza-gmm__card poliza-gmm__card--dark">
+                                <div class="poliza-gmm__field">
+                                    <span class="poliza-gmm__label">Número de póliza</span>
+                                    <span class="poliza-gmm__value poliza-gmm__value--dark">
+                                        {{ gm.numPolizaGM || gm.numPoliza || gm.documento || '—' }}
+                                    </span>
+                                </div>
+                                <div class="poliza-gmm__field">
+                                    <span class="poliza-gmm__label">Compañía</span>
+                                    <span class="poliza-gmm__value">
+                                        {{ gm.compania && gm.compania.nombreCompania ? gm.compania.nombreCompania : (gm.ciaNombre || '—') }}
+                                    </span>
+                                </div>
+                                <div class="poliza-gmm__field">
+                                    <span class="poliza-gmm__label">Vigencia</span>
+                                    <span class="poliza-gmm__value poliza-gmm__value--dark">
+                                        {{ gm.vDesde || formatDate(gm.polizaDesde) }} al {{ gm.vHasta || formatDate(gm.polizaHasta) }}
+                                    </span>
+                                </div>
                             </div>
-                            <div class="poliza-gmm__field">
-                                <span class="poliza-gmm__label">Compañía</span>
-                                <span class="poliza-gmm__value">{{ gm.compania && gm.compania.nombreCompania ? gm.compania.nombreCompania : '—' }}</span>
-                            </div>
-                            <div class="poliza-gmm__field">
-                                <span class="poliza-gmm__label">Vigencia</span>
-                                <span class="poliza-gmm__value poliza-gmm__value--dark">{{ gm.vDesde || '—' }} al {{ gm.vHasta || '—' }}</span>
+                            <div class="poliza-gmm__card poliza-gmm__card--light">
+                                <div class="poliza-gmm__field">
+                                    <span class="poliza-gmm__label">Suma asegurada</span>
+                                    <span class="poliza-gmm__value">{{ gm.sumaGM || gm.primaTotal || '' }}</span>
+                                </div>
+
+                                <!-- Vista local: mostramos coaseguro y deducible numéricos -->
+                                <template v-if="!esExterna">
+                                    <div class="poliza-gmm__field">
+                                        <span class="poliza-gmm__label">Coaseguro </span>
+                                        <span class="poliza-gmm__value poliza-gmm__value--dark">{{ gm.coaseguro || '—' }}</span>
+                                    </div>
+                                    <div class="poliza-gmm__field">
+                                        <span class="poliza-gmm__label">Deducible </span>
+                                        <span class="poliza-gmm__value poliza-gmm__value--dark">{{ gm.deducible || '—' }}</span>
+                                    </div>
+                                </template>
+
+                                <!-- Vista SICAS: solo leyenda -->
+                                <template v-else>
+                                    <div class="poliza-gmm__field">
+                                        <span class="poliza-gmm__label">Coaseguro y deducible</span>
+                                        <span class="poliza-gmm__value poliza-gmm__value--dark poliza-gmm__value--small">
+                                            Para conocer tu coaseguro y deducible por favor descarga tu póliza en el botón inferior.
+                                        </span>
+                                    </div>
+                                </template>
                             </div>
                         </div>
-                        <div class="poliza-gmm__card poliza-gmm__card--light">
-                            <div class="poliza-gmm__field">
-                                <span class="poliza-gmm__label">Suma asegurada</span>
-                                <span class="poliza-gmm__value">{{ gm.sumaGM || '' }}</span>
-                            </div>
-                           
-                            <div class="poliza-gmm__field">
-                                <span class="poliza-gmm__label">Coaseguro </span>
-                                <span class="poliza-gmm__value poliza-gmm__value--dark">{{ gm.coaseguro || '—' }}</span>
-                            </div>
-                            <div class="poliza-gmm__field">
-                                <span class="poliza-gmm__label">Deducible </span>
-                                <span class="poliza-gmm__value poliza-gmm__value--dark">{{ gm.deducible || '—' }}</span>
+
+                        <!-- Programar una cirugía -->
+                        <div class="poliza-gmm__detalle-card poliza-gmm__card--light poliza-gmm__cirugia-card">
+                            <div class="poliza-gmm__cirugia-row">
+                                <div class="poliza-gmm__cirugia-text">
+                                    <h3 class="poliza-gmm__subtitle">Programar una cirugía</h3>
+                                    <p class="poliza-gmm__doc-intro">Estos documentos son necesarios para realizar este trámite:</p>
+                                    <ul class="poliza-gmm__doc-list">
+                                        <li>- Solicitud de reclamación de Gastos Médicos Mayores, llena y firmada por el titular de la póliza.</li>
+                                        <li>- Informe médico firmado por cada médico tratante. Incluir la fecha y lugar de la cirugía.</li>
+                                        <li>- Identificación oficial (original y copia).</li>
+                                    </ul>
+                                </div>
+                                <div class="poliza-gmm__cirugia-btns">
+                                    <a
+                                        :href="linkWhatsapp"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="poliza-gmm__btn poliza-gmm__btn--whatsapp"
+                                    >
+                                        <i class="fab fa-whatsapp"></i>
+                                        Contactar por WhatsApp
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Programar una cirugía -->
-                    <div class="poliza-gmm__detalle-card poliza-gmm__card--light">
-                        <div class="poliza-gmm__cirugia-row">
-                            <div class="poliza-gmm__cirugia-text">
-                                <h3 class="poliza-gmm__subtitle">Programar una cirugía</h3>
-                                <p class="poliza-gmm__doc-intro">Estos documentos son necesarios para realizar este trámite:</p>
-                                <ul class="poliza-gmm__doc-list">
-                                    <li>- Solicitud de reclamación de Gastos Médicos Mayores, llena y firmada por el titular de la póliza.</li>
-                                    <li>- Informe médico firmado por cada médico tratante. Incluir la fecha y lugar de la cirugía.</li>
-                                    <li>- Identificación oficial (original y copia).</li>
-                                </ul>
-                            </div>
-                            <div class="poliza-gmm__cirugia-btns">
-                                <a
-                                    :href="linkWhatsapp"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="poliza-gmm__btn poliza-gmm__btn--whatsapp"
-                                >
-                                    <i class="fab fa-whatsapp"></i>
-                                    Contactar por WhatsApp
-                                </a>
-                                
-                            </div>
+                        <!-- Botones: Descargables / Médicos y Hospitales -->
+                        <div class="poliza-gmm__row-two">
+                            <a
+                                href="https://ibsconsultores.com/descargables/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="poliza-gmm__btn poliza-gmm__btn--sec"
+                            >
+                                Descargables
+                            </a>
+                            <a
+                                href="https://www.ibsconsultores.com/hospitales/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="poliza-gmm__btn poliza-gmm__btn--sec"
+                            >
+                                Médicos y Hospitales
+                            </a>
                         </div>
+                        <div class="poliza-gmm__row-two">
+                            <button
+                                type="button"
+                                class="poliza-gmm__btn poliza-gmm__btn--primary"
+                                @click="abrirCondiciones"
+                            >
+                                Condiciones generales
+                            </button>
+                            <a
+                                v-if="pdfUrl"
+                                :href="pdfUrl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="poliza-gmm__btn poliza-gmm__btn--download"
+                            >
+                                Descargar PDF
+                            </a>
+                        </div>
+                        <p class="poliza-gmm__hint">Para más información descarga el documento.</p>
                     </div>
-
-                    <!-- Botones: WhatsApp, Siniestro, Descargables, Hospitales -->
-                    <div class="poliza-gmm__row-two">
-                        <a
-                            href="https://ibsconsultores.com/descargables/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="poliza-gmm__btn poliza-gmm__btn--sec"
-                        >
-                            Descargables
-                        </a>
-                        <a
-                            href="https://www.ibsconsultores.com/hospitales/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="poliza-gmm__btn poliza-gmm__btn--sec"
-                        >
-                            Médicos y Hospitales
-                        </a>
-                    </div>
-                    <div class="poliza-gmm__row-two">
-                        <button
-                            type="button"
-                            class="poliza-gmm__btn poliza-gmm__btn--primary"
-                            @click="abrirCondiciones"
-                        >
-                            Condiciones generales
-                        </button>
-                        <a
-                             v-if="gm.file_url"
-                            :href="gm.file_url"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="poliza-gmm__btn poliza-gmm__btn--download"
-                        >
-                        Descargar PDF
-                        </a>
-                    </div>
-                    <p class="poliza-gmm__hint">Para más información descarga el documento.</p>
-                </template>
             </div>
         </section>
 
@@ -157,8 +177,17 @@ export default {
         };
     },
     computed: {
+        esExterna() {
+            return this.gm && (this.gm._origen === 'sicas' || this.gm.ciaNombre);
+        },
         asegurados() {
-            return Array.isArray(this.gm && this.gm.dataAsegurados) ? this.gm.dataAsegurados : [];
+            // Para pólizas locales usamos dataAsegurados;
+            // para SICAS mostramos el nombre principal como único asegurado.
+            if (!this.gm) return [];
+            if (this.esExterna) {
+                return this.gm.nombre ? [{ nombre: this.gm.nombre }] : [];
+            }
+            return Array.isArray(this.gm.dataAsegurados) ? this.gm.dataAsegurados : [];
         },
         linkWhatsapp() {
             if (!this.gm || !this.gm.WPibs) {
@@ -174,6 +203,14 @@ export default {
                 : '8007770911';
             const tel = num.length === 10 ? `52${num}` : num.length === 12 && num.startsWith('52') ? num : `52${num}`;
             return `tel:+${tel}`;
+        },
+        pdfUrl() {
+            if (!this.gm) return '';
+            if (this.gm.file_url) return this.gm.file_url;
+            if (this.gm.idDocto) {
+                return `https://api-sicas-616002718679.us-central1.run.app/api/api/polizas/pdf/${this.gm.idDocto}`;
+            }
+            return '';
         }
     },
     head() {
@@ -197,10 +234,15 @@ export default {
     },
     methods: {
         async cargarLinkCondiciones() {
-            if (!this.gm || !this.gm.compania || !this.gm.compania.nombreCompania || !this.$db) return;
+            const nombreCompania = this.gm && (
+                this.gm.compania && this.gm.compania.nombreCompania
+                    ? this.gm.compania.nombreCompania
+                    : this.gm.ciaNombre
+            );
+            if (!this.gm || !nombreCompania || !this.$db) return;
             try {
                 const snap = await this.$db.collection('ImgCompania')
-                    .where('nombreCompania', '==', this.gm.compania.nombreCompania)
+                    .where('nombreCompania', '==', nombreCompania)
                     .get();
                 if (!snap.empty) {
                     this.linkCondiciones = snap.docs[0].data().linkCondiciones || '';
@@ -214,6 +256,14 @@ export default {
                 window.open(this.linkCondiciones, '_blank', 'noopener,noreferrer');
             } else {
                 alert('El enlace no está disponible.');
+            }
+        },
+        formatDate(date) {
+            if (!date) return '—';
+            try {
+                return new Date(date).toLocaleDateString('es-MX');
+            } catch (e) {
+                return date;
             }
         }
     }
@@ -250,6 +300,14 @@ export default {
     padding: 28px 24px;
     margin-bottom: 24px;
     color: #fff;
+}
+
+.poliza-gmm__banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .poliza-gmm__banner-title {

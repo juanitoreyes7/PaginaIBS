@@ -14,80 +14,161 @@
                 </div>
 
                 <template v-else>
-                    <!-- Banner tipo app -->
-                    <div class="poliza-vida__banner">
-                        <div class="poliza-vida__banner-inner">
-                            <h1 class="poliza-vida__banner-title">Póliza de Vida</h1>
-                            <a href="tel:8007770911" class="poliza-vida__banner-contact">
-                                <i class="fas fa-phone-alt"></i>
-                                Contáctanos 800 777 09 11
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Cards: izquierda oscura, derecha blanca -->
-                    <div class="poliza-vida__grid">
-                        <div class="poliza-vida__card poliza-vida__card--dark">
-                            <div class="poliza-vida__field">
-                                <span class="poliza-vida__label">Compañía</span>
-                                <span class="poliza-vida__value">{{ vida.compania && vida.compania.nombreCompania ? vida.compania.nombreCompania : '—' }}</span>
+                    <!-- Vista especial para pólizas de VIDA que vienen de SICAS -->
+                    <template v-if="esExterna">
+                        <div class="poliza-vida__banner">
+                            <div class="poliza-vida__banner-inner">
+                                <h1 class="poliza-vida__banner-title">Póliza de Vida</h1>
+                                <a href="tel:8007770911" class="poliza-vida__banner-contact">
+                                    <i class="fas fa-phone-alt"></i>
+                                    Contáctanos 800 777 09 11
+                                </a>
                             </div>
-                            <template v-if="vida.numPolizaVida !== 'AXA_KERALTY_SMTC'">
+                        </div>
+
+                        <div class="poliza-vida__grid">
+                            <!-- Card azul -->
+                            <div class="poliza-vida__card poliza-vida__card--dark">
+                                <div class="poliza-vida__field">
+                                    <span class="poliza-vida__label">Asegurado</span>
+                                    <span class="poliza-vida__value">
+                                        {{ (vida._rawSicas && vida._rawSicas.nombre) || vida.nombre || '—' }}
+                                    </span>
+                                </div>
+                                <div class="poliza-vida__field">
+                                    <span class="poliza-vida__label">Compañía</span>
+                                    <span class="poliza-vida__value">{{ vida.ciaNombre || '—' }}</span>
+                                </div>
                                 <div class="poliza-vida__field">
                                     <span class="poliza-vida__label">Estatus</span>
-                                    <span class="poliza-vida__value">{{ vida.estatus || '—' }}</span>
+                                    <span class="poliza-vida__value">{{ (vida.status || '').toString().toUpperCase() || '—' }}</span>
                                 </div>
+                            </div>
+
+                            <!-- Card blanca -->
+                            <div class="poliza-vida__card poliza-vida__card--light">
                                 <div class="poliza-vida__field">
-                                    <span class="poliza-vida__label">Suma asegurada</span>
-                                    <span class="poliza-vida__value">{{ vida.sumaVida || '—' }}</span>
-                                </div>
-                            </template>
-                        </div>
-                        <div class="poliza-vida__card poliza-vida__card--light">
-                            <template v-if="vida.numPolizaVida !== 'AXA_KERALTY_SMTC'">
-                                <div class="poliza-vida__field">
-                                    <span class="poliza-vida__label">Número de póliza</span>
+                                    <span class="poliza-vida__label">No. Póliza</span>
                                     <span class="poliza-vida__value poliza-vida__value--dark">{{ vida.numPolizaVida || '—' }}</span>
                                 </div>
-                            </template>
-                            <div class="poliza-vida__field">
-                                <span class="poliza-vida__label">Vigencia</span>
-                                <span class="poliza-vida__value poliza-vida__value--dark">{{ vida.vDesde || '—' }} al {{ vida.vHasta || '—' }}</span>
+                                <div class="poliza-vida__field">
+                                    <span class="poliza-vida__label">Vigencia</span>
+                                    <span class="poliza-vida__value poliza-vida__value--dark">
+                                        {{ formatDate(vida.polizaDesde) }} al {{ formatDate(vida.polizaHasta) }}
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Tres botones en un solo renglón -->
-                    <div class="poliza-vida__row poliza-vida__row--three">
-                        <button
-                            type="button"
-                            class="poliza-vida__btn poliza-vida__btn--primary"
-                            @click="abrirCondiciones"
-                        >
-                            Condiciones generales
-                        </button>
-                        <a
-                            v-if="vida.file_url"
-                            :href="vida.file_url"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="poliza-vida__btn poliza-vida__btn--download"
-                        >
-                            <i class="fas fa-download"></i>
-                            Descargar PDF
-                        </a>
-                        <a
-                            :href="linkWhatsapp"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="poliza-vida__btn poliza-vida__btn--whatsapp"
-                        >
-                            <i class="fab fa-whatsapp"></i>
-                            Asesoría de IBS Consultores
-                        </a>
-                    </div>
+                        <div class="poliza-vida__row poliza-vida__row--three">
+                            <button
+                                type="button"
+                                class="poliza-vida__btn poliza-vida__btn--primary"
+                                @click="abrirCondiciones"
+                            >
+                                Condiciones generales
+                            </button>
+                            <a
+                                v-if="pdfUrl"
+                                :href="pdfUrl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="poliza-vida__btn poliza-vida__btn--download"
+                            >
+                                <i class="fas fa-download"></i>
+                                Descargar PDF
+                            </a>
+                            <a
+                                :href="linkWhatsapp"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="poliza-vida__btn poliza-vida__btn--whatsapp"
+                            >
+                                <i class="fab fa-whatsapp"></i>
+                                Asesoría de IBS Consultores
+                            </a>
+                        </div>
 
-                    <p class="poliza-vida__hint">Para más información descarga el documento.</p>
+                        <p class="poliza-vida__hint">Para más información descarga el documento.</p>
+                    </template>
+
+                    <!-- Vista original para pólizas de Firebase -->
+                    <template v-else>
+                        <!-- Banner tipo app -->
+                        <div class="poliza-vida__banner">
+                            <div class="poliza-vida__banner-inner">
+                                <h1 class="poliza-vida__banner-title">Póliza de Vida</h1>
+                                <a href="tel:8007770911" class="poliza-vida__banner-contact">
+                                    <i class="fas fa-phone-alt"></i>
+                                    Contáctanos 800 777 09 11
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Cards: izquierda oscura, derecha blanca -->
+                        <div class="poliza-vida__grid">
+                            <div class="poliza-vida__card poliza-vida__card--dark">
+                                <div class="poliza-vida__field">
+                                    <span class="poliza-vida__label">Compañía</span>
+                                    <span class="poliza-vida__value">{{ vida.compania && vida.compania.nombreCompania ? vida.compania.nombreCompania : '—' }}</span>
+                                </div>
+                                <template v-if="vida.numPolizaVida !== 'AXA_KERALTY_SMTC'">
+                                    <div class="poliza-vida__field">
+                                        <span class="poliza-vida__label">Estatus</span>
+                                        <span class="poliza-vida__value">{{ vida.estatus || '—' }}</span>
+                                    </div>
+                                    <div class="poliza-vida__field">
+                                        <span class="poliza-vida__label">Suma asegurada</span>
+                                        <span class="poliza-vida__value">{{ vida.sumaVida || '—' }}</span>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="poliza-vida__card poliza-vida__card--light">
+                                <template v-if="vida.numPolizaVida !== 'AXA_KERALTY_SMTC'">
+                                    <div class="poliza-vida__field">
+                                        <span class="poliza-vida__label">Número de póliza</span>
+                                        <span class="poliza-vida__value poliza-vida__value--dark">{{ vida.numPolizaVida || '—' }}</span>
+                                    </div>
+                                </template>
+                                <div class="poliza-vida__field">
+                                    <span class="poliza-vida__label">Vigencia</span>
+                                    <span class="poliza-vida__value poliza-vida__value--dark">{{ vida.vDesde || '—' }} al {{ vida.vHasta || '—' }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tres botones en un solo renglón -->
+                        <div class="poliza-vida__row poliza-vida__row--three">
+                            <button
+                                type="button"
+                                class="poliza-vida__btn poliza-vida__btn--primary"
+                                @click="abrirCondiciones"
+                            >
+                                Condiciones generales
+                            </button>
+                            <a
+                                v-if="pdfUrl"
+                                :href="pdfUrl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="poliza-vida__btn poliza-vida__btn--download"
+                            >
+                                <i class="fas fa-download"></i>
+                                Descargar PDF
+                            </a>
+                            <a
+                                :href="linkWhatsapp"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="poliza-vida__btn poliza-vida__btn--whatsapp"
+                            >
+                                <i class="fab fa-whatsapp"></i>
+                                Asesoría de IBS Consultores
+                            </a>
+                        </div>
+
+                        <p class="poliza-vida__hint">Para más información descarga el documento.</p>
+                    </template>
                 </template>
             </div>
         </section>
@@ -119,8 +200,19 @@ export default {
         };
     },
     computed: {
+        esExterna() {
+            return this.vida && (this.vida._origen === 'sicas' || this.vida.ciaNombre);
+        },
         linkWhatsapp() {
             return WHATSAPP_LINK;
+        },
+        pdfUrl() {
+            if (!this.vida) return '';
+            if (this.vida.file_url) return this.vida.file_url;
+            if (this.vida.idDocto) {
+                return `https://api-sicas-616002718679.us-central1.run.app/api/api/polizas/pdf/${this.vida.idDocto}`;
+            }
+            return '';
         }
     },
     head() {
@@ -144,12 +236,17 @@ export default {
     },
     methods: {
         async cargarLinkCondiciones() {
-            if (!this.vida || !this.vida.compania || !this.vida.compania.nombreCompania || !this.$db) {
+            const nombreCompania = this.vida && (
+                this.vida.compania && this.vida.compania.nombreCompania
+                    ? this.vida.compania.nombreCompania
+                    : this.vida.ciaNombre
+            );
+            if (!this.vida || !nombreCompania || !this.$db) {
                 return;
             }
             try {
                 const snap = await this.$db.collection('ImgCompania')
-                    .where('nombreCompania', '==', this.vida.compania.nombreCompania)
+                    .where('nombreCompania', '==', nombreCompania)
                     .get();
                 if (!snap.empty) {
                     this.linkCondiciones = snap.docs[0].data().linkCondiciones || '';
@@ -163,6 +260,14 @@ export default {
                 window.open(this.linkCondiciones, '_blank', 'noopener,noreferrer');
             } else {
                 alert('El enlace no está disponible.');
+            }
+        },
+        formatDate(date) {
+            if (!date) return '—';
+            try {
+                return new Date(date).toLocaleDateString('es-MX');
+            } catch (e) {
+                return date;
             }
         }
     }

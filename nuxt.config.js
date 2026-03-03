@@ -4,10 +4,7 @@ export default {
     },
 
     target: 'static',
-    
-    /*
-    ** Headers of the page
-    */
+
     head: {
         title: process.env.npm_package_name || 'Vue.JS Technology & Blog Template',
         meta: [
@@ -19,44 +16,33 @@ export default {
             { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }
         ]
     },
-    /*
-    ** Customize the progress-bar color
-    */
+
     loading: { color: '#fff' },
-    /*
-    ** Global CSS
-    */
+
     css: [
-        'assets/scss/style.scss',
+        'assets/scss/style.scss'
     ],
 
     router: {
-        linkExactActiveClass: 'active-link',
+        linkExactActiveClass: 'active-link'
     },
-    /*
-    ** Plugins to load before mounting the App
-    */
+
     plugins: [
         '~/plugins/firebase.js',
         '~/plugins/vue-awesome-swiper.js',
         '~/plugins/vuejs-paginate.js',
-        '~/plugins/observe-visibility.js',
+        '~/plugins/observe-visibility.js'
     ],
 
     components: true,
-    
-    /*
-    ** Nuxt.js dev-modules
-    */
-    buildModules: [
-        
-    ],
-    /*
-    ** Nuxt.js modules
-    */
+
+    buildModules: [],
+
     modules: [
         'bootstrap-vue/nuxt',
         '@nuxtjs/style-resources',
+        '@nuxtjs/axios',
+        '@nuxtjs/proxy'
     ],
 
     styleResources: {
@@ -65,19 +51,28 @@ export default {
         ]
     },
 
-    /*
-    ** Build configuration
-    */
+    axios: {
+        proxy: true
+    },
+
+    proxy: {
+        '/api/': {
+            target: process.env.API_BASE_URL || 'http://localhost:8080',
+            pathRewrite: { '^/api/': '/api/' },
+            changeOrigin: true
+        }
+    },
+
+    publicRuntimeConfig: {
+        apiBaseUrl: process.env.API_BASE_URL || 'http://localhost:8080/api'
+    },
+
     build: {
         extractCSS: true,
-        /*
-        ** You can extend webpack config here
-        */
-        extend (config, ctx) {
-            // Fix for Node.js 17+ OpenSSL compatibility
+        extend(config, ctx) {
             const crypto = require('crypto');
             const crypto_orig_createHash = crypto.createHash;
             crypto.createHash = algorithm => crypto_orig_createHash(algorithm === 'md4' ? 'sha256' : algorithm);
         }
-    },
+    }
 }

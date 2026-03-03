@@ -14,78 +14,161 @@
                 </div>
 
                 <template v-else>
-                    <div class="poliza-auto__banner">
-                        <h1 class="poliza-auto__banner-title">Póliza de Auto</h1>
-                        <p class="poliza-auto__banner-sub">{{ auto.descripcionAuto }} {{ auto.modelo || '' }}</p>
-                    </div>
+                    <!-- Layout para pólizas que vienen de SICAS / API externa -->
+                    <template v-if="esExterna">
+                        <div class="poliza-auto__banner">
+                            <h1 class="poliza-auto__banner-title">Póliza de Auto</h1>
+                            <p class="poliza-auto__banner-sub">
+                                {{ auto.concepto || 'Cobertura de auto' }}
+                            </p>
+                        </div>
 
-                    <div class="poliza-auto__grid">
-                        <div class="poliza-auto__card poliza-auto__card--dark">
-                            <div class="poliza-auto__field">
-                                <span class="poliza-auto__label">Compañía</span>
-                                <span class="poliza-auto__value">{{ auto.compania && auto.compania.nombreCompania ? auto.compania.nombreCompania : '—' }}</span>
+                        <div class="poliza-auto__grid">
+                            <div class="poliza-auto__card poliza-auto__card--dark">
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Compañía</span>
+                                    <span class="poliza-auto__value">{{ auto.ciaNombre || '—' }}</span>
+                                </div>
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Estado</span>
+                                    <span class="poliza-auto__value">{{ (auto.status || '').toUpperCase() }}</span>
+                                </div>
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Concepto</span>
+                                    <span class="poliza-auto__value">{{ auto.concepto || '—' }}</span>
+                                </div>
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Forma de pago</span>
+                                    <span class="poliza-auto__value">{{ auto.formaPago || '—' }}</span>
+                                </div>
                             </div>
-                            <div class="poliza-auto__field">
-                                <span class="poliza-auto__label">Estado</span>
-                                <span class="poliza-auto__value">{{ (auto.estatus || '').toUpperCase() }}</span>
-                            </div>
-                            <div class="poliza-auto__field">
-                                <span class="poliza-auto__label">Cobertura</span>
-                                <span class="poliza-auto__value">{{ auto.cobertura || '—' }}</span>
-                            </div>
-                            <div class="poliza-auto__field">
-                                <span class="poliza-auto__label">Forma de pago</span>
-                                <span class="poliza-auto__value">{{ auto.formaPago || '—' }}</span>
+
+                            <div class="poliza-auto__card poliza-auto__card--light">
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Número de póliza</span>
+                                    <span class="poliza-auto__value poliza-auto__value--dark">{{ auto.numPoliza || '—' }}</span>
+                                </div>
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Asegurado</span>
+                                    <span class="poliza-auto__value poliza-auto__value--dark">{{ (auto._rawSicas && auto._rawSicas.nombre) || auto.nombre || '—' }}</span>
+                                </div>
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Prima total</span>
+                                    <span class="poliza-auto__value poliza-auto__value--dark">{{ auto.primaTotal || '—' }}</span>
+                                </div>
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Vigencia</span>
+                                    <span class="poliza-auto__value poliza-auto__value--dark">
+                                        {{ formatDate(auto.polizaDesde) }} al {{ formatDate(auto.polizaHasta) }}
+                                    </span>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="poliza-auto__card poliza-auto__card--light">
-                            <div class="poliza-auto__field">
-                                <span class="poliza-auto__label">Descripción del vehículo</span>
-                                <span class="poliza-auto__value poliza-auto__value--dark">{{ auto.descripcionAuto }} {{ auto.modelo || '' }}</span>
+                        <div class="poliza-auto__row poliza-auto__row--three">
+                            <button
+                                type="button"
+                                class="poliza-auto__btn poliza-auto__btn--primary"
+                                @click="abrirCondiciones"
+                            >
+                                Condiciones generales
+                            </button>
+                            <a
+                                v-if="pdfUrl"
+                                :href="pdfUrl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="poliza-auto__btn poliza-auto__btn--download"
+                            >
+                                <i class="fas fa-download"></i>
+                                Descargar PDF
+                            </a>
+                            <button
+                                type="button"
+                                class="poliza-auto__btn poliza-auto__btn--siniestro"
+                                @click="abrirModalSiniestro"
+                            >
+                                Siniestro
+                            </button>
+                        </div>
+                        <p class="poliza-auto__hint">Para más información descarga el documento.</p>
+                    </template>
+
+                    <!-- Layout original para pólizas internas (Firebase) -->
+                    <template v-else>
+                        <div class="poliza-auto__banner">
+                            <h1 class="poliza-auto__banner-title">Póliza de Auto</h1>
+                            <p class="poliza-auto__banner-sub">{{ auto.descripcionAuto }} {{ auto.modelo || '' }}</p>
+                        </div>
+
+                        <div class="poliza-auto__grid">
+                            <div class="poliza-auto__card poliza-auto__card--dark">
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Compañía</span>
+                                    <span class="poliza-auto__value">{{ auto.compania && auto.compania.nombreCompania ? auto.compania.nombreCompania : '—' }}</span>
+                                </div>
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Estado</span>
+                                    <span class="poliza-auto__value">{{ (auto.estatus || '').toUpperCase() }}</span>
+                                </div>
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Cobertura</span>
+                                    <span class="poliza-auto__value">{{ auto.cobertura || '—' }}</span>
+                                </div>
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Forma de pago</span>
+                                    <span class="poliza-auto__value">{{ auto.formaPago || '—' }}</span>
+                                </div>
                             </div>
-                            <div class="poliza-auto__field">
-                                <span class="poliza-auto__label">NS</span>
-                                <span class="poliza-auto__value poliza-auto__value--dark">{{ auto.numSerie || '—' }}</span>
-                            </div>
-                            <div class="poliza-auto__field">
-                                <span class="poliza-auto__label">Número de póliza</span>
-                                <span class="poliza-auto__value poliza-auto__value--dark">{{ auto.numPoliza || '—' }}</span>
-                            </div>
-                            <div class="poliza-auto__field">
-                                <span class="poliza-auto__label">Vigencia</span>
-                                <span class="poliza-auto__value poliza-auto__value--dark">{{ auto.vDesde || '—' }} al {{ auto.vHasta || '—' }}</span>
+
+                            <div class="poliza-auto__card poliza-auto__card--light">
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Descripción del vehículo</span>
+                                    <span class="poliza-auto__value poliza-auto__value--dark">{{ auto.descripcionAuto }} {{ auto.modelo || '' }}</span>
+                                </div>
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">NS</span>
+                                    <span class="poliza-auto__value poliza-auto__value--dark">{{ auto.numSerie || '—' }}</span>
+                                </div>
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Número de póliza</span>
+                                    <span class="poliza-auto__value poliza-auto__value--dark">{{ auto.numPoliza || '—' }}</span>
+                                </div>
+                                <div class="poliza-auto__field">
+                                    <span class="poliza-auto__label">Vigencia</span>
+                                    <span class="poliza-auto__value poliza-auto__value--dark">{{ auto.vDesde || '—' }} al {{ auto.vHasta || '—' }}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="poliza-auto__row poliza-auto__row--three">
-                        <button
-                            type="button"
-                            class="poliza-auto__btn poliza-auto__btn--primary"
-                            @click="abrirCondiciones"
-                        >
-                            Condiciones generales
-                        </button>
-                        <a
-                            v-if="auto.file_url"
-                            :href="auto.file_url"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="poliza-auto__btn poliza-auto__btn--download"
-                        >
-                            <i class="fas fa-download"></i>
-                            Descargar PDF
-                        </a>
-                        <button
-                            type="button"
-                            class="poliza-auto__btn poliza-auto__btn--siniestro"
-                            @click="abrirModalSiniestro"
-                        >
-                            Siniestro
-                        </button>
-                    </div>
-                    <p class="poliza-auto__hint">Para más información descarga el documento.</p>
+                        <div class="poliza-auto__row poliza-auto__row--three">
+                            <button
+                                type="button"
+                                class="poliza-auto__btn poliza-auto__btn--primary"
+                                @click="abrirCondiciones"
+                            >
+                                Condiciones generales
+                            </button>
+                            <a
+                                v-if="pdfUrl"
+                                :href="pdfUrl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="poliza-auto__btn poliza-auto__btn--download"
+                            >
+                                <i class="fas fa-download"></i>
+                                Descargar PDF
+                            </a>
+                            <button
+                                type="button"
+                                class="poliza-auto__btn poliza-auto__btn--siniestro"
+                                @click="abrirModalSiniestro"
+                            >
+                                Siniestro
+                            </button>
+                        </div>
+                        <p class="poliza-auto__hint">Para más información descarga el documento.</p>
+                    </template>
                 </template>
             </div>
         </section>
@@ -126,7 +209,12 @@
                         <div class="siniestro-modal__step">
                             <span class="siniestro-modal__step-num">3.</span>
                             <strong> Reporta el siniestro a:</strong>
-                            <span v-if="auto && auto.compania && auto.compania.nombreCompania"> {{ auto.compania.nombreCompania }}</span>
+                            <span v-if="auto && auto.compania && auto.compania.nombreCompania">
+                                {{ auto.compania.nombreCompania }}
+                            </span>
+                            <span v-else-if="auto && auto.ciaNombre">
+                                {{ auto.ciaNombre }}
+                            </span>
                         </div>
                         <p class="siniestro-modal__step-text">
                             Al reportar el siniestro se te asignará un número de reporte es importante anotarlo.
@@ -181,8 +269,19 @@ export default {
         };
     },
     computed: {
+        esExterna() {
+            return this.auto && (this.auto._origen === 'sicas' || this.auto.ciaNombre);
+        },
         linkWhatsappAsesoria() {
             return WHATSAPP_ASESORIA;
+        },
+        pdfUrl() {
+            if (!this.auto) return '';
+            if (this.auto.file_url) return this.auto.file_url;
+            if (this.auto.idDocto) {
+                return `https://api-sicas-616002718679.us-central1.run.app/api/api/polizas/pdf/${this.auto.idDocto}`;
+            }
+            return '';
         },
         telReportarSiniestro() {
             const num = this.auto && this.auto.compania && this.auto.compania.numTelefonoAuto
@@ -220,12 +319,17 @@ export default {
     },
     methods: {
         async cargarLinkCondiciones() {
-            if (!this.auto || !this.auto.compania || !this.auto.compania.nombreCompania || !this.$db) {
+            const nombreCompania = this.auto && (
+                this.auto.compania && this.auto.compania.nombreCompania
+                    ? this.auto.compania.nombreCompania
+                    : this.auto.ciaNombre
+            );
+            if (!this.auto || !nombreCompania || !this.$db) {
                 return;
             }
             try {
                 const snap = await this.$db.collection('ImgCompania')
-                    .where('nombreCompania', '==', this.auto.compania.nombreCompania)
+                    .where('nombreCompania', '==', nombreCompania)
                     .get();
                 if (!snap.empty) {
                     this.linkCondiciones = snap.docs[0].data().linkCondiciones || '';
@@ -246,6 +350,14 @@ export default {
         },
         cerrarModalSiniestro() {
             this.showModalSiniestro = false;
+        },
+        formatDate(date) {
+            if (!date) return '—';
+            try {
+                return new Date(date).toLocaleDateString('es-MX');
+            } catch (e) {
+                return date;
+            }
         },
     }
 };

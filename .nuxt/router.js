@@ -26,6 +26,7 @@ const _7fc959b9 = () => interopDefault(import('../pages/poliza-accidente.vue' /*
 const _1e4a97fc = () => interopDefault(import('../pages/poliza-auto.vue' /* webpackChunkName: "pages/poliza-auto" */))
 const _f74eb910 = () => interopDefault(import('../pages/poliza-funeraria.vue' /* webpackChunkName: "pages/poliza-funeraria" */))
 const _6a08158a = () => interopDefault(import('../pages/poliza-gmm.vue' /* webpackChunkName: "pages/poliza-gmm" */))
+const _f4addc18 = () => interopDefault(import('../pages/poliza-hogar.vue' /* webpackChunkName: "pages/poliza-hogar" */))
 const _0ce5ac3d = () => interopDefault(import('../pages/poliza-vida.vue' /* webpackChunkName: "pages/poliza-vida" */))
 const _c871cc0e = () => interopDefault(import('../pages/portafolio-polizas.vue' /* webpackChunkName: "pages/portafolio-polizas" */))
 const _57ea64ce = () => interopDefault(import('../pages/portal.vue' /* webpackChunkName: "pages/portal" */))
@@ -150,6 +151,10 @@ export const routerOptions = {
     path: "/poliza-gmm",
     component: _6a08158a,
     name: "poliza-gmm"
+  }, {
+    path: "/poliza-hogar",
+    component: _f4addc18,
+    name: "poliza-hogar"
   }, {
     path: "/poliza-vida",
     component: _0ce5ac3d,
