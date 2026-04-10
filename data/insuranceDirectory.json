@@ -61,7 +61,7 @@
         },
         {
             "id": 9,
-            "name": "Primero Seguros",
+            "name": "Plan Seguros",
             "logo": "/images/brand/plan.png",
             "phone": "800 017 6288",
             "phoneLink": "tel:8000176288"
@@ -72,20 +72,6 @@
             "logo": "/images/brand/chubb.png",
             "phone": "811 253 3030",
             "phoneLink": "tel:8112533030"
-        },
-        {
-            "id": 11,
-            "name": "AIG",
-            "logo": "/images/brand/aserta.png",
-            "phone": "800 001 1300",
-            "phoneLink": "tel:8000011300"
-        },
-        {
-            "id": 12,
-            "name": "New Horizon",
-            "logo": "/images/brand/nhseguros.png",
-            "phone": "1 713 4019563",
-            "phoneLink": "tel:17134019563"
         }
     ]
 }

@@ -8,6 +8,11 @@
                     </n-link>
                 </li>
                 <li>
+                    <n-link to="/agente">
+                        <span>Únete como agente</span>
+                    </n-link>
+                </li>
+                <li>
                     <n-link to="/case-studies">
                         <span>Seguros</span>
                     </n-link>
@@ -27,19 +32,15 @@
                         <span>Descargables</span>
                     </n-link>
                 </li>
-                <li class="mobile-nav-logout">
-                    <a
-                        v-if="!isLoggedIn"
-                        href="/login"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="mobile-logout-btn mobile-login-link"
+                <li
+                    v-if="isLoggedIn"
+                    class="mobile-nav-logout"
+                >
+                    <button
+                        type="button"
+                        class="mobile-logout-btn"
+                        @click="cerrarSesion"
                     >
-                        <i class="fas fa-sign-in-alt"></i>
-                        <span>Iniciar sesión</span>
-                    </a>
-                    <button v-else type="button" class="mobile-logout-btn" @click="cerrarSesion">
-                        <i class="fas fa-sign-out-alt"></i>
                         <span>Cerrar sesión</span>
                     </button>
                 </li>

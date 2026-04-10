@@ -326,7 +326,7 @@ export default {
     border-radius: 20px;
     padding: 12px 12px 14px;
     box-shadow: 0 8px 24px rgba(0, 47, 166, 0.12);
-    width: 150px;
+    width: min(220px, 40vw);
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;

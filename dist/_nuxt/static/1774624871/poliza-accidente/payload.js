@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/poliza-accidente", {data:[{}],fetch:{},mutations:void 0});

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/beneficios/hospital-angeles-chihuahua", {data:[{}],fetch:{},mutations:void 0});

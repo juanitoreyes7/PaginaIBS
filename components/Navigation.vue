@@ -1,14 +1,7 @@
 <template>
     <ul>
-        <li v-for="(item, index) in navItemsWithIcons" :key="index">
+        <li v-for="(item, index) in navItems" :key="index">
             <n-link :to="item.to">
-                <img
-                    v-if="item.icon && item.icon.startsWith('/')"
-                    :src="item.icon"
-                    :alt="item.label"
-                    class="nav-item-icon"
-                >
-                <i v-else-if="item.icon" :class="item.icon" class="nav-item-icon nav-item-icon--fa"></i>
                 <span>{{ item.label }}</span>
             </n-link>
         </li>
@@ -19,46 +12,42 @@
 export default {
     data() {
         return {
-            navItemsWithIcons: [
+            navItems: [
                 {
-                    to: '/portal',
-                    label: 'Inicio',
-                    icon: 'fas fa-home'
+                    to: '/',
+                    label: 'Inicio'
                 },
                 {
                     to: '/about',
-                    label: 'Nosotros',
-                    icon: 'fas fa-users'
+                    label: 'Nosotros'
+                },
+                {
+                    to: '/agente',
+                    label: 'Únete como agente'
                 },
                 {
                     to: '/case-studies',
-                    label: 'Seguros',
-                    icon: 'fas fa-shield-alt'
+                    label: 'Seguros'
                 },
                 {
                     to: '/ibsapp',
-                    label: 'IBSApp',
-                    icon: 'fas fa-mobile-alt'
+                    label: 'IBSApp'
                 },
                 {
                     to: '/siniestros',
-                    label: 'Siniestros',
-                    icon: 'fas fa-exclamation-triangle'
+                    label: 'Siniestros'
                 },
                 {
                     to: '/cobranza',
-                    label: 'Cobranza',
-                    icon: 'fas fa-file-invoice-dollar'
+                    label: 'Cobranza'
                 },
                 {
                     to: '/contact',
-                    label: 'Contacto',
-                    icon: 'fas fa-envelope'
+                    label: 'Contacto'
                 },
                 {
                     to: '/descargables',
-                    label: 'Descargables',
-                    icon: 'fas fa-download'
+                    label: 'Descargables'
                 }
             ]
         };
@@ -67,17 +56,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.nav-item-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    vertical-align: middle;
-    object-fit: contain;
-
-    &--fa {
-        font-size: 16px;
-        width: auto;
-        height: auto;
-    }
-}
 </style>

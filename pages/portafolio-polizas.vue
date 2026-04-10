@@ -195,6 +195,60 @@
   
       <Footer />
       <OffCanvasMobileMenu />
+
+      <!-- Widget de chat IA -->
+      <transition name="chat-fade">
+        <div v-if="showChat" class="chat-widget">
+          <div class="chat-widget__header">
+            <span class="chat-widget__title">IBY tu asistente virtual de IBS Consultores</span>
+            <button
+              type="button"
+              class="chat-widget__close"
+              @click="toggleChat"
+            >
+              ×
+            </button>
+          </div>
+
+          <div class="chat-widget__body">
+            <div
+              v-for="(msg, index) in chatMessages"
+              :key="index"
+              class="chat-widget__message"
+              :class="msg.from === 'user' ? 'chat-widget__message--user' : 'chat-widget__message--bot'"
+            >
+              {{ msg.text }}
+            </div>
+          </div>
+
+          <div class="chat-widget__footer">
+            <input
+              v-model="chatInput"
+              type="text"
+              class="chat-widget__input"
+              placeholder="Escribe tu pregunta sobre tus pólizas..."
+              @keyup.enter.prevent="sendChatMessage"
+            />
+            <button
+              type="button"
+              class="chat-widget__send"
+              :disabled="!chatInput.trim() || chatLoading"
+              @click="sendChatMessage"
+            >
+              <span v-if="!chatLoading">Enviar</span>
+              <span v-else>...</span>
+            </button>
+          </div>
+        </div>
+      </transition>
+
+      <button
+        type="button"
+        class="chat-widget__toggle"
+        @click="toggleChat"
+      >
+        <i class="fas fa-comments"></i>
+      </button>
     </div>
   </template>
   
@@ -219,7 +273,16 @@
         },
         isLoading: true,
         error: null,
-        refreshing: false
+        refreshing: false,
+        showChat: false,
+        chatMessages: [
+          {
+            from: 'bot',
+            text: 'Hola, soy IBY tu asistente virtual de IBS Consultores tu mejor agente de seguros y fianzas. ¿En qué puedo ayudarte?'
+          }
+        ],
+        chatInput: '',
+        chatLoading: false
       };
     },
   
@@ -685,6 +748,44 @@
             console.error(e);
           }
         }
+      },
+
+      toggleChat() {
+        this.showChat = !this.showChat;
+      },
+
+      async sendChatMessage() {
+        const texto = this.chatInput.trim();
+        if (!texto || this.chatLoading) return;
+
+        const userMessage = { from: 'user', text: texto };
+        this.chatMessages.push(userMessage);
+        this.chatInput = '';
+        this.chatLoading = true;
+
+        try {
+          const response = await this.$axios.$post('/api/chat-ia', {
+            mensaje: texto
+          });
+
+          const respuesta =
+            response && (response.respuesta || response.message || response.mensaje)
+              ? (response.respuesta || response.message || response.mensaje)
+              : 'He recibido tu mensaje. En este momento el asistente está en modo de prueba.';
+
+          this.chatMessages.push({
+            from: 'bot',
+            text: respuesta
+          });
+        } catch (error) {
+          console.error('Error en el chat IA:', error);
+          this.chatMessages.push({
+            from: 'bot',
+            text: 'Hubo un problema al contactar al asistente. Intenta de nuevo más tarde.'
+          });
+        } finally {
+          this.chatLoading = false;
+        }
       }
     }
   };
@@ -928,5 +1029,150 @@
         opacity: 0.9;
         color: #ffffff;
     }
+}
+
+/* =======================
+   Widget de chat IA fijo
+   ======================= */
+
+.chat-widget__toggle {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background: #086AD8;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.35);
+    cursor: pointer;
+    z-index: 9999;
+    font-size: 22px;
+
+    &:hover {
+        background: #0552aa;
+    }
+}
+
+.chat-widget {
+    position: fixed;
+    left: 20px;
+    bottom: 90px;
+    width: 320px;
+    max-height: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.55);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 9999;
+    border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.chat-widget__header {
+    background: linear-gradient(135deg, #002FA6 0%, #086AD8 100%);
+    color: #ffffff;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat-widget__title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.chat-widget__close {
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.chat-widget__body {
+    padding: 10px 12px;
+    flex: 1;
+    overflow-y: auto;
+    background: #f8fafc;
+}
+
+.chat-widget__message {
+    max-width: 90%;
+    padding: 8px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+.chat-widget__message--bot {
+    background: #e2e8f0;
+    color: #0f172a;
+    align-self: flex-start;
+}
+
+.chat-widget__message--user {
+    background: #086AD8;
+    color: #ffffff;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.chat-widget__footer {
+    padding: 8px;
+    display: flex;
+    gap: 6px;
+    border-top: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.chat-widget__input {
+    flex: 1;
+    border-radius: 999px;
+    border: 1px solid #cbd5e1;
+    padding: 6px 10px;
+    font-size: 13px;
+    outline: none;
+
+    &:focus {
+        border-color: #086AD8;
+        box-shadow: 0 0 0 1px rgba(8, 106, 216, 0.15);
+    }
+}
+
+.chat-widget__send {
+    border-radius: 999px;
+    border: none;
+    background: #086AD8;
+    color: #ffffff;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.chat-fade-enter-active,
+.chat-fade-leave-active {
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.chat-fade-enter,
+.chat-fade-leave-to {
+    opacity: 0;
+    transform: translateY(12px);
 }
 </style>

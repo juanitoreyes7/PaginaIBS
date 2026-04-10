@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/beneficios/sierra-alta", {data:[{}],fetch:{},mutations:void 0});

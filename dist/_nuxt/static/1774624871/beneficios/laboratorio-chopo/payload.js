@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/beneficios/laboratorio-chopo", {data:[{}],fetch:{},mutations:void 0});

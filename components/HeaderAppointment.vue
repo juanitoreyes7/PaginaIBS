@@ -103,11 +103,7 @@
 
                                         <!-- Menú reducido para usuarios conectados -->
                                         <ul v-else class="navigation-single">
-                                            <li>
-                                                <n-link to="/portal">
-                                                    <span>Inicio</span>
-                                                </n-link>
-                                            </li>
+                                  
                                             <li>
                                                 <n-link to="/portafolio-polizas">
                                                     <span>Mis pólizas</span>
@@ -119,24 +115,20 @@
                                                 </n-link>
                                             </li>
                                             <li>
+                                                <n-link to="/agente">
+                                                    <span>Únete como agente</span>
+                                                </n-link>
+                                            </li>
+                                            <li>
                                                 <n-link to="/contact">
                                                     <span>Contacto</span>
                                                 </n-link>
                                             </li>
                                         </ul>
                                     </nav>
-                                    <a
-                                        v-if="!isLoggedIn"
-                                        href="/login"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="header-logout-btn header-login-btn"
-                                    >
-                                        <i class="fas fa-sign-in-alt"></i>
-                                        <span>Iniciar sesión</span>
-                                    </a>
+                                    
                                     <button
-                                        v-else
+                                        v-if="isLoggedIn"
                                         type="button"
                                         class="header-logout-btn"
                                         @click="cerrarSesion"

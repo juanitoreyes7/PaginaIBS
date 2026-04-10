@@ -45,6 +45,19 @@
                                 <span class="contact-btn__wa"><i class="fab fa-whatsapp"></i> WhatsApp</span>
                             </a>
                         </div>
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <a
+                                href="https://wa.link/ax5ck8"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="contact-btn"
+                            >
+                                <span class="contact-btn__icon"><i class="fas fa-user"></i></span>
+                                <span class="contact-btn__label">Recursos Humanos</span>
+                                <span class="contact-btn__sublabel">Información de recursos humanos</span>
+                                <span class="contact-btn__wa"><i class="fab fa-whatsapp"></i> WhatsApp</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 

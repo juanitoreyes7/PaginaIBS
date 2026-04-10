@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/beneficios/star-medica", {data:[{}],fetch:{},mutations:void 0});

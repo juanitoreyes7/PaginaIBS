@@ -9,7 +9,8 @@
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate",
-        "deploy": "npm run generate && aws s3 sync dist/ s3://TU_BUCKET_IBS --delete"
+        "deploy": "npm run deploy:firebase",
+        "deploy:firebase": "npm run generate && firebase deploy --only hosting:web"
     },
     "dependencies": {
         "@emailjs/browser": "^3.7.0",

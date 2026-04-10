@@ -12,7 +12,7 @@
                 <div v-if="isChristus" class="beneficio-christus-card">
                     <div class="beneficio-christus__image-wrap">
                         <img
-                            src="/images/bg/foto.jpg"
+                            src="/images/beneficios/1.png"
                             alt="Christus Muguerza - Beneficios"
                             class="beneficio-christus__image"
                         >
@@ -52,7 +52,7 @@
                 <div v-else-if="isSierraAlta" class="beneficio-sierra-card">
                     <div class="beneficio-sierra__image-wrap">
                         <img
-                            src="/images/bg/foto.jpg"
+                            src="/images/beneficios/6.png"
                             alt="Sierra Alta - Beneficios"
                             class="beneficio-sierra__image"
                         >
@@ -81,7 +81,7 @@
                 <div v-else-if="isHospitalAngeles" class="beneficio-angeles-card">
                     <div class="beneficio-angeles__image-wrap">
                         <img
-                            src="/images/bg/foto.jpg"
+                            src="/images/beneficios/4.png"
                             alt="Hospital Ángeles Chihuahua - Beneficios"
                             class="beneficio-angeles__image"
                         >
@@ -110,7 +110,7 @@
                 <div v-else-if="isChopo" class="beneficio-chopo-card">
                     <div class="beneficio-chopo__image-wrap">
                         <img
-                            src="/images/bg/foto.jpg"
+                            src="/images/beneficios/3.png"
                             alt="Laboratorio Médico de Chopo - Beneficios"
                             class="beneficio-chopo__image"
                         >
@@ -142,7 +142,7 @@
                 <div v-else-if="isStarMedica" class="beneficio-star-card">
                     <div class="beneficio-star__image-wrap">
                         <img
-                            src="/images/bg/foto.jpg"
+                            src="/images/beneficios/5.png"
                             alt="Star Médica - Beneficios"
                             class="beneficio-star__image"
                         >
@@ -311,14 +311,20 @@ export default {
 .beneficio-christus__image-wrap {
     margin-bottom: 24px;
     line-height: 0;
+    padding: 20px 20px 0;
+    background: linear-gradient(180deg, #f8f6fc 0%, #ffffff 100%);
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
 }
 
 .beneficio-christus__image {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
-    max-height: 320px;
+    object-fit: contain;
+    object-position: center center;
+    max-height: 420px;
+    margin: 0 auto;
 }
 
 .beneficio-christus__buttons {
@@ -393,14 +399,20 @@ export default {
 .beneficio-sierra__image-wrap {
     margin-bottom: 24px;
     line-height: 0;
+    padding: 20px 20px 0;
+    background: linear-gradient(180deg, #e8faf9 0%, #ffffff 100%);
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
 }
 
 .beneficio-sierra__image {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
-    max-height: 320px;
+    object-fit: contain;
+    object-position: center center;
+    max-height: 420px;
+    margin: 0 auto;
 }
 
 .beneficio-sierra__buttons {
@@ -485,14 +497,20 @@ export default {
 .beneficio-angeles__image-wrap {
     margin-bottom: 24px;
     line-height: 0;
+    padding: 20px 20px 0;
+    background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
 }
 
 .beneficio-angeles__image {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
-    max-height: 320px;
+    object-fit: contain;
+    object-position: center center;
+    max-height: 420px;
+    margin: 0 auto;
 }
 
 .beneficio-angeles__buttons {
@@ -573,14 +591,20 @@ export default {
 .beneficio-chopo__image-wrap {
     margin-bottom: 16px;
     line-height: 0;
+    padding: 20px 20px 0;
+    background: linear-gradient(180deg, #f5f5f5 0%, #ffffff 100%);
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
 }
 
 .beneficio-chopo__image {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
-    max-height: 320px;
+    object-fit: contain;
+    object-position: center center;
+    max-height: 420px;
+    margin: 0 auto;
 }
 
 .beneficio-chopo__convenio {
@@ -669,14 +693,20 @@ export default {
 .beneficio-star__image-wrap {
     margin-bottom: 24px;
     line-height: 0;
+    padding: 20px 20px 0;
+    background: linear-gradient(180deg, #f8f6fc 0%, #ffffff 100%);
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
 }
 
 .beneficio-star__image {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
-    max-height: 320px;
+    object-fit: contain;
+    object-position: center center;
+    max-height: 420px;
+    margin: 0 auto;
 }
 
 .beneficio-star__buttons {

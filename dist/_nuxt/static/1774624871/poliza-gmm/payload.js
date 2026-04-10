@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/poliza-gmm", {data:[{}],fetch:{},mutations:void 0});

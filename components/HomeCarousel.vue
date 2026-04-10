@@ -6,8 +6,13 @@
                 :key="index"
                 class="home-carousel__slide"
                 :class="getSlideClass(index)"
-                :style="{ backgroundImage: `url(${slide.src})` }"
             >
+                <img
+                    :src="slide.src"
+                    :srcset="`${slide.src} 2400w`"
+                    :alt="slide.alt || `Slide ${index + 1}`"
+                    class="home-carousel__img"
+                >
                 <div class="home-carousel__overlay"></div>
             </div>
 
@@ -52,11 +57,11 @@ export default {
             prevIndex: 0,
             direction: 'next',
             autoPlayId: null,
-            // Imágenes servidas desde static/images/carusel -> /images/carusel/*
+            // Imágenes 2400×840 px en static/images/carusel -> /images/carusel/*
             slides: [
-                { src: '/images/carusel/1.png' },
-                { src: '/images/carusel/2.png' },
-                { src: '/images/carusel/3.png' }
+                { src: '/images/carusel/1.png', alt: 'Banner 1' },
+                { src: '/images/carusel/2.png', alt: 'Banner 2' },
+                { src: '/images/carusel/3.png', alt: 'Banner 3' }
             ]
         };
     },
@@ -133,9 +138,15 @@ export default {
 
 .home-carousel__inner {
     position: relative;
-    height: 60vh;
-    min-height: 320px;
-    max-height: 520px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Proporción exacta del banner: 2400×840 px → 840/2400 = 35% */
+.home-carousel__inner::before {
+    content: '';
+    display: block;
+    padding-top: 35%;
 }
 
 .home-carousel__slide {
@@ -144,26 +155,19 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
     opacity: 0;
     transform: translateX(100%);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    backface-visibility: hidden;
 }
 
-@media (max-width: 992px) {
-    .home-carousel__inner {
-        height: 50vh;
-        min-height: 260px;
-    }
-}
-
-@media (max-width: 576px) {
-    .home-carousel__inner {
-        height: 45vh;
-        min-height: 220px;
-    }
+/* Imagen a resolución completa (2400×840): el navegador escala sin perder nitidez */
+.home-carousel__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
 }
 
 .home-carousel__slide--active {
@@ -182,6 +186,7 @@ export default {
 .home-carousel__overlay {
     position: absolute;
     inset: 0;
+    z-index: 1;
     background: linear-gradient(
         90deg,
         rgba(15, 23, 42, 0.25) 0%,

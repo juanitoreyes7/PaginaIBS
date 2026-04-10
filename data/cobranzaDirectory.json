@@ -53,24 +53,10 @@
         },
         
         {
-            "id": 8,
-            "name": "New Horizon",
-            "logo": "/images/brand/nhseguros.png",
-            "paymentUrl": "#",
-            "paymentText": "Portal de Pago"
-        },
-        {
             "id": 9,
             "name": "ANA",
             "logo": "/images/brand/ana.png",
             "paymentUrl": "https://www.anaseguros.com.mx/",
-            "paymentText": "Portal de Pago"
-        },
-        {
-            "id": 10,
-            "name": "General de Seguros",
-            "logo": "/images/brand/general.png",
-            "paymentUrl": "#",
             "paymentText": "Portal de Pago"
         },
 
@@ -123,13 +109,7 @@
             "paymentUrl": "https://web.planseguro.com.mx:444/pagatupoliza/poliza",
             "paymentText": "Portal de Pago"
         },
-        {
-            "id": 18,
-            "name": "INBURSA",
-            "logo": "/images/brand/inbursa.png",
-            "paymentUrl": " https://serviciosgfi.inbursa.com:4077/PagodePolizasGFI/BuscaPagoServicio.aspx    ",
-            "paymentText": "Portal de Pago"
-        },
+
         {
             "id": 19,
             "name": "Mapfre",

@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/ibsapp", {data:[{}],fetch:{},mutations:void 0});

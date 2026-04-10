@@ -44,6 +44,10 @@ export default {
         '@nuxtjs/axios',
         '@nuxtjs/proxy'
     ],
+    
+    bootstrapVue: {
+        icons: false
+    },
 
     styleResources: {
         scss: [
@@ -64,7 +68,10 @@ export default {
     },
 
     publicRuntimeConfig: {
-        apiBaseUrl: process.env.API_BASE_URL || 'http://localhost:8080/api'
+        apiBaseUrl: process.env.API_BASE_URL || 'http://localhost:8080/api',
+        emailjsServiceId: process.env.EMAILJS_SERVICE_ID || 'service_bw3dpyd',
+        emailjsTemplateId: process.env.EMAILJS_TEMPLATE_ID || 'template_yqyee8c',
+        emailjsPublicKey: process.env.EMAILJS_PUBLIC_KEY || '9dXIW13fiQT0eCgk5'
     },
 
     build: {

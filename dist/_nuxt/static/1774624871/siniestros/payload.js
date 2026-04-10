@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/siniestros", {data:[{}],fetch:{},mutations:void 0});

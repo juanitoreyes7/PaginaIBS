@@ -7,6 +7,20 @@
     "_name": "_7b004f60"
   },
   {
+    "name": "agente",
+    "path": "/agente",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/agente.vue",
+    "chunkName": "pages/agente",
+    "_name": "_7dce792d"
+  },
+  {
+    "name": "agentes",
+    "path": "/agentes",
+    "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/agentes.vue",
+    "chunkName": "pages/agentes",
+    "_name": "_3fac4d96"
+  },
+  {
     "name": "Appointment",
     "path": "/Appointment",
     "component": "/Users/sistemasibs/Documents/GitHub/PaginaIBS/pages/Appointment.vue",

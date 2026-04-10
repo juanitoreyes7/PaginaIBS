@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/poliza-vida", {data:[{}],fetch:{},mutations:void 0});
