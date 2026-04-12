@@ -58,6 +58,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Navigation>` | `<navigation>` (components/Navigation.vue)
 - `<OffCanvasMobileMenu>` | `<off-canvas-mobile-menu>` (components/OffCanvasMobileMenu.vue)
 - `<PageHeader>` | `<page-header>` (components/PageHeader.vue)
+- `<PortalEmpresaView>` | `<portal-empresa-view>` (components/PortalEmpresaView.vue)
 - `<PreviewMobileNavMenu>` | `<preview-mobile-nav-menu>` (components/PreviewMobileNavMenu.vue)
 - `<PreviewOffcanvasMobileMenu>` | `<preview-offcanvas-mobile-menu>` (components/PreviewOffcanvasMobileMenu.vue)
 - `<QualifiedMethod>` | `<qualified-method>` (components/QualifiedMethod.vue)

@@ -32,6 +32,11 @@
                         <span>Descargables</span>
                     </n-link>
                 </li>
+                <li v-if="!isLoggedIn">
+                    <n-link to="/login" class="mobile-login-link">
+                        <span>Iniciar sesión</span>
+                    </n-link>
+                </li>
                 <li
                     v-if="isLoggedIn"
                     class="mobile-nav-logout"

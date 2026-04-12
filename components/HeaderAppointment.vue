@@ -1,7 +1,7 @@
 <template>
     <div class="header-area header-sticky">
-        <!-- Top Info Bar -->
-        <div class="header-top-bar bg-white d-none d-lg-block">
+        <!-- Top Info Bar (oculto en portal empresarial: logo va en la barra azul) -->
+        <div v-if="!portalEmpresa" class="header-top-bar bg-white d-none d-lg-block">
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-lg-12">
@@ -87,23 +87,37 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="header-bottom-inner">
-                                <!-- Mobile Logo -->
-                                <div class="header__logo-mobile d-lg-none">
+                            <div
+                                class="header-bottom-inner"
+                                :class="{ 'header-bottom-inner--portal-empresa': portalEmpresa }"
+                            >
+                                <!-- Logo en barra azul (portal empresarial: desktop y móvil) -->
+                                <div v-if="portalEmpresa" class="header__logo-portal-empresa">
+                                    <n-link to="/">
+                                        <img src="/images/logo/logoIBS.png" class="img-fluid" alt="IBS Consultores">
+                                    </n-link>
+                                </div>
+                                <!-- Mobile Logo (sitio general) -->
+                                <div v-else class="header__logo-mobile d-lg-none">
                                     <n-link to="/">
                                         <img src="/images/logo/logoIBS.png" class="img-fluid" alt="Brand Logo">
                                     </n-link>
                                 </div>
 
                                 <!-- Navigation Menu -->
-                                <div class="header__navigation header__navigation--with-logout">
-                                    <nav class="navigation-menu navigation-menu--text_white">
+                                <div
+                                    class="header__navigation header__navigation--with-logout"
+                                    :class="{ 'header__navigation--solo-logout': portalEmpresa }"
+                                >
+                                    <nav
+                                        v-if="!portalEmpresa"
+                                        class="navigation-menu navigation-menu--text_white"
+                                    >
                                         <!-- Menú completo para visitantes -->
                                         <Navigation v-if="!isLoggedIn" />
 
                                         <!-- Menú reducido para usuarios conectados -->
                                         <ul v-else class="navigation-single">
-                                  
                                             <li>
                                                 <n-link to="/portafolio-polizas">
                                                     <span>Mis pólizas</span>
@@ -126,11 +140,21 @@
                                             </li>
                                         </ul>
                                     </nav>
-                                    
+
+                                    <n-link
+                                        v-if="!isLoggedIn && !portalEmpresa"
+                                        to="/login"
+                                        class="header-login-btn"
+                                    >
+                                        <i class="fas fa-sign-in-alt"></i>
+                                        <span>Iniciar sesión</span>
+                                    </n-link>
+
                                     <button
                                         v-if="isLoggedIn"
                                         type="button"
                                         class="header-logout-btn"
+                                        :class="{ 'header-logout-btn--edge': portalEmpresa }"
                                         @click="cerrarSesion"
                                     >
                                         <i class="fas fa-sign-out-alt"></i>
@@ -138,9 +162,13 @@
                                     </button>
                                 </div>
 
-                                <!-- Mobile Menu Toggle -->
-                                <div class="mobile-navigation-icon d-block d-xl-none" id="mobile-menu-trigger"
-                                    @click="mobiletoggleClass('addClass', 'active')">
+                                <!-- Mobile Menu Toggle (oculto en portal empresarial: sin menú lateral) -->
+                                <div
+                                    v-if="!portalEmpresa"
+                                    id="mobile-menu-trigger"
+                                    class="mobile-navigation-icon d-block d-xl-none"
+                                    @click="mobiletoggleClass('addClass', 'active')"
+                                >
                                     <i></i>
                                 </div>
                             </div>
@@ -160,6 +188,13 @@ export default {
     components: {
         FixedHeader,
         Navigation
+    },
+    props: {
+        /** RFC moral (portal empresarial): sin franja blanca; logo en la barra de menú */
+        portalEmpresa: {
+            type: Boolean,
+            default: false
+        }
     },
     data() {
         return {
@@ -459,6 +494,62 @@ export default {
         padding: 0 50px 0 60px;
         min-height: 65px;
     }
+
+    &--portal-empresa {
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding-left: 16px;
+        padding-right: 6px;
+
+        @media (max-width: 991px) {
+            padding: 0 8px 0 12px;
+        }
+
+        .header__navigation:not(.header__navigation--solo-logout) {
+            flex: 1;
+            width: auto;
+            min-width: 0;
+            justify-content: center;
+        }
+
+        .header__navigation--solo-logout {
+            flex: 1;
+            justify-content: flex-end;
+            width: auto;
+            min-width: 0;
+            margin-left: auto;
+        }
+    }
+}
+
+.header__logo-portal-empresa {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+
+    a {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        height: 48px;
+        width: auto;
+        max-width: 170px;
+        object-fit: contain;
+
+        @media (max-width: 575px) {
+            height: 42px;
+            max-width: 140px;
+        }
+
+        @media (max-width: 375px) {
+            height: 38px;
+            max-width: 120px;
+        }
+    }
 }
 
 .header__logo-mobile {
@@ -501,6 +592,15 @@ export default {
     &--with-logout {
         justify-content: center;
     }
+
+    /** Portal empresarial: solo cerrar sesión; visible también en móvil */
+    &--solo-logout {
+        justify-content: flex-end;
+
+        @media (max-width: 991px) {
+            display: flex !important;
+        }
+    }
 }
 
 .header-logout-btn,
@@ -530,6 +630,11 @@ export default {
         border-color: rgba(255, 255, 255, 0.8);
         color: #ffffff !important;
     }
+}
+
+.header-logout-btn.header-logout-btn--edge {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .navigation-menu {

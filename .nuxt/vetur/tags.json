@@ -155,6 +155,9 @@
   "PageHeader": {
     "description": "Auto imported from components/PageHeader.vue"
   },
+  "PortalEmpresaView": {
+    "description": "Auto imported from components/PortalEmpresaView.vue"
+  },
   "PreviewMobileNavMenu": {
     "description": "Auto imported from components/PreviewMobileNavMenu.vue"
   },

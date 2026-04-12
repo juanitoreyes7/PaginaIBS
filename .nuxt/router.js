@@ -4,55 +4,55 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _7b004f60 = () => interopDefault(import('../pages/About.vue' /* webpackChunkName: "pages/About" */))
-const _7dce792d = () => interopDefault(import('../pages/agente.vue' /* webpackChunkName: "pages/agente" */))
-const _3fac4d96 = () => interopDefault(import('../pages/agentes.vue' /* webpackChunkName: "pages/agentes" */))
-const _da6169bc = () => interopDefault(import('../pages/Appointment.vue' /* webpackChunkName: "pages/Appointment" */))
-const _12926b5c = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
-const _64f81b8c = () => interopDefault(import('../pages/case-studies/index.vue' /* webpackChunkName: "pages/case-studies/index" */))
-const _159d55bd = () => interopDefault(import('../pages/cobranza.vue' /* webpackChunkName: "pages/cobranza" */))
-const _2467d8a3 = () => interopDefault(import('../pages/Contact.vue' /* webpackChunkName: "pages/Contact" */))
-const _17bb818c = () => interopDefault(import('../pages/Cotgmm.vue' /* webpackChunkName: "pages/Cotgmm" */))
-const _0ba3a556 = () => interopDefault(import('../pages/CotHogar.vue' /* webpackChunkName: "pages/CotHogar" */))
-const _4927165c = () => interopDefault(import('../pages/Cybersecurity.vue' /* webpackChunkName: "pages/Cybersecurity" */))
-const _3ccb8cc1 = () => interopDefault(import('../pages/descargables.vue' /* webpackChunkName: "pages/descargables" */))
-const _18cc51dc = () => interopDefault(import('../pages/Faq/index.vue' /* webpackChunkName: "pages/Faq/index" */))
-const _0a20311e = () => interopDefault(import('../pages/GmExt.vue' /* webpackChunkName: "pages/GmExt" */))
-const _ff580dd6 = () => interopDefault(import('../pages/hospitales.vue' /* webpackChunkName: "pages/hospitales" */))
-const _332ae914 = () => interopDefault(import('../pages/ibsapp.vue' /* webpackChunkName: "pages/ibsapp" */))
-const _bea94176 = () => interopDefault(import('../pages/IT-Solutions.vue' /* webpackChunkName: "pages/IT-Solutions" */))
-const _7cf45d12 = () => interopDefault(import('../pages/Leadership.vue' /* webpackChunkName: "pages/Leadership" */))
-const _346d364c = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
-const _615892c7 = () => interopDefault(import('../pages/Politicas.vue' /* webpackChunkName: "pages/Politicas" */))
-const _7fc959b9 = () => interopDefault(import('../pages/poliza-accidente.vue' /* webpackChunkName: "pages/poliza-accidente" */))
-const _1e4a97fc = () => interopDefault(import('../pages/poliza-auto.vue' /* webpackChunkName: "pages/poliza-auto" */))
-const _f74eb910 = () => interopDefault(import('../pages/poliza-funeraria.vue' /* webpackChunkName: "pages/poliza-funeraria" */))
-const _6a08158a = () => interopDefault(import('../pages/poliza-gmm.vue' /* webpackChunkName: "pages/poliza-gmm" */))
-const _f4addc18 = () => interopDefault(import('../pages/poliza-hogar.vue' /* webpackChunkName: "pages/poliza-hogar" */))
-const _0ce5ac3d = () => interopDefault(import('../pages/poliza-vida.vue' /* webpackChunkName: "pages/poliza-vida" */))
-const _c871cc0e = () => interopDefault(import('../pages/portafolio-polizas.vue' /* webpackChunkName: "pages/portafolio-polizas" */))
-const _57ea64ce = () => interopDefault(import('../pages/portal.vue' /* webpackChunkName: "pages/portal" */))
-const _6dcd7b40 = () => interopDefault(import('../pages/Processing.vue' /* webpackChunkName: "pages/Processing" */))
-const _75112ec0 = () => interopDefault(import('../pages/registro.vue' /* webpackChunkName: "pages/registro" */))
-const _7f7e78ca = () => interopDefault(import('../pages/Resolutions.vue' /* webpackChunkName: "pages/Resolutions" */))
-const _a1f1ae90 = () => interopDefault(import('../pages/Service.vue' /* webpackChunkName: "pages/Service" */))
-const _03d2588e = () => interopDefault(import('../pages/siniestros.vue' /* webpackChunkName: "pages/siniestros" */))
-const _0e247b32 = () => interopDefault(import('../pages/Solicitud.vue' /* webpackChunkName: "pages/Solicitud" */))
-const _0299b547 = () => interopDefault(import('../pages/blog/blog-details.vue' /* webpackChunkName: "pages/blog/blog-details" */))
-const _88e13350 = () => interopDefault(import('../pages/element/accordion.vue' /* webpackChunkName: "pages/element/accordion" */))
-const _445f3a4a = () => interopDefault(import('../pages/element/box-icon.vue' /* webpackChunkName: "pages/element/box-icon" */))
-const _0536312e = () => interopDefault(import('../pages/element/box-image.vue' /* webpackChunkName: "pages/element/box-image" */))
-const _492de6d7 = () => interopDefault(import('../pages/element/box-large-image.vue' /* webpackChunkName: "pages/element/box-large-image" */))
-const _7c5e9fb9 = () => interopDefault(import('../pages/element/call-to-action.vue' /* webpackChunkName: "pages/element/call-to-action" */))
-const _d83770d2 = () => interopDefault(import('../pages/element/counters.vue' /* webpackChunkName: "pages/element/counters" */))
-const _7abf2a12 = () => interopDefault(import('../pages/element/gradation.vue' /* webpackChunkName: "pages/element/gradation" */))
-const _1e028074 = () => interopDefault(import('../pages/element/teams.vue' /* webpackChunkName: "pages/element/teams" */))
-const _0e14f92f = () => interopDefault(import('../pages/beneficios/_slug.vue' /* webpackChunkName: "pages/beneficios/_slug" */))
-const _15ffadec = () => interopDefault(import('../pages/blog/_slug.vue' /* webpackChunkName: "pages/blog/_slug" */))
-const _b00589bc = () => interopDefault(import('../pages/case-studies/_id.vue' /* webpackChunkName: "pages/case-studies/_id" */))
-const _3885c978 = () => interopDefault(import('../pages/Faq/_id.vue' /* webpackChunkName: "pages/Faq/_id" */))
-const _33d56413 = () => interopDefault(import('../pages/service/_slug.vue' /* webpackChunkName: "pages/service/_slug" */))
-const _6ac59335 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _73dbd5d5 = () => interopDefault(import('../pages/About.vue' /* webpackChunkName: "pages/About" */))
+const _101ba770 = () => interopDefault(import('../pages/agente.vue' /* webpackChunkName: "pages/agente" */))
+const _09fefddb = () => interopDefault(import('../pages/agentes.vue' /* webpackChunkName: "pages/agentes" */))
+const _cfd35e32 = () => interopDefault(import('../pages/Appointment.vue' /* webpackChunkName: "pages/Appointment" */))
+const _f9751026 = () => interopDefault(import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */))
+const _1ef65656 = () => interopDefault(import('../pages/case-studies/index.vue' /* webpackChunkName: "pages/case-studies/index" */))
+const _d4bea3d0 = () => interopDefault(import('../pages/cobranza.vue' /* webpackChunkName: "pages/cobranza" */))
+const _228aee30 = () => interopDefault(import('../pages/Contact.vue' /* webpackChunkName: "pages/Contact" */))
+const _dc4196b2 = () => interopDefault(import('../pages/Cotgmm.vue' /* webpackChunkName: "pages/Cotgmm" */))
+const _e8b2049e = () => interopDefault(import('../pages/CotHogar.vue' /* webpackChunkName: "pages/CotHogar" */))
+const _18c3bee1 = () => interopDefault(import('../pages/Cybersecurity.vue' /* webpackChunkName: "pages/Cybersecurity" */))
+const _3f3580c8 = () => interopDefault(import('../pages/descargables.vue' /* webpackChunkName: "pages/descargables" */))
+const _cd97f63e = () => interopDefault(import('../pages/Faq/index.vue' /* webpackChunkName: "pages/Faq/index" */))
+const _8907a2ba = () => interopDefault(import('../pages/GmExt.vue' /* webpackChunkName: "pages/GmExt" */))
+const _0ce2a6b0 = () => interopDefault(import('../pages/hospitales.vue' /* webpackChunkName: "pages/hospitales" */))
+const _a562c7a2 = () => interopDefault(import('../pages/ibsapp.vue' /* webpackChunkName: "pages/ibsapp" */))
+const _44451220 = () => interopDefault(import('../pages/IT-Solutions.vue' /* webpackChunkName: "pages/IT-Solutions" */))
+const _09830aad = () => interopDefault(import('../pages/Leadership.vue' /* webpackChunkName: "pages/Leadership" */))
+const _346d985e = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
+const _3c7f7468 = () => interopDefault(import('../pages/Politicas.vue' /* webpackChunkName: "pages/Politicas" */))
+const _f16fb1d8 = () => interopDefault(import('../pages/poliza-accidente.vue' /* webpackChunkName: "pages/poliza-accidente" */))
+const _23919dc1 = () => interopDefault(import('../pages/poliza-auto.vue' /* webpackChunkName: "pages/poliza-auto" */))
+const _e8511e5a = () => interopDefault(import('../pages/poliza-funeraria.vue' /* webpackChunkName: "pages/poliza-funeraria" */))
+const _12d279b6 = () => interopDefault(import('../pages/poliza-gmm.vue' /* webpackChunkName: "pages/poliza-gmm" */))
+const _2942c4cf = () => interopDefault(import('../pages/poliza-hogar.vue' /* webpackChunkName: "pages/poliza-hogar" */))
+const _122cb202 = () => interopDefault(import('../pages/poliza-vida.vue' /* webpackChunkName: "pages/poliza-vida" */))
+const _827006d8 = () => interopDefault(import('../pages/portafolio-polizas.vue' /* webpackChunkName: "pages/portafolio-polizas" */))
+const _4e2e80b4 = () => interopDefault(import('../pages/portal.vue' /* webpackChunkName: "pages/portal" */))
+const _55a7effb = () => interopDefault(import('../pages/Processing.vue' /* webpackChunkName: "pages/Processing" */))
+const _457ac0fb = () => interopDefault(import('../pages/registro.vue' /* webpackChunkName: "pages/registro" */))
+const _f67502e2 = () => interopDefault(import('../pages/Resolutions.vue' /* webpackChunkName: "pages/Resolutions" */))
+const _7959d8fd = () => interopDefault(import('../pages/Service.vue' /* webpackChunkName: "pages/Service" */))
+const _df3df3ae = () => interopDefault(import('../pages/siniestros.vue' /* webpackChunkName: "pages/siniestros" */))
+const _7955756c = () => interopDefault(import('../pages/Solicitud.vue' /* webpackChunkName: "pages/Solicitud" */))
+const _2a16d968 = () => interopDefault(import('../pages/blog/blog-details.vue' /* webpackChunkName: "pages/blog/blog-details" */))
+const _b82b7746 = () => interopDefault(import('../pages/element/accordion.vue' /* webpackChunkName: "pages/element/accordion" */))
+const _35619f94 = () => interopDefault(import('../pages/element/box-icon.vue' /* webpackChunkName: "pages/element/box-icon" */))
+const _34807524 = () => interopDefault(import('../pages/element/box-image.vue' /* webpackChunkName: "pages/element/box-image" */))
+const _942d25c8 = () => interopDefault(import('../pages/element/box-large-image.vue' /* webpackChunkName: "pages/element/box-large-image" */))
+const _ceb28658 = () => interopDefault(import('../pages/element/call-to-action.vue' /* webpackChunkName: "pages/element/call-to-action" */))
+const _c939d61c = () => interopDefault(import('../pages/element/counters.vue' /* webpackChunkName: "pages/element/counters" */))
+const _aa096e08 = () => interopDefault(import('../pages/element/gradation.vue' /* webpackChunkName: "pages/element/gradation" */))
+const _7ec92f6a = () => interopDefault(import('../pages/element/teams.vue' /* webpackChunkName: "pages/element/teams" */))
+const _1593c68a = () => interopDefault(import('../pages/beneficios/_slug.vue' /* webpackChunkName: "pages/beneficios/_slug" */))
+const _fce252b6 = () => interopDefault(import('../pages/blog/_slug.vue' /* webpackChunkName: "pages/blog/_slug" */))
+const _a107ef06 = () => interopDefault(import('../pages/case-studies/_id.vue' /* webpackChunkName: "pages/case-studies/_id" */))
+const _a3e068ee = () => interopDefault(import('../pages/Faq/_id.vue' /* webpackChunkName: "pages/Faq/_id" */))
+const _03720c98 = () => interopDefault(import('../pages/service/_slug.vue' /* webpackChunkName: "pages/service/_slug" */))
+const _1c2190ba = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
 
@@ -67,199 +67,199 @@ export const routerOptions = {
 
   routes: [{
     path: "/About",
-    component: _7b004f60,
+    component: _73dbd5d5,
     name: "About"
   }, {
     path: "/agente",
-    component: _7dce792d,
+    component: _101ba770,
     name: "agente"
   }, {
     path: "/agentes",
-    component: _3fac4d96,
+    component: _09fefddb,
     name: "agentes"
   }, {
     path: "/Appointment",
-    component: _da6169bc,
+    component: _cfd35e32,
     name: "Appointment"
   }, {
     path: "/blog",
-    component: _12926b5c,
+    component: _f9751026,
     name: "blog"
   }, {
     path: "/case-studies",
-    component: _64f81b8c,
+    component: _1ef65656,
     name: "case-studies"
   }, {
     path: "/cobranza",
-    component: _159d55bd,
+    component: _d4bea3d0,
     name: "cobranza"
   }, {
     path: "/Contact",
-    component: _2467d8a3,
+    component: _228aee30,
     name: "Contact"
   }, {
     path: "/Cotgmm",
-    component: _17bb818c,
+    component: _dc4196b2,
     name: "Cotgmm"
   }, {
     path: "/CotHogar",
-    component: _0ba3a556,
+    component: _e8b2049e,
     name: "CotHogar"
   }, {
     path: "/Cybersecurity",
-    component: _4927165c,
+    component: _18c3bee1,
     name: "Cybersecurity"
   }, {
     path: "/descargables",
-    component: _3ccb8cc1,
+    component: _3f3580c8,
     name: "descargables"
   }, {
     path: "/Faq",
-    component: _18cc51dc,
+    component: _cd97f63e,
     name: "Faq"
   }, {
     path: "/GmExt",
-    component: _0a20311e,
+    component: _8907a2ba,
     name: "GmExt"
   }, {
     path: "/hospitales",
-    component: _ff580dd6,
+    component: _0ce2a6b0,
     name: "hospitales"
   }, {
     path: "/ibsapp",
-    component: _332ae914,
+    component: _a562c7a2,
     name: "ibsapp"
   }, {
     path: "/IT-Solutions",
-    component: _bea94176,
+    component: _44451220,
     name: "IT-Solutions"
   }, {
     path: "/Leadership",
-    component: _7cf45d12,
+    component: _09830aad,
     name: "Leadership"
   }, {
     path: "/login",
-    component: _346d364c,
+    component: _346d985e,
     name: "login"
   }, {
     path: "/Politicas",
-    component: _615892c7,
+    component: _3c7f7468,
     name: "Politicas"
   }, {
     path: "/poliza-accidente",
-    component: _7fc959b9,
+    component: _f16fb1d8,
     name: "poliza-accidente"
   }, {
     path: "/poliza-auto",
-    component: _1e4a97fc,
+    component: _23919dc1,
     name: "poliza-auto"
   }, {
     path: "/poliza-funeraria",
-    component: _f74eb910,
+    component: _e8511e5a,
     name: "poliza-funeraria"
   }, {
     path: "/poliza-gmm",
-    component: _6a08158a,
+    component: _12d279b6,
     name: "poliza-gmm"
   }, {
     path: "/poliza-hogar",
-    component: _f4addc18,
+    component: _2942c4cf,
     name: "poliza-hogar"
   }, {
     path: "/poliza-vida",
-    component: _0ce5ac3d,
+    component: _122cb202,
     name: "poliza-vida"
   }, {
     path: "/portafolio-polizas",
-    component: _c871cc0e,
+    component: _827006d8,
     name: "portafolio-polizas"
   }, {
     path: "/portal",
-    component: _57ea64ce,
+    component: _4e2e80b4,
     name: "portal"
   }, {
     path: "/Processing",
-    component: _6dcd7b40,
+    component: _55a7effb,
     name: "Processing"
   }, {
     path: "/registro",
-    component: _75112ec0,
+    component: _457ac0fb,
     name: "registro"
   }, {
     path: "/Resolutions",
-    component: _7f7e78ca,
+    component: _f67502e2,
     name: "Resolutions"
   }, {
     path: "/Service",
-    component: _a1f1ae90,
+    component: _7959d8fd,
     name: "Service"
   }, {
     path: "/siniestros",
-    component: _03d2588e,
+    component: _df3df3ae,
     name: "siniestros"
   }, {
     path: "/Solicitud",
-    component: _0e247b32,
+    component: _7955756c,
     name: "Solicitud"
   }, {
     path: "/blog/blog-details",
-    component: _0299b547,
+    component: _2a16d968,
     name: "blog-blog-details"
   }, {
     path: "/element/accordion",
-    component: _88e13350,
+    component: _b82b7746,
     name: "element-accordion"
   }, {
     path: "/element/box-icon",
-    component: _445f3a4a,
+    component: _35619f94,
     name: "element-box-icon"
   }, {
     path: "/element/box-image",
-    component: _0536312e,
+    component: _34807524,
     name: "element-box-image"
   }, {
     path: "/element/box-large-image",
-    component: _492de6d7,
+    component: _942d25c8,
     name: "element-box-large-image"
   }, {
     path: "/element/call-to-action",
-    component: _7c5e9fb9,
+    component: _ceb28658,
     name: "element-call-to-action"
   }, {
     path: "/element/counters",
-    component: _d83770d2,
+    component: _c939d61c,
     name: "element-counters"
   }, {
     path: "/element/gradation",
-    component: _7abf2a12,
+    component: _aa096e08,
     name: "element-gradation"
   }, {
     path: "/element/teams",
-    component: _1e028074,
+    component: _7ec92f6a,
     name: "element-teams"
   }, {
     path: "/beneficios/:slug?",
-    component: _0e14f92f,
+    component: _1593c68a,
     name: "beneficios-slug"
   }, {
     path: "/blog/:slug",
-    component: _15ffadec,
+    component: _fce252b6,
     name: "blog-slug"
   }, {
     path: "/case-studies/:id?",
-    component: _b00589bc,
+    component: _a107ef06,
     name: "case-studies-id"
   }, {
     path: "/Faq/:id",
-    component: _3885c978,
+    component: _a3e068ee,
     name: "Faq-id"
   }, {
     path: "/service/:slug?",
-    component: _33d56413,
+    component: _03720c98,
     name: "service-slug"
   }, {
     path: "/",
-    component: _6ac59335,
+    component: _1c2190ba,
     name: "index"
   }],
 

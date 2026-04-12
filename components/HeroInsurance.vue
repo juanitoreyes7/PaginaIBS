@@ -59,15 +59,13 @@
                                 <n-link to="/Solicitud">Ya tengo una cotización</n-link>
                             </div>
                             <div class="hero-portal-link">
-                                <a
+                                <n-link
                                     v-if="!isLoggedIn"
-                                    href="/login"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    to="/login"
                                     class="hero-portal-link__btn"
                                 >
                                     Iniciar sesión
-                                </a>
+                                </n-link>
                                 <n-link
                                     v-else
                                     to="/portal"
@@ -321,25 +319,26 @@ export default {
     font-weight: 600;
     border-radius: 10px;
     text-decoration: none;
-    transition: opacity 0.2s, background 0.2s;
-    background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    border: 2px solid rgba(255, 255, 255, 0.6);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    background: #ffffff;
+    color: #086AD8;
+    border: 2px solid #086AD8;
 
     &:hover {
-        opacity: 0.95;
-        background: rgba(255, 255, 255, 0.25);
+        background: #086AD8;
         color: #ffffff;
+        border-color: #086AD8;
     }
 
     &--portal {
-        background: rgba(255, 255, 255, 0.95);
-        color: #086AD8;
-        border-color: #fff;
+        background: #086AD8;
+        color: #ffffff;
+        border-color: #086AD8;
 
         &:hover {
-            background: #fff;
-            color: #086AD8;
+            background: #002FA6;
+            border-color: #002FA6;
+            color: #ffffff;
         }
     }
 }

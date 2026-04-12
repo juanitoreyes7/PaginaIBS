@@ -12,9 +12,9 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_7467d39a from 'nuxt_plugin_plugin_7467d39a' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_bootstrapvue_23c28a10 from 'nuxt_plugin_bootstrapvue_23c28a10' // Source: ./bootstrap-vue.js (mode: 'all')
-import nuxt_plugin_axios_8d60946e from 'nuxt_plugin_axios_8d60946e' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_plugin_656a38e4 from 'nuxt_plugin_plugin_656a38e4' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_bootstrapvue_dc8f245a from 'nuxt_plugin_bootstrapvue_dc8f245a' // Source: ./bootstrap-vue.js (mode: 'all')
+import nuxt_plugin_axios_4b6b73a4 from 'nuxt_plugin_axios_4b6b73a4' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_firebase_34d6f55a from 'nuxt_plugin_firebase_34d6f55a' // Source: ../plugins/firebase.js (mode: 'all')
 import nuxt_plugin_vueawesomeswiper_5ce03f58 from 'nuxt_plugin_vueawesomeswiper_5ce03f58' // Source: ../plugins/vue-awesome-swiper.js (mode: 'all')
 import nuxt_plugin_vuejspaginate_185e95ec from 'nuxt_plugin_vuejspaginate_185e95ec' // Source: ../plugins/vuejs-paginate.js (mode: 'all')
@@ -182,16 +182,16 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_7467d39a === 'function') {
-    await nuxt_plugin_plugin_7467d39a(app.context, inject)
+  if (typeof nuxt_plugin_plugin_656a38e4 === 'function') {
+    await nuxt_plugin_plugin_656a38e4(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_bootstrapvue_23c28a10 === 'function') {
-    await nuxt_plugin_bootstrapvue_23c28a10(app.context, inject)
+  if (typeof nuxt_plugin_bootstrapvue_dc8f245a === 'function') {
+    await nuxt_plugin_bootstrapvue_dc8f245a(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_8d60946e === 'function') {
-    await nuxt_plugin_axios_8d60946e(app.context, inject)
+  if (typeof nuxt_plugin_axios_4b6b73a4 === 'function') {
+    await nuxt_plugin_axios_4b6b73a4(app.context, inject)
   }
 
   if (typeof nuxt_plugin_firebase_34d6f55a === 'function') {

@@ -1,8 +1,18 @@
 <template>
     <div class="main-container">
-        <HeaderAppointment />
+        <HeaderAppointment :portal-empresa="perfilListo && esUsuarioEmpresa" />
 
-        <section class="portal-hero">
+        <div v-if="!perfilListo" class="portal-perfil-loading">
+            <i class="fas fa-spinner fa-spin portal-perfil-loading__icon"></i>
+            <span>Cargando tu portal…</span>
+        </div>
+
+        <PortalEmpresaView
+            v-else-if="esUsuarioEmpresa && empresaPerfil"
+            :empresa="empresaPerfil"
+        />
+
+        <section v-else class="portal-hero">
             <HomeCarousel />
 
             <div class="portal-hero__welcome">
@@ -42,8 +52,12 @@
             </div>
         </section>
 
-        <!-- Sección IBSApp resumida dentro del portal -->
-        <section id="portal-ibsapp" class="portal-app section-space--ptb_80">
+        <!-- Sección IBSApp: solo usuarios con RFC de persona (no moral de 12 caracteres) -->
+        <section
+            v-if="perfilListo && !esUsuarioEmpresa"
+            id="portal-ibsapp"
+            class="portal-app section-space--ptb_80"
+        >
             <div class="container">
                 <div class="portal-app__grid">
                     <div class="portal-app__content">
@@ -129,6 +143,8 @@ import HeaderAppointment from '@/components/HeaderAppointment';
 import Footer from '@/components/Footer';
 import OffCanvasMobileMenu from '@/components/OffCanvasMobileMenu';
 import HomeCarousel from '@/components/HomeCarousel';
+import PortalEmpresaView from '@/components/PortalEmpresaView';
+import { esRfcEmpresa } from '@/utils/rfcEmpresa';
 
 const BENEFICIOS = [
     { name: 'Christus Muguerza', slug: 'christus-muguerza', color: '#5A2D8E', to: '/beneficios/christus-muguerza', light: false },
@@ -140,21 +156,55 @@ const BENEFICIOS = [
 
 export default {
     name: 'PortalWelcome',
+    middleware: 'auth',
     components: {
         HeaderAppointment,
         Footer,
         OffCanvasMobileMenu,
-        HomeCarousel
+        HomeCarousel,
+        PortalEmpresaView
     },
     data() {
         return {
-            beneficios: BENEFICIOS
+            beneficios: BENEFICIOS,
+            perfilListo: false,
+            esUsuarioEmpresa: false,
+            empresaPerfil: null
         };
     },
     head() {
         return {
             title: 'Bienvenido - IBS Consultores'
         };
+    },
+    mounted() {
+        if (!process.client || !this.$auth) {
+            this.perfilListo = true;
+            return;
+        }
+        const unsubscribe = this.$auth.onAuthStateChanged(async (user) => {
+            unsubscribe && unsubscribe();
+            if (!user || !user.email || !this.$db) {
+                this.perfilListo = true;
+                return;
+            }
+            try {
+                const snap = await this.$db.collection('Usuarios').where('email', '==', user.email).get();
+                if (!snap.empty) {
+                    const d = snap.docs[0].data();
+                    this.empresaPerfil = {
+                        nombre: d.nombre || '',
+                        email: d.email || user.email,
+                        telefono: d.telefono || '',
+                        rfc: d.rfc || ''
+                    };
+                    this.esUsuarioEmpresa = esRfcEmpresa(this.empresaPerfil.rfc);
+                }
+            } catch (e) {
+                console.error(e);
+            }
+            this.perfilListo = true;
+        });
     },
     methods: {
         scrollToIBSApp() {
@@ -168,6 +218,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.portal-perfil-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 40vh;
+    padding: 48px 24px;
+    font-size: 16px;
+    color: #64748b;
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.portal-perfil-loading__icon {
+    font-size: 22px;
+    color: #086ad8;
+}
+
 .portal-hero {
     background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
 }
