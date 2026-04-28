@@ -107,9 +107,13 @@
                                     <span class="portal-empresa__label">Compañía</span>
                                     <p class="portal-empresa__value">{{ companiaActual }}</p>
                                 </div>
-                                <div class="portal-empresa__field portal-empresa__field--wide">
-                                    <span class="portal-empresa__label">Vigencia</span>
-                                    <p class="portal-empresa__value">{{ vigenciaActual }}</p>
+                                <div class="portal-empresa__field">
+                                    <span class="portal-empresa__label">Vigencia desde (vDesde)</span>
+                                    <p class="portal-empresa__value">{{ vigenciaDesdePoliza }}</p>
+                                </div>
+                                <div class="portal-empresa__field">
+                                    <span class="portal-empresa__label">Vigencia hasta (vHasta)</span>
+                                    <p class="portal-empresa__value">{{ vigenciaHastaPoliza }}</p>
                                 </div>
                             </div>
                             <div v-if="pdfUrlActual" class="portal-empresa__pdf-row">
@@ -164,6 +168,16 @@
                     </div>
 
                     <template v-if="vistaInferior === 'asegurados'">
+                        <div class="portal-empresa__aseg-intro">
+                            <p class="portal-empresa__aseg-intro-title">
+                                Asegurados en pólizas vinculadas a <strong>{{ empresa.nombre || 'tu empresa' }}</strong>
+                            </p>
+                            <p class="portal-empresa__aseg-intro-meta">
+                                Listado consolidado por <code>nombreEmpresa</code> e <code>ImgEmpresa</code> en Firestore (todas las pólizas encontradas para la empresa).
+                                <span class="portal-empresa__aseg-intro-count">{{ aseguradosPorNombreEmpresaLista.length }} persona(s)</span>
+                            </p>
+                        </div>
+
                         <div class="portal-empresa__search">
                             <i class="fas fa-search"></i>
                             <input
@@ -176,14 +190,13 @@
                         </div>
 
                         <div v-if="!aseguradosFiltrados.length" class="portal-empresa__empty-table">
-                            No hay asegurados para mostrar. Comprueba que en Firestore las pólizas tengan
-                            <strong>nombreEmpresa</strong> o <strong>rfc</strong> (RFC de la empresa) alineados con tu cuenta,
-                            y que exista <strong>dataAsegurados</strong> (o nombre/RFC del titular) con los integrantes.
-                            Ajusta la búsqueda o recarga la página.
+                            No hay asegurados que coincidan con la búsqueda o no hay pólizas con
+                            <strong>nombreEmpresa</strong> alineado a tu cuenta. Verifica en Firestore el campo
+                            <strong>dataAsegurados</strong> (objeto, arreglo o mapa por RFC) en <code>PolizaGM</code> y colecciones relacionadas.
                         </div>
 
-                        <div v-else class="portal-empresa__table-wrap">
-                            <table class="portal-empresa__table">
+                        <div v-else class="portal-empresa__table-wrap portal-empresa__table-wrap--aseg">
+                            <table class="portal-empresa__table portal-empresa__table--aseg">
                                 <thead>
                                     <tr>
                                         <th>Asegurado</th>
@@ -194,7 +207,7 @@
                                 <tbody>
                                     <tr
                                         v-for="(row, idx) in aseguradosPagina"
-                                        :key="'aseg-' + idx + '-' + row.rfc + '-' + row.tipo"
+                                        :key="claveFilaAsegurado(row, idx)"
                                     >
                                         <td>{{ row.nombre }}</td>
                                         <td>{{ row.rfc }}</td>
@@ -234,12 +247,195 @@
                         </div>
                     </template>
 
-                    <div v-else class="portal-empresa__endosos-placeholder">
-                        <i class="fas fa-file-contract portal-empresa__endosos-icon"></i>
-                        <p>
-                            La consulta de endosos estará disponible próximamente. Para trámites urgentes,
-                            contacta a tu ejecutivo IBS.
+                    <div v-else class="portal-empresa__endosos-wrap">
+                        <h3 class="portal-empresa__card-title portal-empresa__card-title--flush">Solicitud de endosos</h3>
+                        <p class="portal-empresa__hint">
+                            Captura altas, bajas o correcciones. Al enviar se notifica a emisión y recibes confirmación por correo con folio.
+                            El Excel de seguimiento incluye todos los movimientos; si aplica ATLAS GMM, se agrega una hoja con formato de personas.
                         </p>
+
+                        <div v-if="misEndososAgrupados.length" class="portal-empresa__pendientes">
+                            <h4 class="portal-empresa__pendientes-title">Endosos pendientes registrados</h4>
+                            <div class="portal-empresa__pendientes-list">
+                                <div
+                                    v-for="grupo in misEndososAgrupados"
+                                    :key="grupo.loteId"
+                                    class="portal-empresa__pendiente-card"
+                                >
+                                    <div class="portal-empresa__pendiente-card-head">
+                                        <span class="portal-empresa__pendiente-folio">{{ grupo.loteId }}</span>
+                                        <div class="portal-empresa__pendiente-actions">
+                                            <span class="portal-empresa__pendiente-badge">{{ grupo.registros.length }} mov.</span>
+                                            <button
+                                                type="button"
+                                                class="portal-empresa__btn-ver portal-empresa__btn-ver--sm"
+                                                @click="toggleDetalleEndoso(grupo.loteId)"
+                                            >
+                                                <i class="fas fa-eye"></i>
+                                                {{ loteDetalleAbierto === grupo.loteId ? 'Ocultar detalle' : 'Ver detalle' }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <p class="portal-empresa__pendiente-meta">{{ grupo.fechaTexto }} · Estado: pendiente</p>
+                                    <div v-if="loteDetalleAbierto === grupo.loteId" class="portal-empresa__pendiente-detalle">
+                                        <div class="portal-empresa__table-wrap">
+                                            <table class="portal-empresa__table portal-empresa__table--small">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Movimiento</th>
+                                                        <th>Ramo</th>
+                                                        <th>Póliza</th>
+                                                        <th>Certificado</th>
+                                                        <th>Nombre</th>
+                                                        <th>Parentesco</th>
+                                                        <th>F. Nac.</th>
+                                                        <th>F. Alta</th>
+                                                        <th>F. Antig.</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr v-for="(reg, rIdx) in grupo.registros" :key="grupo.loteId + '-' + rIdx">
+                                                        <td>{{ reg.tipoMovimiento || '—' }}</td>
+                                                        <td>{{ reg.ramoEndoso || reg.tipo || '—' }}</td>
+                                                        <td>{{ reg.poliza || '—' }}</td>
+                                                        <td>{{ reg.certificado || '—' }}</td>
+                                                        <td>{{ reg.nombreCompleto || '—' }}</td>
+                                                        <td>{{ reg.parentescoLabel || parentescoLabel(reg.parentesco) }}</td>
+                                                        <td>{{ reg.fechaNacimiento || '—' }}</td>
+                                                        <td>{{ reg.fechaAlta || '—' }}</td>
+                                                        <td>{{ reg.fechaAntiguedad || '—' }}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-else class="portal-empresa__empty-table" style="margin-bottom: 16px;">
+                            No hay endosos pendientes registrados para esta empresa.
+                        </div>
+
+                        <div v-if="!polizasEndosoActivas.length" class="portal-empresa__empty-table">
+                            No hay pólizas (GMM, vida, funerario o accidentes) disponibles para capturar endosos.
+                        </div>
+
+                        <form v-else @submit.prevent="guardarRegistroEndoso" class="portal-empresa__company-grid">
+                            <div class="portal-empresa__field">
+                                <span class="portal-empresa__label">Tipo de movimiento</span>
+                                <select v-model="endosoForm.tipoMovimiento" class="portal-empresa__select">
+                                    <option value="Alta">Alta</option>
+                                    <option value="Baja">Baja</option>
+                                    <option value="Correccion de datos">Corrección de datos</option>
+                                </select>
+                            </div>
+
+                            <div class="portal-empresa__field">
+                                <span class="portal-empresa__label">Póliza</span>
+                                <select v-model="endosoForm.polizaKey" class="portal-empresa__select">
+                                    <option disabled value="">Selecciona una póliza</option>
+                                    <option v-for="p in polizasEndosoActivas" :key="p.key" :value="p.key">
+                                        {{ p.label }}
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="portal-empresa__field">
+                                <span class="portal-empresa__label">Certificado</span>
+                                <input v-model.trim="endosoForm.certificado" type="text" class="portal-empresa__search-input portal-empresa__endosos-input">
+                            </div>
+
+                            <div class="portal-empresa__field">
+                                <span class="portal-empresa__label">Parentesco</span>
+                                <select v-model.number="endosoForm.parentesco" class="portal-empresa__select">
+                                    <option :value="1">Titular (1)</option>
+                                    <option :value="2">Conyugue (2)</option>
+                                    <option :value="3">Hijo(a) (3)</option>
+                                </select>
+                            </div>
+
+                            <div class="portal-empresa__field">
+                                <span class="portal-empresa__label">Nombres</span>
+                                <input v-model.trim="endosoForm.nombres" type="text" class="portal-empresa__search-input portal-empresa__endosos-input">
+                            </div>
+
+                            <div class="portal-empresa__field">
+                                <span class="portal-empresa__label">Apellido paterno</span>
+                                <input v-model.trim="endosoForm.apellidoPaterno" type="text" class="portal-empresa__search-input portal-empresa__endosos-input">
+                            </div>
+
+                            <div class="portal-empresa__field">
+                                <span class="portal-empresa__label">Apellido materno</span>
+                                <input v-model.trim="endosoForm.apellidoMaterno" type="text" class="portal-empresa__search-input portal-empresa__endosos-input">
+                            </div>
+
+                            <div class="portal-empresa__field">
+                                <span class="portal-empresa__label">Sexo</span>
+                                <select v-model="endosoForm.sexo" class="portal-empresa__select">
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                </select>
+                            </div>
+
+                            <div class="portal-empresa__field">
+                                <span class="portal-empresa__label">Fecha nacimiento</span>
+                                <input v-model="endosoForm.fechaNacimiento" type="date" class="portal-empresa__search-input portal-empresa__endosos-input">
+                            </div>
+
+                            <div class="portal-empresa__field">
+                                <span class="portal-empresa__label">Fecha alta</span>
+                                <input v-model="endosoForm.fechaAlta" type="date" class="portal-empresa__search-input portal-empresa__endosos-input">
+                            </div>
+
+                            <div class="portal-empresa__field">
+                                <span class="portal-empresa__label">Fecha antiguedad</span>
+                                <input v-model="endosoForm.fechaAntiguedad" type="date" class="portal-empresa__search-input portal-empresa__endosos-input">
+                            </div>
+
+                            <div class="portal-empresa__field">
+                                <button type="submit" class="portal-empresa__btn-ver">
+                                    <i class="fas fa-plus"></i>
+                                    Guardar registro
+                                </button>
+                            </div>
+                        </form>
+
+                        <div v-if="endososPendientes.length" class="portal-empresa__table-wrap" style="margin-top: 14px;">
+                            <table class="portal-empresa__table">
+                                <thead>
+                                    <tr>
+                                        <th>Movimiento</th>
+                                        <th>Póliza</th>
+                                        <th>Compañía</th>
+                                        <th>Certificado</th>
+                                        <th>Nombre</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(r, idx) in endososPendientes" :key="r.localId">
+                                        <td>{{ r.tipoMovimiento }}</td>
+                                        <td>{{ r.poliza }}</td>
+                                        <td>{{ r.compania }}</td>
+                                        <td>{{ r.certificado || '—' }}</td>
+                                        <td>{{ r.nombreCompleto }}</td>
+                                        <td>
+                                            <button type="button" class="portal-empresa__btn-retry" @click="eliminarRegistroEndoso(idx)">
+                                                Quitar
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div v-if="endososPendientes.length" class="portal-empresa__endosos-actions portal-empresa__endosos-actions--send">
+                            <button type="button" class="portal-empresa__btn-pdf" :disabled="enviandoEndosos" @click="enviarEndosos">
+                                <i v-if="enviandoEndosos" class="fas fa-spinner fa-spin"></i>
+                                <i v-else class="fas fa-paper-plane"></i>
+                                Enviar endoso
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -320,6 +516,20 @@
                         <p v-else class="portal-empresa-modal__empty">
                             No hay datos de póliza en este ramo para este RFC.
                         </p>
+
+                        <div v-if="modalDetalleCampos.length" class="portal-empresa-modal__detalle-block">
+                            <p class="portal-empresa-modal__ramo-label">Datos del integrante / registro</p>
+                            <div class="portal-empresa-modal__detalle-dl">
+                                <div
+                                    v-for="(item, di) in modalDetalleCampos"
+                                    :key="'det-' + di"
+                                    class="portal-empresa-modal__detalle-row"
+                                >
+                                    <span class="portal-empresa-modal__detalle-dt">{{ item.label }}</span>
+                                    <span class="portal-empresa-modal__detalle-dd">{{ item.valor }}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -329,7 +539,7 @@
 
 <script>
 import { cargarPolizasPorRfc } from '~/lib/cargarPolizasPorRfc';
-import { aplicarReglasImgEmpresa, fetchImgEmpresaPorNombre } from '~/lib/imgEmpresa';
+import { aplicarReglasImgEmpresa, fetchImgEmpresaPorNombre, normalizarTextoEmpresa } from '~/lib/imgEmpresa';
 import { mergeDocumentosEmpresaEnPolizas } from '~/lib/mergePolizasEmpresa';
 import {
     fetchTodosDocumentosEmpresa,
@@ -341,6 +551,7 @@ import {
     normalizarListaAsegurados
 } from '~/lib/aseguradosPorEmpresa';
 import { fetchCatalogoCompaniasMap } from '~/lib/imgCompaniaCatalog';
+import Swal from 'sweetalert2';
 
 const PAGE_SIZE = 10;
 
@@ -379,10 +590,34 @@ export default {
             modalDetalle: false,
             modalNombre: '',
             modalRfc: '',
-            ramoModalActivo: 'gmm'
+            ramoModalActivo: 'gmm',
+            endosoForm: {
+                tipoMovimiento: 'Alta',
+                polizaKey: '',
+                certificado: '',
+                parentesco: 1,
+                nombres: '',
+                apellidoPaterno: '',
+                apellidoMaterno: '',
+                sexo: 'Masculino',
+                fechaNacimiento: '',
+                fechaAlta: '',
+                fechaAntiguedad: ''
+            },
+            endososPendientes: [],
+            enviandoEndosos: false,
+            /** Fila de asegurado abierta en el modal (incluye detalleIntegrante). */
+            modalRow: null,
+            misEndososFirestore: [],
+            loteDetalleAbierto: ''
         };
     },
     computed: {
+        apiBaseUrl() {
+            const c = this.$config && this.$config.apiBaseUrl;
+            const s = c ? String(c).replace(/\/$/, '') : '';
+            return s || 'https://api-sicas-616002718679.us-central1.run.app/api';
+        },
         imgEmpresaLogoUrl() {
             const d = this.imgEmpresaRegistro;
             if (!d) return '';
@@ -421,7 +656,7 @@ export default {
         tabsDisponibles() {
             const t = [];
             const p = this.polizas;
-            if (p.gastosMedicos.length) t.push({ key: 'gmm', label: 'GMM' });
+            if (p.gastosMedicos.length) t.push({ key: 'gmm', label: 'Gastos médicos' });
             if (p.vida.length) t.push({ key: 'vida', label: 'Vida' });
             if (p.funerarias.length) t.push({ key: 'funeraria', label: 'Funeraria' });
             if (p.accidentes.length) t.push({ key: 'accidentes', label: 'Accidentes' });
@@ -487,18 +722,91 @@ export default {
         vigenciaActual() {
             const pol = this.polizaActiva;
             if (!pol) return '—';
-            const desde = pol.vDesde || this.formatDate(pol.polizaDesde) || '—';
-            const hasta = pol.vHasta || this.formatDate(pol.polizaHasta) || '—';
+            const desde = pol.vDesde != null ? this.formatDate(pol.vDesde) : this.formatDate(pol.polizaDesde) || '—';
+            const hasta = pol.vHasta != null ? this.formatDate(pol.vHasta) : this.formatDate(pol.polizaHasta) || '—';
             return `${desde} — ${hasta}`;
+        },
+        vigenciaDesdePoliza() {
+            const pol = this.polizaActiva;
+            if (!pol) return '—';
+            return pol.vDesde != null ? this.formatDate(pol.vDesde) : this.formatDate(pol.polizaDesde) || '—';
+        },
+        vigenciaHastaPoliza() {
+            const pol = this.polizaActiva;
+            if (!pol) return '—';
+            return pol.vHasta != null ? this.formatDate(pol.vHasta) : this.formatDate(pol.polizaHasta) || '—';
         },
         pdfUrlActual() {
             const pol = this.polizaActiva;
             if (!pol) return '';
             if (pol.file_url) return pol.file_url;
             if (pol.idDocto) {
-                return `https://api-sicas-616002718679.us-central1.run.app/api/api/polizas/pdf/${pol.idDocto}`;
+                return `${this.apiBaseUrl}/api/polizas/pdf/${pol.idDocto}`;
             }
             return '';
+        },
+        /**
+         * Todas las filas de asegurados en pólizas vinculadas a nombreEmpresa (campo en documento o ImgEmpresa),
+         * más documentos devueltos por la consulta por empresa en Firestore.
+         */
+        aseguradosPorNombreEmpresaLista() {
+            const ordenarPorNombre = (arr) =>
+                [...arr].sort((a, b) =>
+                    String(a.nombre || '').localeCompare(String(b.nombre || ''), 'es', {
+                        sensitivity: 'base'
+                    })
+                );
+            const nombreEmpresaNorm = normalizarTextoEmpresa(this.empresa.nombre || '');
+            if (!nombreEmpresaNorm) {
+                return ordenarPorNombre(this.filasSinRfcEmpresaMoral(this.aseguradosLista));
+            }
+            const polizaCoincideNombreEmpresa = (pol) => {
+                if (!pol) return false;
+                if (
+                    pol._origen === 'empresaNombre'
+                    || pol._origen === 'nombreEmpresa'
+                    || pol._origen === 'empresaQuery'
+                ) {
+                    return true;
+                }
+                const candidatos = [
+                    pol.nombreEmpresa,
+                    pol.NombreEmpresa,
+                    pol.ImgEmpresa && pol.ImgEmpresa.nombreEmpresa,
+                    pol.imgEmpresa && pol.imgEmpresa.nombreEmpresa
+                ];
+                return candidatos.some(
+                    (c) => c && normalizarTextoEmpresa(String(c)) === nombreEmpresaNorm
+                );
+            };
+
+            const filas = [];
+            const extraerSiCoincide = (pol, tipo) => {
+                if (!polizaCoincideNombreEmpresa(pol)) return;
+                const extra = extraerAseguradosDePolizaData(pol, tipo, pol);
+                extra.forEach((r) => {
+                    filas.push({
+                        ...r,
+                        origen: r.origen || 'nombreEmpresa'
+                    });
+                });
+            };
+
+            for (const p of this.polizas.gastosMedicos || []) extraerSiCoincide(p, 'GMM');
+            for (const p of this.polizas.vida || []) extraerSiCoincide(p, 'Vida');
+            for (const p of this.polizas.funerarias || []) extraerSiCoincide(p, 'Funeraria');
+            for (const p of this.polizas.accidentes || []) extraerSiCoincide(p, 'Accidentes');
+            for (const p of this.polizas.auto || []) extraerSiCoincide(p, 'Auto');
+            for (const p of this.polizas.hogar || []) extraerSiCoincide(p, 'Hogar');
+
+            filas.push(...extraerFilasAseguradosDesdeDocumentos(this.documentosPorEmpresa));
+
+            const deduped = dedupeAseguradosPorPersona(filas);
+            const out = this.filasSinRfcEmpresaMoral(deduped);
+            if (out.length > 0) {
+                return ordenarPorNombre(out);
+            }
+            return ordenarPorNombre(this.filasSinRfcEmpresaMoral(this.aseguradosLista));
         },
         aseguradosDesdePolizasRFC() {
             const rows = [];
@@ -652,26 +960,84 @@ export default {
             if (!pol) return '';
             if (pol.file_url) return pol.file_url;
             if (pol.idDocto) {
-                return `https://api-sicas-616002718679.us-central1.run.app/api/api/polizas/pdf/${pol.idDocto}`;
+                return `${this.apiBaseUrl}/api/polizas/pdf/${pol.idDocto}`;
             }
             return '';
         },
         aseguradosFiltrados() {
             const q = this.busquedaAsegurado.trim().toLowerCase();
-            if (!q) return this.aseguradosLista;
-            return this.aseguradosLista.filter((r) => {
+            const base = this.aseguradosPorNombreEmpresaLista;
+            if (!q) return base;
+            return base.filter((r) => {
                 return (
-                    r.nombre.toLowerCase().includes(q) ||
-                    String(r.rfc).toLowerCase().includes(q)
+                    String(r.nombre || '').toLowerCase().includes(q) ||
+                    String(r.rfc || '').toLowerCase().includes(q)
                 );
             });
         },
+        /** Longitud estable para vigilar paginación sin reaccionar al mismo array reconstruido. */
+        cantidadAseguradosFiltrados() {
+            return this.aseguradosFiltrados.length;
+        },
         totalPaginas() {
-            return Math.max(1, Math.ceil(this.aseguradosFiltrados.length / PAGE_SIZE));
+            return Math.max(1, Math.ceil(this.cantidadAseguradosFiltrados / PAGE_SIZE));
         },
         aseguradosPagina() {
             const start = (this.paginaActual - 1) * PAGE_SIZE;
             return this.aseguradosFiltrados.slice(start, start + PAGE_SIZE);
+        },
+        polizasEndosoActivas() {
+            const out = [];
+            const pushLista = (arr, ramoKey, etiquetaRamo, getNumero) => {
+                (arr || []).forEach((pol, idx) => {
+                    const numero = getNumero(pol) || `${etiquetaRamo}-${idx + 1}`;
+                    const compania = this.nombreCompaniaDesdePoliza(pol);
+                    const key = `${ramoKey}|${numero}|${compania}|${idx}`;
+                    out.push({
+                        key,
+                        ramoKey,
+                        numero,
+                        compania,
+                        label: `[${etiquetaRamo}] ${numero} — ${compania}`,
+                        poliza: pol
+                    });
+                });
+            };
+            pushLista(this.polizas.gastosMedicos, 'gmm', 'GMM', (p) => p.numPolizaGM || p.documento);
+            pushLista(this.polizas.vida, 'vida', 'Vida', (p) => p.numPolizaVida || p.documento);
+            pushLista(this.polizas.funerarias, 'funeraria', 'Funeraria', (p) => p.numPolizaFuneraria || p.documento);
+            pushLista(this.polizas.accidentes, 'accidentes', 'Accidentes', (p) => p.numPolizaAccidente || p.documento);
+            return out;
+        },
+        misEndososAgrupados() {
+            const map = new Map();
+            for (const row of this.misEndososFirestore) {
+                const loteId = row.loteId || '—';
+                if (!map.has(loteId)) {
+                    map.set(loteId, {
+                        loteId,
+                        registros: [],
+                        fechaTexto: '—',
+                        ts: 0
+                    });
+                }
+                const g = map.get(loteId);
+                g.registros.push(row);
+                const t = row.fechaRegistroEndoso;
+                let sec = 0;
+                if (t && typeof t.seconds === 'number') sec = t.seconds;
+                else if (t instanceof Date) sec = Math.floor(t.getTime() / 1000);
+                if (sec > g.ts) {
+                    g.ts = sec;
+                    g.fechaTexto = this.formatDate(t) || '—';
+                }
+            }
+            return [...map.values()].sort((a, b) => b.ts - a.ts);
+        },
+        modalDetalleCampos() {
+            const row = this.modalRow;
+            if (!row || !row.detalleIntegrante) return [];
+            return this.aplanarObjetoParaVista(row.detalleIntegrante);
         }
     },
     watch: {
@@ -684,24 +1050,34 @@ export default {
                     this.ramoActivo = list[0].key;
                 }
                 this.indicePoliza = 0;
+                /* No reiniciar paginaActual: el listado de asegurados es global y no depende del ramo. */
             }
         },
         busquedaAsegurado() {
             this.paginaActual = 1;
         },
-        aseguradosFiltrados() {
-            if (this.paginaActual > this.totalPaginas) {
-                this.paginaActual = this.totalPaginas;
+        /**
+         * Solo ajustar si la página actual queda fuera de rango (búsqueda o recarga de datos).
+         * No usar watch profundo sobre el array: se dispara en cada render y reiniciaba la página.
+         */
+        cantidadAseguradosFiltrados() {
+            const tp = this.totalPaginas;
+            if (this.paginaActual > tp) {
+                this.paginaActual = tp;
             }
         },
         modalDetalle(val) {
             if (process.client) {
                 document.body.style.overflow = val ? 'hidden' : '';
             }
+            if (!val) {
+                this.modalRow = null;
+            }
         }
     },
     mounted() {
         this.cargarPolizas();
+        this.refrescarMisEndosos();
     },
     beforeDestroy() {
         if (process.client) {
@@ -741,9 +1117,140 @@ export default {
             }
             return str;
         },
+        claveFilaAsegurado(row, idx) {
+            const docId = row.poliza && row.poliza._firestoreId ? row.poliza._firestoreId : 'x';
+            const rfc = String(row.rfc || 'sin-rfc').replace(/\s/g, '');
+            const tipo = row.tipo || '';
+            return `aseg-${rfc}-${tipo}-${docId}-${idx}`;
+        },
+        filasSinRfcEmpresaMoral(rows) {
+            const rfcEmp = String(this.empresa.rfc || '')
+                .replace(/-/g, '')
+                .toUpperCase();
+            if (rfcEmp.length !== 12) return rows;
+            return rows.filter(
+                (r) => String(r.rfc).replace(/-/g, '').toUpperCase() !== rfcEmp
+            );
+        },
+        normalizarShapePolizas(src) {
+            const p = src && typeof src === 'object' ? src : {};
+            return {
+                auto: Array.isArray(p.auto) ? p.auto : [],
+                gastosMedicos: Array.isArray(p.gastosMedicos) ? p.gastosMedicos : [],
+                vida: Array.isArray(p.vida) ? p.vida : [],
+                funerarias: Array.isArray(p.funerarias) ? p.funerarias : [],
+                accidentes: Array.isArray(p.accidentes) ? p.accidentes : [],
+                hogar: Array.isArray(p.hogar) ? p.hogar : []
+            };
+        },
+        toggleDetalleEndoso(loteId) {
+            this.loteDetalleAbierto = this.loteDetalleAbierto === loteId ? '' : loteId;
+        },
         seleccionarRamo(key) {
             this.ramoActivo = key;
             this.indicePoliza = 0;
+        },
+        tipoDesdeRamo(ramo) {
+            const m = {
+                gmm: 'GMM',
+                vida: 'Vida',
+                funeraria: 'Funeraria',
+                accidentes: 'Accidentes',
+                auto: 'Auto',
+                hogar: 'Hogar'
+            };
+            return m[ramo] || 'GMM';
+        },
+        aplanarObjetoParaVista(obj, prefijo = '') {
+            if (obj == null || typeof obj !== 'object') return [];
+            const filas = [];
+            for (const [k, raw] of Object.entries(obj)) {
+                const label = prefijo ? `${prefijo}.${k}` : k;
+                if (raw != null && typeof raw === 'object' && !Array.isArray(raw) && !(raw instanceof Date)) {
+                    if (typeof raw.toDate === 'function' || typeof raw.seconds === 'number') {
+                        filas.push({ label, valor: this.formatDetalleValor(raw) });
+                    } else {
+                        filas.push(...this.aplanarObjetoParaVista(raw, label));
+                    }
+                } else {
+                    filas.push({ label, valor: this.formatDetalleValor(raw) });
+                }
+            }
+            return filas;
+        },
+        formatDetalleValor(v) {
+            if (v == null || v === '') return '—';
+            if (typeof v.toDate === 'function') return this.formatDate(v);
+            if (v && typeof v.seconds === 'number') return this.formatDate(v);
+            if (v instanceof Date) return this.formatDate(v);
+            if (Array.isArray(v)) {
+                const s = JSON.stringify(v);
+                return s.length > 400 ? `${s.slice(0, 400)}…` : s;
+            }
+            if (typeof v === 'object') {
+                const s = JSON.stringify(v);
+                return s.length > 400 ? `${s.slice(0, 400)}…` : s;
+            }
+            const s = String(v);
+            return s.length > 500 ? `${s.slice(0, 500)}…` : s;
+        },
+        async refrescarMisEndosos() {
+            if (!process.client || !this.$db) {
+                return;
+            }
+
+            const normalizar = (v) => String(v || '').trim().toUpperCase();
+            const rfcEmpresa = normalizar(this.empresa && this.empresa.rfc);
+            const nombreEmpresaRaw = String((this.empresa && this.empresa.nombre) || '').trim();
+            const nombreEmpresa = normalizar(nombreEmpresaRaw);
+
+            if (!rfcEmpresa && !nombreEmpresa) {
+                this.misEndososFirestore = [];
+                return;
+            }
+
+            try {
+                const dedupe = new Map();
+                const pushRows = (snap) => {
+                    snap.docs.forEach((d) => {
+                        dedupe.set(d.id, { id: d.id, ...d.data() });
+                    });
+                };
+
+                if (rfcEmpresa) {
+                    const snapRfc = await this.$db
+                        .collection('endososgmm')
+                        .where('empresaRfc', '==', rfcEmpresa)
+                        .limit(150)
+                        .get();
+                    pushRows(snapRfc);
+                }
+
+                if (nombreEmpresaRaw) {
+                    const snapNombre = await this.$db
+                        .collection('endososgmm')
+                        .where('empresaNombre', '==', nombreEmpresaRaw)
+                        .limit(150)
+                        .get();
+                    pushRows(snapNombre);
+                }
+
+                const rows = [...dedupe.values()].filter((r) => {
+                    const estado = normalizar(r.estado || 'PENDIENTE');
+                    if (estado && estado !== 'PENDIENTE') return false;
+
+                    const rfcRow = normalizar(r.empresaRfc);
+                    const nombreRow = normalizar(r.empresaNombre);
+                    const coincideRfc = rfcEmpresa && rfcRow && rfcRow === rfcEmpresa;
+                    const coincideNombre = nombreEmpresa && nombreRow && nombreRow === nombreEmpresa;
+                    return Boolean(coincideRfc || coincideNombre);
+                });
+
+                this.misEndososFirestore = rows;
+            } catch (e) {
+                console.warn('refrescarMisEndosos', e);
+                this.misEndososFirestore = [];
+            }
         },
         async cargarPolizas() {
             if (!this.$db || !this.empresa || !this.empresa.rfc) {
@@ -785,7 +1292,7 @@ export default {
                     this.empresa.nombre,
                     mergedCompletas
                 );
-                this.polizas = polizas;
+                this.polizas = this.normalizarShapePolizas(polizas);
                 this.ramosImgEmpresa = ramosPermitidos;
                 this.imgEmpresaRegistro = imgEmpresa
                     ? { _docId: imgEmpresaId, ...imgEmpresa }
@@ -800,6 +1307,7 @@ export default {
             } finally {
                 this.cargandoPolizas = false;
                 this.perfilImgEmpresaResuelto = true;
+                this.refrescarMisEndosos();
             }
         },
         tipoARamoKey(tipo) {
@@ -814,6 +1322,7 @@ export default {
             return m[tipo] || 'gmm';
         },
         abrirModalAsegurado(row) {
+            this.modalRow = row;
             this.modalNombre = row.nombre;
             this.modalRfc = row.rfc;
             this.modalDetalle = true;
@@ -868,6 +1377,186 @@ export default {
                 return pol.numPolizaHogar || pol.documento || 'Hogar';
             }
             return 'Póliza';
+        },
+        parentescoLabel(v) {
+            const n = Number(v);
+            if (n === 1) return 'Titular';
+            if (n === 2) return 'Conyugue';
+            if (n === 3) return 'Hijo(a)';
+            return '—';
+        },
+        mostrarAviso({ icon = 'info', title = '', text = '' } = {}) {
+            return Swal.fire({
+                icon,
+                title,
+                text,
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#002fa6'
+            });
+        },
+        confirmarAccion({ title = '', text = '' } = {}) {
+            return Swal.fire({
+                icon: 'question',
+                title,
+                text,
+                showCancelButton: true,
+                confirmButtonText: 'Sí, enviar',
+                cancelButtonText: 'Cancelar',
+                confirmButtonColor: '#002fa6',
+                cancelButtonColor: '#94a3b8'
+            });
+        },
+        guardarRegistroEndoso() {
+            if (!this.endosoForm.polizaKey) {
+                this.mostrarAviso({
+                    icon: 'warning',
+                    title: 'Falta póliza',
+                    text: 'Selecciona una póliza.'
+                });
+                return;
+            }
+            if (!this.endosoForm.nombres || !this.endosoForm.apellidoPaterno || !this.endosoForm.apellidoMaterno) {
+                this.mostrarAviso({
+                    icon: 'warning',
+                    title: 'Datos incompletos',
+                    text: 'Completa nombres y apellidos.'
+                });
+                return;
+            }
+            const polizaSel = this.polizasEndosoActivas.find((p) => p.key === this.endosoForm.polizaKey);
+            if (!polizaSel) {
+                this.mostrarAviso({
+                    icon: 'error',
+                    title: 'Póliza inválida',
+                    text: 'Selecciona nuevamente una póliza válida.'
+                });
+                return;
+            }
+
+            const nombreCompleto = [
+                this.endosoForm.nombres,
+                this.endosoForm.apellidoPaterno,
+                this.endosoForm.apellidoMaterno
+            ].join(' ').replace(/\s+/g, ' ').trim();
+
+            this.endososPendientes.push({
+                localId: `${Date.now()}-${Math.random().toString(16).slice(2, 7)}`,
+                tipoMovimiento: this.endosoForm.tipoMovimiento,
+                poliza: polizaSel.numero,
+                ramoEndoso: polizaSel.ramoKey,
+                compania: polizaSel.compania,
+                certificado: this.endosoForm.certificado || '',
+                parentesco: Number(this.endosoForm.parentesco),
+                parentescoLabel: this.parentescoLabel(this.endosoForm.parentesco),
+                nombreCompleto,
+                sexo: this.endosoForm.sexo,
+                fechaNacimiento: this.endosoForm.fechaNacimiento,
+                fechaAlta: this.endosoForm.fechaAlta,
+                fechaAntiguedad: this.endosoForm.fechaAntiguedad,
+                empresaNombre: this.empresa.nombre || '',
+                empresaRfc: this.empresa.rfc || ''
+            });
+
+            this.endosoForm.certificado = '';
+            this.endosoForm.nombres = '';
+            this.endosoForm.apellidoPaterno = '';
+            this.endosoForm.apellidoMaterno = '';
+            this.endosoForm.sexo = 'Masculino';
+            this.endosoForm.fechaNacimiento = '';
+            this.endosoForm.fechaAlta = '';
+            this.endosoForm.fechaAntiguedad = '';
+        },
+        eliminarRegistroEndoso(idx) {
+            this.endososPendientes.splice(idx, 1);
+        },
+        async enviarEndosos() {
+            if (!this.endososPendientes.length) {
+                await this.mostrarAviso({
+                    icon: 'warning',
+                    title: 'Sin registros',
+                    text: 'No hay registros para enviar.'
+                });
+                return;
+            }
+            const conf = await this.confirmarAccion({
+                title: 'Confirmar envío',
+                text: '¿Estas seguro de enviar endoso?'
+            });
+            if (!conf.isConfirmed) return;
+            if (!this.$db) {
+                await this.mostrarAviso({
+                    icon: 'error',
+                    title: 'Sin conexión',
+                    text: 'No hay conexión a base de datos.'
+                });
+                return;
+            }
+            this.enviandoEndosos = true;
+            try {
+                const loteId = `END-${Date.now()}`;
+                const authUser =
+                    this.$auth && typeof this.$auth.getCurrentUser === 'function'
+                        ? this.$auth.getCurrentUser()
+                        : null;
+                const capturadorEmail =
+                    (authUser && authUser.email) || this.empresa.email || '';
+                const payloads = this.endososPendientes.map((row) => ({
+                    loteId,
+                    tipoMovimiento: row.tipoMovimiento,
+                    poliza: row.poliza,
+                    ramoEndoso: row.ramoEndoso || '',
+                    compania: row.compania,
+                    certificado: row.certificado,
+                    parentesco: row.parentesco,
+                    parentescoLabel: row.parentescoLabel,
+                    nombreCompleto: row.nombreCompleto,
+                    sexo: row.sexo,
+                    fechaNacimiento: row.fechaNacimiento,
+                    fechaAlta: row.fechaAlta,
+                    fechaAntiguedad: row.fechaAntiguedad,
+                    empresaNombre: row.empresaNombre,
+                    empresaRfc: row.empresaRfc,
+                    capturadorEmail,
+                    estado: 'pendiente',
+                    fechaRegistroEndoso: new Date(),
+                    origen: 'portalEmpresa'
+                }));
+
+                await Promise.all(payloads.map((doc) => this.$db.collection('endososgmm').add(doc)));
+
+                const notifResp = await fetch(`${this.apiBaseUrl}/endosos/notificar`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        folio: loteId,
+                        empresaNombre: this.empresa.nombre || '',
+                        empresaRfc: this.empresa.rfc || '',
+                        emailSolicitante: capturadorEmail,
+                        registros: payloads
+                    })
+                });
+                if (!notifResp.ok) {
+                    const t = await notifResp.text();
+                    throw new Error(t || `HTTP ${notifResp.status}`);
+                }
+
+                this.endososPendientes = [];
+                await this.refrescarMisEndosos();
+                await this.mostrarAviso({
+                    icon: 'success',
+                    title: 'Solicitud enviada',
+                    text: `Solicitud enviada con folio ${loteId}.`
+                });
+            } catch (e) {
+                console.error(e);
+                await this.mostrarAviso({
+                    icon: 'error',
+                    title: 'No se pudo enviar',
+                    text: `No se pudo enviar la solicitud de endosos. ${e.message || ''}`.trim()
+                });
+            } finally {
+                this.enviandoEndosos = false;
+            }
         },
     }
 };
@@ -1252,6 +1941,22 @@ export default {
     }
 }
 
+.portal-empresa__table-wrap--aseg {
+    box-shadow: 0 2px 14px rgba(15, 23, 42, 0.06);
+}
+
+.portal-empresa__table--aseg tbody tr:nth-child(even) td {
+    background: #f1f5f9;
+}
+
+.portal-empresa__table--aseg tbody tr:nth-child(odd) td {
+    background: #ffffff;
+}
+
+.portal-empresa__table--aseg tbody tr:hover td {
+    background: #e0f2fe !important;
+}
+
 .portal-empresa__btn-ver {
     display: inline-flex;
     align-items: center;
@@ -1339,6 +2044,22 @@ export default {
     margin-right: auto;
 }
 
+.portal-empresa__endosos-input {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #ffffff;
+}
+
+.portal-empresa__endosos-actions {
+    margin-top: 14px;
+    display: flex;
+}
+
+.portal-empresa__endosos-actions--send {
+    justify-content: flex-end;
+}
+
 /* Modal asegurado */
 .portal-empresa-modal-fade-enter-active,
 .portal-empresa-modal-fade-leave-active {
@@ -1364,7 +2085,7 @@ export default {
 
 .portal-empresa-modal__box {
     width: 100%;
-    max-width: 520px;
+    max-width: 640px;
     max-height: 90vh;
     overflow: auto;
     border-radius: 16px;
@@ -1529,5 +2250,218 @@ export default {
     color: #64748b;
     text-align: center;
     padding: 16px;
+}
+
+.portal-empresa__aseg-intro {
+    margin-bottom: 18px;
+    padding: 16px 18px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.portal-empresa__aseg-intro-title {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.35;
+
+    strong {
+        color: #002fa6;
+    }
+}
+
+.portal-empresa__aseg-intro-meta {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #64748b;
+
+    code {
+        font-size: 12px;
+        padding: 2px 6px;
+        background: #e2e8f0;
+        color: #0f172a;
+        border-radius: 4px;
+    }
+}
+
+.portal-empresa__aseg-intro-count {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #086ad8 0%, #002fa6 100%);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.portal-empresa__aseg-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    margin-bottom: 16px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, rgba(8, 106, 216, 0.08) 0%, rgba(0, 47, 166, 0.06) 100%);
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+}
+
+.portal-empresa__aseg-banner-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748b;
+}
+
+.portal-empresa__aseg-banner-count {
+    font-size: 16px;
+    font-weight: 700;
+    color: #002fa6;
+}
+
+.portal-empresa__aseg-banner-meta {
+    font-size: 13px;
+    color: #475569;
+    flex: 1 1 100%;
+
+    @media (min-width: 640px) {
+        flex: 0 1 auto;
+        margin-left: auto;
+    }
+}
+
+.portal-empresa__endosos-wrap {
+    text-align: left;
+    padding: 8px 0 0;
+}
+
+.portal-empresa__card-title--flush {
+    margin-top: 0;
+    text-align: left;
+}
+
+.portal-empresa__pendientes {
+    margin-bottom: 24px;
+    padding: 18px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+}
+
+.portal-empresa__pendientes-title {
+    margin: 0 0 12px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.portal-empresa__pendientes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.portal-empresa__pendiente-card {
+    padding: 12px 14px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.portal-empresa__pendiente-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.portal-empresa__pendiente-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.portal-empresa__pendiente-folio {
+    font-family: ui-monospace, monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: #002fa6;
+}
+
+.portal-empresa__pendiente-badge {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.portal-empresa__pendiente-meta {
+    margin: 8px 0 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.portal-empresa__pendiente-detalle {
+    margin-top: 10px;
+}
+
+.portal-empresa__table--small {
+    font-size: 12px;
+
+    th,
+    td {
+        padding: 8px 10px;
+    }
+}
+
+.portal-empresa__btn-ver--sm {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+.portal-empresa-modal__detalle-block {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.portal-empresa-modal__detalle-dl {
+    max-height: 280px;
+    overflow-y: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #f8fafc;
+}
+
+.portal-empresa-modal__detalle-row {
+    display: grid;
+    grid-template-columns: minmax(0, 38%) minmax(0, 62%);
+    gap: 8px 12px;
+    padding: 10px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.portal-empresa-modal__detalle-dt {
+    color: #64748b;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.portal-empresa-modal__detalle-dd {
+    color: #0f172a;
+    word-break: break-word;
+    margin: 0;
 }
 </style>

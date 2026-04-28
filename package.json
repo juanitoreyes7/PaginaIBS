@@ -9,6 +9,8 @@
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate",
+        "serve:dist": "npx --yes serve@14 dist -s -l 3000",
+        "preview": "npm run generate && npm run serve:dist",
         "deploy": "npm run deploy:firebase",
         "deploy:firebase": "npm run generate && firebase deploy --only hosting:web"
     },
@@ -18,6 +20,7 @@
         "@nuxtjs/style-resources": "^1.2.1",
         "bootstrap": "^4.6.1",
         "bootstrap-vue": "^2.21.2",
+        "exceljs": "^4.4.0",
         "firebase": "^8.10.0",
         "nuxt": "^2.15.8",
         "swiper": "^5.3.7",

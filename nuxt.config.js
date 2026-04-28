@@ -68,7 +68,8 @@ export default {
     },
 
     publicRuntimeConfig: {
-        apiBaseUrl: process.env.API_BASE_URL || 'http://localhost:8080/api',
+        // Default a Cloud Run para evitar "Failed to fetch" cuando no hay API local levantada.
+        apiBaseUrl: process.env.API_BASE_URL || 'https://api-sicas-616002718679.us-central1.run.app/api',
         emailjsServiceId: process.env.EMAILJS_SERVICE_ID || 'service_bw3dpyd',
         emailjsTemplateId: process.env.EMAILJS_TEMPLATE_ID || 'template_yqyee8c',
         emailjsPublicKey: process.env.EMAILJS_PUBLIC_KEY || '9dXIW13fiQT0eCgk5'

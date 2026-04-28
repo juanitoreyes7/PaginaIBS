@@ -117,7 +117,20 @@ export default {
             this.cargando = true;
             try {
                 await this.$auth.signInWithEmailAndPassword(this.email, this.password);
-                this.$router.push('/portal');
+                await this.$nextTick();
+                try {
+                    await this.$router.push('/portal');
+                } catch (navErr) {
+                    if (navErr && navErr.name === 'NavigationDuplicated') {
+                        return;
+                    }
+                    /* Recarga completa: evita 404 con servidores estáticos sin modo SPA (-s). */
+                    if (process.client) {
+                        const base = (this.$router && this.$router.options && this.$router.options.base) || '/';
+                        const path = `${base.replace(/\/$/, '')}/portal/`.replace(/\/+/g, '/');
+                        window.location.assign(path.startsWith('/') ? path : `/${path}`);
+                    }
+                }
             } catch (error) {
                 if (error.code === 'auth/user-not-found') {
                     this.mensajeError = 'No existe una cuenta con este correo.';

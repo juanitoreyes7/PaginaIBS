@@ -8,16 +8,21 @@ export default function ({ route, redirect, app }) {
     if (rutasPublicas.includes(route.path)) {
         return;
     }
-    // Solo en el cliente podemos leer el estado de Firebase Auth
-    if (process.client && app.$auth) {
-        return new Promise((resolve) => {
-            const unsubscribe = app.$auth.onAuthStateChanged((user) => {
-                unsubscribe();
-                if (!user) {
-                    redirect('/login');
-                }
-                resolve();
-            });
-        });
+    // Generación estática / SSR: Firebase solo existe en el cliente; no bloquear aquí.
+    if (!process.client) {
+        return;
     }
+    // Solo en el cliente validamos sesión
+    if (!app.$auth) {
+        return;
+    }
+    return new Promise((resolve) => {
+        const unsubscribe = app.$auth.onAuthStateChanged((user) => {
+            unsubscribe();
+            if (!user) {
+                redirect('/login');
+            }
+            resolve();
+        });
+    });
 }

@@ -1,122 +1,122 @@
-export const AboutCompany = () => import('../../components/AboutCompany.vue' /* webpackChunkName: "components/about-company" */).then(c => wrapFunctional(c.default || c))
-export const AboutCompanyTwo = () => import('../../components/AboutCompanyTwo.vue' /* webpackChunkName: "components/about-company-two" */).then(c => wrapFunctional(c.default || c))
-export const AboutDelivery = () => import('../../components/AboutDelivery.vue' /* webpackChunkName: "components/about-delivery" */).then(c => wrapFunctional(c.default || c))
-export const AccordionOne = () => import('../../components/AccordionOne.vue' /* webpackChunkName: "components/accordion-one" */).then(c => wrapFunctional(c.default || c))
-export const AccordionTwo = () => import('../../components/AccordionTwo.vue' /* webpackChunkName: "components/accordion-two" */).then(c => wrapFunctional(c.default || c))
-export const AppointmentForm = () => import('../../components/AppointmentForm.vue' /* webpackChunkName: "components/appointment-form" */).then(c => wrapFunctional(c.default || c))
-export const BlogSidebar = () => import('../../components/BlogSidebar.vue' /* webpackChunkName: "components/blog-sidebar" */).then(c => wrapFunctional(c.default || c))
-export const BrandLogoCarousel = () => import('../../components/BrandLogoCarousel.vue' /* webpackChunkName: "components/brand-logo-carousel" */).then(c => wrapFunctional(c.default || c))
-export const Breadcrumbs = () => import('../../components/Breadcrumbs.vue' /* webpackChunkName: "components/breadcrumbs" */).then(c => wrapFunctional(c.default || c))
-export const Breadcrumbs2 = () => import('../../components/Breadcrumbs2.vue' /* webpackChunkName: "components/breadcrumbs2" */).then(c => wrapFunctional(c.default || c))
-export const CaseStudiesItem = () => import('../../components/CaseStudiesItem.vue' /* webpackChunkName: "components/case-studies-item" */).then(c => wrapFunctional(c.default || c))
-export const ContactUsInfo = () => import('../../components/ContactUsInfo.vue' /* webpackChunkName: "components/contact-us-info" */).then(c => wrapFunctional(c.default || c))
-export const ContactUsInfo1 = () => import('../../components/ContactUsInfo1.vue' /* webpackChunkName: "components/contact-us-info1" */).then(c => wrapFunctional(c.default || c))
-export const CorporateVideo = () => import('../../components/CorporateVideo.vue' /* webpackChunkName: "components/corporate-video" */).then(c => wrapFunctional(c.default || c))
-export const CtaContact = () => import('../../components/CtaContact.vue' /* webpackChunkName: "components/cta-contact" */).then(c => wrapFunctional(c.default || c))
-export const CtaContactTwo = () => import('../../components/CtaContactTwo.vue' /* webpackChunkName: "components/cta-contact-two" */).then(c => wrapFunctional(c.default || c))
-export const CtaFour = () => import('../../components/CtaFour.vue' /* webpackChunkName: "components/cta-four" */).then(c => wrapFunctional(c.default || c))
-export const CtaOne = () => import('../../components/CtaOne.vue' /* webpackChunkName: "components/cta-one" */).then(c => wrapFunctional(c.default || c))
-export const CtaOne1 = () => import('../../components/CtaOne1.vue' /* webpackChunkName: "components/cta-one1" */).then(c => wrapFunctional(c.default || c))
-export const CtaThree = () => import('../../components/CtaThree.vue' /* webpackChunkName: "components/cta-three" */).then(c => wrapFunctional(c.default || c))
-export const CtaTwo = () => import('../../components/CtaTwo.vue' /* webpackChunkName: "components/cta-two" */).then(c => wrapFunctional(c.default || c))
-export const CtaVideo = () => import('../../components/CtaVideo.vue' /* webpackChunkName: "components/cta-video" */).then(c => wrapFunctional(c.default || c))
-export const FeatureItem = () => import('../../components/FeatureItem.vue' /* webpackChunkName: "components/feature-item" */).then(c => wrapFunctional(c.default || c))
-export const FeatureItemStyleThree = () => import('../../components/FeatureItemStyleThree.vue' /* webpackChunkName: "components/feature-item-style-three" */).then(c => wrapFunctional(c.default || c))
-export const FeatureItemTwo = () => import('../../components/FeatureItemTwo.vue' /* webpackChunkName: "components/feature-item-two" */).then(c => wrapFunctional(c.default || c))
-export const Footer = () => import('../../components/Footer.vue' /* webpackChunkName: "components/footer" */).then(c => wrapFunctional(c.default || c))
-export const FooterAbout = () => import('../../components/FooterAbout.vue' /* webpackChunkName: "components/footer-about" */).then(c => wrapFunctional(c.default || c))
-export const FooterVideo = () => import('../../components/FooterVideo.vue' /* webpackChunkName: "components/footer-video" */).then(c => wrapFunctional(c.default || c))
-export const FooterWidgetApps = () => import('../../components/FooterWidgetApps.vue' /* webpackChunkName: "components/footer-widget-apps" */).then(c => wrapFunctional(c.default || c))
-export const FooterWidgetLink = () => import('../../components/FooterWidgetLink.vue' /* webpackChunkName: "components/footer-widget-link" */).then(c => wrapFunctional(c.default || c))
-export const FunFact = () => import('../../components/FunFact.vue' /* webpackChunkName: "components/fun-fact" */).then(c => wrapFunctional(c.default || c))
-export const FunFactThree = () => import('../../components/FunFactThree.vue' /* webpackChunkName: "components/fun-fact-three" */).then(c => wrapFunctional(c.default || c))
-export const FunFactTwo = () => import('../../components/FunFactTwo.vue' /* webpackChunkName: "components/fun-fact-two" */).then(c => wrapFunctional(c.default || c))
-export const Header = () => import('../../components/Header.vue' /* webpackChunkName: "components/header" */).then(c => wrapFunctional(c.default || c))
-export const HeaderAppointment = () => import('../../components/HeaderAppointment.vue' /* webpackChunkName: "components/header-appointment" */).then(c => wrapFunctional(c.default || c))
-export const HeaderCybersecurity = () => import('../../components/HeaderCybersecurity.vue' /* webpackChunkName: "components/header-cybersecurity" */).then(c => wrapFunctional(c.default || c))
-export const HeaderProcessing = () => import('../../components/HeaderProcessing.vue' /* webpackChunkName: "components/header-processing" */).then(c => wrapFunctional(c.default || c))
-export const HeaderResolution = () => import('../../components/HeaderResolution.vue' /* webpackChunkName: "components/header-resolution" */).then(c => wrapFunctional(c.default || c))
-export const HeaderTop = () => import('../../components/HeaderTop.vue' /* webpackChunkName: "components/header-top" */).then(c => wrapFunctional(c.default || c))
-export const HeroAppointment = () => import('../../components/HeroAppointment.vue' /* webpackChunkName: "components/hero-appointment" */).then(c => wrapFunctional(c.default || c))
-export const HeroCybersecurity = () => import('../../components/HeroCybersecurity.vue' /* webpackChunkName: "components/hero-cybersecurity" */).then(c => wrapFunctional(c.default || c))
-export const HeroInfotechNo = () => import('../../components/HeroInfotechNo.vue' /* webpackChunkName: "components/hero-infotech-no" */).then(c => wrapFunctional(c.default || c))
-export const HeroInsurance = () => import('../../components/HeroInsurance.vue' /* webpackChunkName: "components/hero-insurance" */).then(c => wrapFunctional(c.default || c))
-export const HeroProcessing = () => import('../../components/HeroProcessing.vue' /* webpackChunkName: "components/hero-processing" */).then(c => wrapFunctional(c.default || c))
-export const HeroResolution = () => import('../../components/HeroResolution.vue' /* webpackChunkName: "components/hero-resolution" */).then(c => wrapFunctional(c.default || c))
-export const HeroService = () => import('../../components/HeroService.vue' /* webpackChunkName: "components/hero-service" */).then(c => wrapFunctional(c.default || c))
-export const HomeCarousel = () => import('../../components/HomeCarousel.vue' /* webpackChunkName: "components/home-carousel" */).then(c => wrapFunctional(c.default || c))
-export const InsuranceModal = () => import('../../components/InsuranceModal.vue' /* webpackChunkName: "components/insurance-modal" */).then(c => wrapFunctional(c.default || c))
-export const MobileNavMenu = () => import('../../components/MobileNavMenu.vue' /* webpackChunkName: "components/mobile-nav-menu" */).then(c => wrapFunctional(c.default || c))
-export const Navigation = () => import('../../components/Navigation.vue' /* webpackChunkName: "components/navigation" */).then(c => wrapFunctional(c.default || c))
-export const OffCanvasMobileMenu = () => import('../../components/OffCanvasMobileMenu.vue' /* webpackChunkName: "components/off-canvas-mobile-menu" */).then(c => wrapFunctional(c.default || c))
-export const PageHeader = () => import('../../components/PageHeader.vue' /* webpackChunkName: "components/page-header" */).then(c => wrapFunctional(c.default || c))
-export const PortalEmpresaView = () => import('../../components/PortalEmpresaView.vue' /* webpackChunkName: "components/portal-empresa-view" */).then(c => wrapFunctional(c.default || c))
-export const PreviewMobileNavMenu = () => import('../../components/PreviewMobileNavMenu.vue' /* webpackChunkName: "components/preview-mobile-nav-menu" */).then(c => wrapFunctional(c.default || c))
-export const PreviewOffcanvasMobileMenu = () => import('../../components/PreviewOffcanvasMobileMenu.vue' /* webpackChunkName: "components/preview-offcanvas-mobile-menu" */).then(c => wrapFunctional(c.default || c))
-export const QualifiedMethod = () => import('../../components/QualifiedMethod.vue' /* webpackChunkName: "components/qualified-method" */).then(c => wrapFunctional(c.default || c))
-export const SearchOverlay = () => import('../../components/SearchOverlay.vue' /* webpackChunkName: "components/search-overlay" */).then(c => wrapFunctional(c.default || c))
-export const SectionTitle = () => import('../../components/SectionTitle.vue' /* webpackChunkName: "components/section-title" */).then(c => wrapFunctional(c.default || c))
-export const ServiceIT = () => import('../../components/ServiceIT.vue' /* webpackChunkName: "components/service-i-t" */).then(c => wrapFunctional(c.default || c))
-export const ServiceItem = () => import('../../components/ServiceItem.vue' /* webpackChunkName: "components/service-item" */).then(c => wrapFunctional(c.default || c))
-export const ServiceItemStyleFive = () => import('../../components/ServiceItemStyleFive.vue' /* webpackChunkName: "components/service-item-style-five" */).then(c => wrapFunctional(c.default || c))
-export const ServiceItemStyleFour = () => import('../../components/ServiceItemStyleFour.vue' /* webpackChunkName: "components/service-item-style-four" */).then(c => wrapFunctional(c.default || c))
-export const ServiceItemStyleThree = () => import('../../components/ServiceItemStyleThree.vue' /* webpackChunkName: "components/service-item-style-three" */).then(c => wrapFunctional(c.default || c))
-export const ServiceItemStyleTwo = () => import('../../components/ServiceItemStyleTwo.vue' /* webpackChunkName: "components/service-item-style-two" */).then(c => wrapFunctional(c.default || c))
-export const ServiceOne = () => import('../../components/ServiceOne.vue' /* webpackChunkName: "components/service-one" */).then(c => wrapFunctional(c.default || c))
-export const TeamMember = () => import('../../components/TeamMember.vue' /* webpackChunkName: "components/team-member" */).then(c => wrapFunctional(c.default || c))
-export const VideoPupupOne = () => import('../../components/VideoPupupOne.vue' /* webpackChunkName: "components/video-pupup-one" */).then(c => wrapFunctional(c.default || c))
-export const VideoWithImages = () => import('../../components/VideoWithImages.vue' /* webpackChunkName: "components/video-with-images" */).then(c => wrapFunctional(c.default || c))
-export const SectionsAboutBanner = () => import('../../components/sections/AboutBanner.vue' /* webpackChunkName: "components/sections-about-banner" */).then(c => wrapFunctional(c.default || c))
-export const SectionsAboutUsDescription = () => import('../../components/sections/AboutUsDescription.vue' /* webpackChunkName: "components/sections-about-us-description" */).then(c => wrapFunctional(c.default || c))
-export const SectionsAboutUsHero = () => import('../../components/sections/AboutUsHero.vue' /* webpackChunkName: "components/sections-about-us-hero" */).then(c => wrapFunctional(c.default || c))
-export const SectionsAccordionWrapper = () => import('../../components/sections/AccordionWrapper.vue' /* webpackChunkName: "components/sections-accordion-wrapper" */).then(c => wrapFunctional(c.default || c))
-export const SectionsAdvisoryButtons = () => import('../../components/sections/AdvisoryButtons.vue' /* webpackChunkName: "components/sections-advisory-buttons" */).then(c => wrapFunctional(c.default || c))
-export const SectionsAdvisoryButtonsCobranza = () => import('../../components/sections/AdvisoryButtonsCobranza.vue' /* webpackChunkName: "components/sections-advisory-buttons-cobranza" */).then(c => wrapFunctional(c.default || c))
-export const SectionsBlogPageWrapper = () => import('../../components/sections/BlogPageWrapper.vue' /* webpackChunkName: "components/sections-blog-page-wrapper" */).then(c => wrapFunctional(c.default || c))
-export const SectionsBlogStyleOne = () => import('../../components/sections/BlogStyleOne.vue' /* webpackChunkName: "components/sections-blog-style-one" */).then(c => wrapFunctional(c.default || c))
-export const SectionsBlogStyleTwo = () => import('../../components/sections/BlogStyleTwo.vue' /* webpackChunkName: "components/sections-blog-style-two" */).then(c => wrapFunctional(c.default || c))
-export const SectionsCaseStudiesItemWrapper = () => import('../../components/sections/CaseStudiesItemWrapper.vue' /* webpackChunkName: "components/sections-case-studies-item-wrapper" */).then(c => wrapFunctional(c.default || c))
-export const SectionsCaseStudiesSection = () => import('../../components/sections/CaseStudiesSection.vue' /* webpackChunkName: "components/sections-case-studies-section" */).then(c => wrapFunctional(c.default || c))
-export const SectionsCaseStudiesSectionTwo = () => import('../../components/sections/CaseStudiesSectionTwo.vue' /* webpackChunkName: "components/sections-case-studies-section-two" */).then(c => wrapFunctional(c.default || c))
-export const SectionsCompanyHistory = () => import('../../components/sections/CompanyHistory.vue' /* webpackChunkName: "components/sections-company-history" */).then(c => wrapFunctional(c.default || c))
-export const SectionsCompañiasSegurosSection = () => import('../../components/sections/CompañiasSegurosSection.vue' /* webpackChunkName: "components/sections-compañias-seguros-section" */).then(c => wrapFunctional(c.default || c))
-export const SectionsContactUs = () => import('../../components/sections/ContactUs.vue' /* webpackChunkName: "components/sections-contact-us" */).then(c => wrapFunctional(c.default || c))
-export const SectionsContactUsFour = () => import('../../components/sections/ContactUsFour.vue' /* webpackChunkName: "components/sections-contact-us-four" */).then(c => wrapFunctional(c.default || c))
-export const SectionsContactUsThree = () => import('../../components/sections/ContactUsThree.vue' /* webpackChunkName: "components/sections-contact-us-three" */).then(c => wrapFunctional(c.default || c))
-export const SectionsContactUsTwo = () => import('../../components/sections/ContactUsTwo.vue' /* webpackChunkName: "components/sections-contact-us-two" */).then(c => wrapFunctional(c.default || c))
-export const SectionsCotHogar = () => import('../../components/sections/CotHogar.vue' /* webpackChunkName: "components/sections-cot-hogar" */).then(c => wrapFunctional(c.default || c))
-export const SectionsCotizaGmExt = () => import('../../components/sections/CotizaGmExt.vue' /* webpackChunkName: "components/sections-cotiza-gm-ext" */).then(c => wrapFunctional(c.default || c))
-export const SectionsCotizaGmm = () => import('../../components/sections/CotizaGmm.vue' /* webpackChunkName: "components/sections-cotiza-gmm" */).then(c => wrapFunctional(c.default || c))
-export const SectionsDirectoresSection = () => import('../../components/sections/DirectoresSection.vue' /* webpackChunkName: "components/sections-directores-section" */).then(c => wrapFunctional(c.default || c))
-export const SectionsExperienciaSection = () => import('../../components/sections/ExperienciaSection.vue' /* webpackChunkName: "components/sections-experiencia-section" */).then(c => wrapFunctional(c.default || c))
-export const SectionsFeatureGallery = () => import('../../components/sections/FeatureGallery.vue' /* webpackChunkName: "components/sections-feature-gallery" */).then(c => wrapFunctional(c.default || c))
-export const SectionsFeatureGalleryFour = () => import('../../components/sections/FeatureGalleryFour.vue' /* webpackChunkName: "components/sections-feature-gallery-four" */).then(c => wrapFunctional(c.default || c))
-export const SectionsFeatureGalleryTwo = () => import('../../components/sections/FeatureGalleryTwo.vue' /* webpackChunkName: "components/sections-feature-gallery-two" */).then(c => wrapFunctional(c.default || c))
-export const SectionsFormacionExperienciaSection = () => import('../../components/sections/FormacionExperienciaSection.vue' /* webpackChunkName: "components/sections-formacion-experiencia-section" */).then(c => wrapFunctional(c.default || c))
-export const SectionsFormacionSection = () => import('../../components/sections/FormacionSection.vue' /* webpackChunkName: "components/sections-formacion-section" */).then(c => wrapFunctional(c.default || c))
-export const SectionsFourSteps = () => import('../../components/sections/FourSteps.vue' /* webpackChunkName: "components/sections-four-steps" */).then(c => wrapFunctional(c.default || c))
-export const SectionsGalleryOne = () => import('../../components/sections/GalleryOne.vue' /* webpackChunkName: "components/sections-gallery-one" */).then(c => wrapFunctional(c.default || c))
-export const SectionsIBSAppSection = () => import('../../components/sections/IBSAppSection.vue' /* webpackChunkName: "components/sections-i-b-s-app-section" */).then(c => wrapFunctional(c.default || c))
-export const SectionsInfoTechExperience = () => import('../../components/sections/InfoTechExperience.vue' /* webpackChunkName: "components/sections-info-tech-experience" */).then(c => wrapFunctional(c.default || c))
-export const SectionsInsuranceDirectory = () => import('../../components/sections/InsuranceDirectory.vue' /* webpackChunkName: "components/sections-insurance-directory" */).then(c => wrapFunctional(c.default || c))
-export const SectionsInsuranceDirectoryCobranza = () => import('../../components/sections/InsuranceDirectoryCobranza.vue' /* webpackChunkName: "components/sections-insurance-directory-cobranza" */).then(c => wrapFunctional(c.default || c))
-export const SectionsPremiosSection = () => import('../../components/sections/PremiosSection.vue' /* webpackChunkName: "components/sections-premios-section" */).then(c => wrapFunctional(c.default || c))
-export const SectionsPricingOne = () => import('../../components/sections/PricingOne.vue' /* webpackChunkName: "components/sections-pricing-one" */).then(c => wrapFunctional(c.default || c))
-export const SectionsServiceITSolution = () => import('../../components/sections/ServiceITSolution.vue' /* webpackChunkName: "components/sections-service-i-t-solution" */).then(c => wrapFunctional(c.default || c))
-export const SectionsServiceStyleEight = () => import('../../components/sections/ServiceStyleEight.vue' /* webpackChunkName: "components/sections-service-style-eight" */).then(c => wrapFunctional(c.default || c))
-export const SectionsServiceStyleFive = () => import('../../components/sections/ServiceStyleFive.vue' /* webpackChunkName: "components/sections-service-style-five" */).then(c => wrapFunctional(c.default || c))
-export const SectionsServiceStyleSeven = () => import('../../components/sections/ServiceStyleSeven.vue' /* webpackChunkName: "components/sections-service-style-seven" */).then(c => wrapFunctional(c.default || c))
-export const SectionsServiceStyleSix = () => import('../../components/sections/ServiceStyleSix.vue' /* webpackChunkName: "components/sections-service-style-six" */).then(c => wrapFunctional(c.default || c))
-export const SectionsServiceStyleThree = () => import('../../components/sections/ServiceStyleThree.vue' /* webpackChunkName: "components/sections-service-style-three" */).then(c => wrapFunctional(c.default || c))
-export const SectionsServiceStyleTwo = () => import('../../components/sections/ServiceStyleTwo.vue' /* webpackChunkName: "components/sections-service-style-two" */).then(c => wrapFunctional(c.default || c))
-export const SectionsTabSection = () => import('../../components/sections/TabSection.vue' /* webpackChunkName: "components/sections-tab-section" */).then(c => wrapFunctional(c.default || c))
-export const SectionsTeamMemberList = () => import('../../components/sections/TeamMemberList.vue' /* webpackChunkName: "components/sections-team-member-list" */).then(c => wrapFunctional(c.default || c))
-export const SectionsTeamOne = () => import('../../components/sections/TeamOne.vue' /* webpackChunkName: "components/sections-team-one" */).then(c => wrapFunctional(c.default || c))
-export const SectionsTeamTwo = () => import('../../components/sections/TeamTwo.vue' /* webpackChunkName: "components/sections-team-two" */).then(c => wrapFunctional(c.default || c))
-export const SectionsTerminosCondicionesButton = () => import('../../components/sections/TerminosCondicionesButton.vue' /* webpackChunkName: "components/sections-terminos-condiciones-button" */).then(c => wrapFunctional(c.default || c))
-export const SectionsTestimonialOne = () => import('../../components/sections/TestimonialOne.vue' /* webpackChunkName: "components/sections-testimonial-one" */).then(c => wrapFunctional(c.default || c))
-export const SectionsTestimonialTwo = () => import('../../components/sections/TestimonialTwo.vue' /* webpackChunkName: "components/sections-testimonial-two" */).then(c => wrapFunctional(c.default || c))
-export const SectionsTiposSegurosSection = () => import('../../components/sections/TiposSegurosSection.vue' /* webpackChunkName: "components/sections-tipos-seguros-section" */).then(c => wrapFunctional(c.default || c))
+export { default as AboutCompany } from '../../components/AboutCompany.vue'
+export { default as AboutCompanyTwo } from '../../components/AboutCompanyTwo.vue'
+export { default as AboutDelivery } from '../../components/AboutDelivery.vue'
+export { default as AccordionOne } from '../../components/AccordionOne.vue'
+export { default as AccordionTwo } from '../../components/AccordionTwo.vue'
+export { default as AppointmentForm } from '../../components/AppointmentForm.vue'
+export { default as BlogSidebar } from '../../components/BlogSidebar.vue'
+export { default as BrandLogoCarousel } from '../../components/BrandLogoCarousel.vue'
+export { default as Breadcrumbs } from '../../components/Breadcrumbs.vue'
+export { default as Breadcrumbs2 } from '../../components/Breadcrumbs2.vue'
+export { default as CaseStudiesItem } from '../../components/CaseStudiesItem.vue'
+export { default as ContactUsInfo } from '../../components/ContactUsInfo.vue'
+export { default as ContactUsInfo1 } from '../../components/ContactUsInfo1.vue'
+export { default as CorporateVideo } from '../../components/CorporateVideo.vue'
+export { default as CtaContact } from '../../components/CtaContact.vue'
+export { default as CtaContactTwo } from '../../components/CtaContactTwo.vue'
+export { default as CtaFour } from '../../components/CtaFour.vue'
+export { default as CtaOne } from '../../components/CtaOne.vue'
+export { default as CtaOne1 } from '../../components/CtaOne1.vue'
+export { default as CtaThree } from '../../components/CtaThree.vue'
+export { default as CtaTwo } from '../../components/CtaTwo.vue'
+export { default as CtaVideo } from '../../components/CtaVideo.vue'
+export { default as FeatureItem } from '../../components/FeatureItem.vue'
+export { default as FeatureItemStyleThree } from '../../components/FeatureItemStyleThree.vue'
+export { default as FeatureItemTwo } from '../../components/FeatureItemTwo.vue'
+export { default as Footer } from '../../components/Footer.vue'
+export { default as FooterAbout } from '../../components/FooterAbout.vue'
+export { default as FooterVideo } from '../../components/FooterVideo.vue'
+export { default as FooterWidgetApps } from '../../components/FooterWidgetApps.vue'
+export { default as FooterWidgetLink } from '../../components/FooterWidgetLink.vue'
+export { default as FunFact } from '../../components/FunFact.vue'
+export { default as FunFactThree } from '../../components/FunFactThree.vue'
+export { default as FunFactTwo } from '../../components/FunFactTwo.vue'
+export { default as Header } from '../../components/Header.vue'
+export { default as HeaderAppointment } from '../../components/HeaderAppointment.vue'
+export { default as HeaderCybersecurity } from '../../components/HeaderCybersecurity.vue'
+export { default as HeaderProcessing } from '../../components/HeaderProcessing.vue'
+export { default as HeaderResolution } from '../../components/HeaderResolution.vue'
+export { default as HeaderTop } from '../../components/HeaderTop.vue'
+export { default as HeroAppointment } from '../../components/HeroAppointment.vue'
+export { default as HeroCybersecurity } from '../../components/HeroCybersecurity.vue'
+export { default as HeroInfotechNo } from '../../components/HeroInfotechNo.vue'
+export { default as HeroInsurance } from '../../components/HeroInsurance.vue'
+export { default as HeroProcessing } from '../../components/HeroProcessing.vue'
+export { default as HeroResolution } from '../../components/HeroResolution.vue'
+export { default as HeroService } from '../../components/HeroService.vue'
+export { default as HomeCarousel } from '../../components/HomeCarousel.vue'
+export { default as InsuranceModal } from '../../components/InsuranceModal.vue'
+export { default as MobileNavMenu } from '../../components/MobileNavMenu.vue'
+export { default as Navigation } from '../../components/Navigation.vue'
+export { default as OffCanvasMobileMenu } from '../../components/OffCanvasMobileMenu.vue'
+export { default as PageHeader } from '../../components/PageHeader.vue'
+export { default as PortalEmpresaView } from '../../components/PortalEmpresaView.vue'
+export { default as PreviewMobileNavMenu } from '../../components/PreviewMobileNavMenu.vue'
+export { default as PreviewOffcanvasMobileMenu } from '../../components/PreviewOffcanvasMobileMenu.vue'
+export { default as QualifiedMethod } from '../../components/QualifiedMethod.vue'
+export { default as SearchOverlay } from '../../components/SearchOverlay.vue'
+export { default as SectionTitle } from '../../components/SectionTitle.vue'
+export { default as ServiceIT } from '../../components/ServiceIT.vue'
+export { default as ServiceItem } from '../../components/ServiceItem.vue'
+export { default as ServiceItemStyleFive } from '../../components/ServiceItemStyleFive.vue'
+export { default as ServiceItemStyleFour } from '../../components/ServiceItemStyleFour.vue'
+export { default as ServiceItemStyleThree } from '../../components/ServiceItemStyleThree.vue'
+export { default as ServiceItemStyleTwo } from '../../components/ServiceItemStyleTwo.vue'
+export { default as ServiceOne } from '../../components/ServiceOne.vue'
+export { default as TeamMember } from '../../components/TeamMember.vue'
+export { default as VideoPupupOne } from '../../components/VideoPupupOne.vue'
+export { default as VideoWithImages } from '../../components/VideoWithImages.vue'
+export { default as SectionsAboutBanner } from '../../components/sections/AboutBanner.vue'
+export { default as SectionsAboutUsDescription } from '../../components/sections/AboutUsDescription.vue'
+export { default as SectionsAboutUsHero } from '../../components/sections/AboutUsHero.vue'
+export { default as SectionsAccordionWrapper } from '../../components/sections/AccordionWrapper.vue'
+export { default as SectionsAdvisoryButtons } from '../../components/sections/AdvisoryButtons.vue'
+export { default as SectionsAdvisoryButtonsCobranza } from '../../components/sections/AdvisoryButtonsCobranza.vue'
+export { default as SectionsBlogPageWrapper } from '../../components/sections/BlogPageWrapper.vue'
+export { default as SectionsBlogStyleOne } from '../../components/sections/BlogStyleOne.vue'
+export { default as SectionsBlogStyleTwo } from '../../components/sections/BlogStyleTwo.vue'
+export { default as SectionsCaseStudiesItemWrapper } from '../../components/sections/CaseStudiesItemWrapper.vue'
+export { default as SectionsCaseStudiesSection } from '../../components/sections/CaseStudiesSection.vue'
+export { default as SectionsCaseStudiesSectionTwo } from '../../components/sections/CaseStudiesSectionTwo.vue'
+export { default as SectionsCompanyHistory } from '../../components/sections/CompanyHistory.vue'
+export { default as SectionsCompañiasSegurosSection } from '../../components/sections/CompañiasSegurosSection.vue'
+export { default as SectionsContactUs } from '../../components/sections/ContactUs.vue'
+export { default as SectionsContactUsFour } from '../../components/sections/ContactUsFour.vue'
+export { default as SectionsContactUsThree } from '../../components/sections/ContactUsThree.vue'
+export { default as SectionsContactUsTwo } from '../../components/sections/ContactUsTwo.vue'
+export { default as SectionsCotHogar } from '../../components/sections/CotHogar.vue'
+export { default as SectionsCotizaGmExt } from '../../components/sections/CotizaGmExt.vue'
+export { default as SectionsCotizaGmm } from '../../components/sections/CotizaGmm.vue'
+export { default as SectionsDirectoresSection } from '../../components/sections/DirectoresSection.vue'
+export { default as SectionsExperienciaSection } from '../../components/sections/ExperienciaSection.vue'
+export { default as SectionsFeatureGallery } from '../../components/sections/FeatureGallery.vue'
+export { default as SectionsFeatureGalleryFour } from '../../components/sections/FeatureGalleryFour.vue'
+export { default as SectionsFeatureGalleryTwo } from '../../components/sections/FeatureGalleryTwo.vue'
+export { default as SectionsFormacionExperienciaSection } from '../../components/sections/FormacionExperienciaSection.vue'
+export { default as SectionsFormacionSection } from '../../components/sections/FormacionSection.vue'
+export { default as SectionsFourSteps } from '../../components/sections/FourSteps.vue'
+export { default as SectionsGalleryOne } from '../../components/sections/GalleryOne.vue'
+export { default as SectionsIBSAppSection } from '../../components/sections/IBSAppSection.vue'
+export { default as SectionsInfoTechExperience } from '../../components/sections/InfoTechExperience.vue'
+export { default as SectionsInsuranceDirectory } from '../../components/sections/InsuranceDirectory.vue'
+export { default as SectionsInsuranceDirectoryCobranza } from '../../components/sections/InsuranceDirectoryCobranza.vue'
+export { default as SectionsPremiosSection } from '../../components/sections/PremiosSection.vue'
+export { default as SectionsPricingOne } from '../../components/sections/PricingOne.vue'
+export { default as SectionsServiceITSolution } from '../../components/sections/ServiceITSolution.vue'
+export { default as SectionsServiceStyleEight } from '../../components/sections/ServiceStyleEight.vue'
+export { default as SectionsServiceStyleFive } from '../../components/sections/ServiceStyleFive.vue'
+export { default as SectionsServiceStyleSeven } from '../../components/sections/ServiceStyleSeven.vue'
+export { default as SectionsServiceStyleSix } from '../../components/sections/ServiceStyleSix.vue'
+export { default as SectionsServiceStyleThree } from '../../components/sections/ServiceStyleThree.vue'
+export { default as SectionsServiceStyleTwo } from '../../components/sections/ServiceStyleTwo.vue'
+export { default as SectionsTabSection } from '../../components/sections/TabSection.vue'
+export { default as SectionsTeamMemberList } from '../../components/sections/TeamMemberList.vue'
+export { default as SectionsTeamOne } from '../../components/sections/TeamOne.vue'
+export { default as SectionsTeamTwo } from '../../components/sections/TeamTwo.vue'
+export { default as SectionsTerminosCondicionesButton } from '../../components/sections/TerminosCondicionesButton.vue'
+export { default as SectionsTestimonialOne } from '../../components/sections/TestimonialOne.vue'
+export { default as SectionsTestimonialTwo } from '../../components/sections/TestimonialTwo.vue'
+export { default as SectionsTiposSegurosSection } from '../../components/sections/TiposSegurosSection.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {
